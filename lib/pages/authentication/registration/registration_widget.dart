@@ -900,62 +900,49 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             ),
                           ),
                         ),
-                        Container(
-                          width: double.infinity,
-                          decoration: const BoxDecoration(),
-                          child: Visibility(
-                            visible: _model.typeValue == 'Healer',
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 15.0, 0.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  if (_model.typeValue == 'Doctor')
-                                    FlutterFlowDropDown<String>(
-                                      multiSelectController:
-                                          _model.healerValueController ??=
-                                              FormFieldController<List<String>>(
-                                                  null),
-                                      options: const [
-                                        'Mthandazi',
-                                        'Prophet',
-                                        'Sangoma',
-                                        'Gedla',
-                                        'Nyanga'
-                                      ],
-                                      width: double.infinity,
-                                      height: 56.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                      hintText: 'Please select...',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderWidth: 2.0,
-                                      borderRadius: 8.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isOverButton: true,
-                                      isSearchable: false,
-                                      isMultiSelect: true,
-                                      onMultiSelectChanged: (val) => setState(
-                                          () => _model.healerValue = val),
-                                    ),
-                                ],
+                        if (_model.typeValue == 'Doctor')
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 0.0),
+                            child: FlutterFlowDropDown<String>(
+                              multiSelectController:
+                                  _model.healerValueController ??=
+                                      FormFieldController<List<String>>(null),
+                              options: const [
+                                'Mthandazi',
+                                'Prophet',
+                                'Sangoma',
+                                'Gedla',
+                                'Nyanga'
+                              ],
+                              width: double.infinity,
+                              height: 56.0,
+                              textStyle:
+                                  FlutterFlowTheme.of(context).bodyMedium,
+                              hintText: 'Please select...',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
                               ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderWidth: 2.0,
+                              borderRadius: 8.0,
+                              margin: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 4.0),
+                              hidesUnderline: true,
+                              isOverButton: true,
+                              isSearchable: false,
+                              isMultiSelect: true,
+                              onMultiSelectChanged: (val) =>
+                                  setState(() => _model.healerValue = val),
                             ),
                           ),
-                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
