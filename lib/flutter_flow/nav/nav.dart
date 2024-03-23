@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const SigninWidget(),
+          appStateNotifier.loggedIn ? const HomePageWidget() : const SignInPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomePageWidget() : const SigninWidget(),
+              appStateNotifier.loggedIn ? const HomePageWidget() : const SignInPageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -102,6 +102,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CompleteProfile',
           path: '/completeProfile',
           builder: (context, params) => const CompleteProfileWidget(),
+        ),
+        FFRoute(
+          name: 'Registration',
+          path: '/registration',
+          builder: (context, params) => const RegistrationWidget(),
+        ),
+        FFRoute(
+          name: 'SignInPage',
+          path: '/signInPage',
+          builder: (context, params) => const SignInPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -268,7 +278,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/signin';
+            return '/signInPage';
           }
           return null;
         },

@@ -161,7 +161,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                     MainAxisAlignment.spaceBetween,
                                 enableActiveFill: false,
                                 autoFocus: true,
-                                enablePinAutofill: false,
+                                enablePinAutofill: true,
                                 errorTextSpace: 16.0,
                                 showCursor: true,
                                 cursorColor:
@@ -194,7 +194,31 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                       FlutterFlowTheme.of(context).primary,
                                 ),
                                 controller: _model.pinCodeController,
-                                onChanged: (_) {},
+                                onChanged: (_) async {
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  final smsCodeVal =
+                                      _model.pinCodeController!.text;
+                                  if (smsCodeVal.isEmpty) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text(
+                                            'Enter SMS verification code.'),
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  final phoneVerifiedUser =
+                                      await authManager.verifySmsCode(
+                                    context: context,
+                                    smsCode: smsCodeVal,
+                                  );
+                                  if (phoneVerifiedUser == null) {
+                                    return;
+                                  }
+
+                                  context.goNamedAuth(
+                                      'CompleteProfile', context.mounted);
+                                },
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
                                 validator: _model.pinCodeControllerValidator

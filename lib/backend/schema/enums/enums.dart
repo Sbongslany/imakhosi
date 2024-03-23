@@ -3,8 +3,7 @@ import 'package:collection/collection.dart';
 enum Role {
   superAdmin,
   admin,
-  doctor,
-  patient,
+  user,
 }
 
 extension FFEnumExtensions<T extends Enum> on T {

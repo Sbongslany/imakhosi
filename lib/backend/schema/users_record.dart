@@ -76,6 +76,11 @@ class UsersRecord extends FirestoreRecord {
   Role? get role => _role;
   bool hasRole() => _role != null;
 
+  // "password" field.
+  String? _password;
+  String get password => _password ?? '';
+  bool hasPassword() => _password != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -89,6 +94,7 @@ class UsersRecord extends FirestoreRecord {
     _type = snapshotData['type'] as String?;
     _isVarified = snapshotData['isVarified'] as bool?;
     _role = deserializeEnum<Role>(snapshotData['role']);
+    _password = snapshotData['password'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -136,6 +142,7 @@ Map<String, dynamic> createUsersRecordData({
   String? type,
   bool? isVarified,
   Role? role,
+  String? password,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -150,6 +157,7 @@ Map<String, dynamic> createUsersRecordData({
       'type': type,
       'isVarified': isVarified,
       'role': role,
+      'password': password,
     }.withoutNulls,
   );
 
@@ -173,7 +181,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         listEquality.equals(e1?.healer, e2?.healer) &&
         e1?.type == e2?.type &&
         e1?.isVarified == e2?.isVarified &&
-        e1?.role == e2?.role;
+        e1?.role == e2?.role &&
+        e1?.password == e2?.password;
   }
 
   @override
@@ -189,7 +198,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.healer,
         e?.type,
         e?.isVarified,
-        e?.role
+        e?.role,
+        e?.password
       ]);
 
   @override
