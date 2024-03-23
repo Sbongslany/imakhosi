@@ -36,11 +36,11 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberController;
   String? Function(BuildContext, String?)? phoneNumberControllerValidator;
-  // State field(s) for RadioButton widget.
-  FormFieldController<String>? radioButtonValueController;
-  // State field(s) for DropDown widget.
-  List<String>? dropDownValue;
-  FormFieldController<List<String>>? dropDownValueController;
+  // State field(s) for type widget.
+  FormFieldController<String>? typeValueController;
+  // State field(s) for healer widget.
+  List<String>? healerValue;
+  FormFieldController<List<String>>? healerValueController;
 
   /// Initialization and disposal methods.
 
@@ -73,5 +73,5 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
 
   /// Additional helper methods are added here.
 
-  String? get radioButtonValue => radioButtonValueController?.value;
+  String? get typeValue => typeValueController?.value;
 }

@@ -878,9 +878,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                 FlutterFlowRadioButton(
                                   options: ['Doctor', 'Patient'].toList(),
                                   onChanged: (val) => setState(() {}),
-                                  controller:
-                                      _model.radioButtonValueController ??=
-                                          FormFieldController<String>(null),
+                                  controller: _model.typeValueController ??=
+                                      FormFieldController<String>(null),
                                   optionHeight: 32.0,
                                   textStyle:
                                       FlutterFlowTheme.of(context).titleSmall,
@@ -905,7 +904,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                           width: double.infinity,
                           decoration: const BoxDecoration(),
                           child: Visibility(
-                            visible: _model.radioButtonValue == 'Healer',
+                            visible: _model.typeValue == 'Healer',
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 0.0),
@@ -914,7 +913,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                 children: [
                                   FlutterFlowDropDown<String>(
                                     multiSelectController: _model
-                                            .dropDownValueController ??=
+                                            .healerValueController ??=
                                         FormFieldController<List<String>>(null),
                                     options: const [
                                       'Mthandazi',
@@ -948,7 +947,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     isSearchable: false,
                                     isMultiSelect: true,
                                     onMultiSelectChanged: (val) => setState(
-                                        () => _model.dropDownValue = val),
+                                        () => _model.healerValue = val),
                                   ),
                                 ],
                               ),
@@ -992,13 +991,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   phoneNumber:
                                       _model.phoneNumberController.text,
                                   name: _model.nameController.text,
-                                  type: _model.radioButtonValue,
+                                  type: _model.typeValue,
                                   isVarified: false,
                                   role: Role.user,
                                 ),
                                 ...mapToFirestore(
                                   {
-                                    'healer': _model.dropDownValue,
+                                    'healer': _model.healerValue,
                                   },
                                 ),
                               });

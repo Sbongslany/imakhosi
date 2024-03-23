@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -63,10 +64,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         color: Color(0x4DFFFFFF),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
-                        Icons.person,
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        size: 24.0,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          GoRouter.of(context).prepareAuthEvent();
+                          await authManager.signOut();
+                          GoRouter.of(context).clearRedirectLocation();
+
+                          context.goNamedAuth('SignInPage', context.mounted);
+                        },
+                        child: Icon(
+                          Icons.person,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          size: 24.0,
+                        ),
                       ),
                     ),
                   ),
