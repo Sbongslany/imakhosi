@@ -433,7 +433,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
-                                    Icons.person,
+                                    Icons.lock,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     size: 24.0,
@@ -699,7 +699,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
-                                    Icons.person,
+                                    Icons.personal_injury_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     size: 24.0,
@@ -876,7 +876,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 FlutterFlowRadioButton(
-                                  options: ['Doctor', 'Patient'].toList(),
+                                  options: ['Traditional Healer', 'Patient']
+                                      .toList(),
                                   onChanged: (val) => setState(() {}),
                                   controller: _model.typeValueController ??=
                                       FormFieldController<String>(null),
@@ -900,7 +901,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             ),
                           ),
                         ),
-                        if (_model.typeValue == 'Doctor')
+                        if (_model.typeValue == 'Traditional Healer')
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 0.0),
@@ -990,6 +991,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   },
                                 ),
                               });
+
+                              if (_model.typeValue != 'Patient') {
+                                context.pushNamedAuth(
+                                    'healer_home', context.mounted);
+
+                                return;
+                              }
 
                               context.pushNamedAuth(
                                   'HomePage', context.mounted);

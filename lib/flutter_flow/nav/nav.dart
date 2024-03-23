@@ -112,6 +112,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'SignInPage',
           path: '/signInPage',
           builder: (context, params) => const SignInPageWidget(),
+        ),
+        FFRoute(
+          name: 'healer_home',
+          path: '/healerHome',
+          builder: (context, params) => const HealerHomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,5 +1,5 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
+export '/pages/home/home_page/home_page_widget.dart' show HomePageWidget;
 export '/pages/authentication/signin/signin_widget.dart' show SigninWidget;
 export '/pages/authentication/verify_mobile/verify_mobile_widget.dart'
     show VerifyMobileWidget;
@@ -9,3 +9,5 @@ export '/pages/authentication/registration/registration_widget.dart'
     show RegistrationWidget;
 export '/pages/authentication/sign_in_page/sign_in_page_widget.dart'
     show SignInPageWidget;
+export '/pages/healer_admin/healer_home/healer_home_widget.dart'
+    show HealerHomeWidget;
