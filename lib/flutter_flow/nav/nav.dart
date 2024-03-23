@@ -2,11 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -73,18 +75,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const SignInPageWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const SignInPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomePageWidget() : const SignInPageWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const SignInPageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'HomePage')
+              : const HomePageWidget(),
         ),
         FFRoute(
           name: 'signin',
@@ -117,8 +121,54 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'healer_home',
           path: '/healerHome',
           builder: (context, params) => const HealerHomeWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_Details',
+          path: '/chat2Details',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2DetailsWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'chat_2_main',
+          path: '/chat2Main',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'chat_2_main')
+              : const Chat2MainWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_InviteUsers',
+          path: '/chat2InviteUsers',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2InviteUsersWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'image_Details',
+          path: '/imageDetails',
+          asyncParams: {
+            'chatMessage':
+                getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ImageDetailsWidget(
+            chatMessage: params.getParam('chatMessage', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'settings',
+          path: '/settings',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'settings')
+              : const SettingsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

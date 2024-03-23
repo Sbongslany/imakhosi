@@ -321,23 +321,20 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                       child: FFButtonWidget(
-                        onPressed: (_model.checkboxValue != null)
-                            ? null
-                            : () async {
-                                GoRouter.of(context).prepareAuthEvent();
+                        onPressed: () async {
+                          GoRouter.of(context).prepareAuthEvent();
 
-                                final user = await authManager.signInWithEmail(
-                                  context,
-                                  _model.emailController.text,
-                                  _model.passwordController.text,
-                                );
-                                if (user == null) {
-                                  return;
-                                }
+                          final user = await authManager.signInWithEmail(
+                            context,
+                            _model.emailController.text,
+                            _model.passwordController.text,
+                          );
+                          if (user == null) {
+                            return;
+                          }
 
-                                context.pushNamedAuth(
-                                    'HomePage', context.mounted);
-                              },
+                          context.pushNamedAuth('HomePage', context.mounted);
+                        },
                         text: 'Submit',
                         options: FFButtonOptions(
                           width: double.infinity,
@@ -358,8 +355,6 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
-                          disabledColor:
-                              FlutterFlowTheme.of(context).secondaryText,
                         ),
                       ),
                     ),

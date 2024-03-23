@@ -81,6 +81,21 @@ class UsersRecord extends FirestoreRecord {
   String get password => _password ?? '';
   bool hasPassword() => _password != null;
 
+  // "shortDescription" field.
+  String? _shortDescription;
+  String get shortDescription => _shortDescription ?? '';
+  bool hasShortDescription() => _shortDescription != null;
+
+  // "last_active_time" field.
+  DateTime? _lastActiveTime;
+  DateTime? get lastActiveTime => _lastActiveTime;
+  bool hasLastActiveTime() => _lastActiveTime != null;
+
+  // "title" field.
+  String? _title;
+  String get title => _title ?? '';
+  bool hasTitle() => _title != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -95,6 +110,9 @@ class UsersRecord extends FirestoreRecord {
     _isVarified = snapshotData['isVarified'] as bool?;
     _role = deserializeEnum<Role>(snapshotData['role']);
     _password = snapshotData['password'] as String?;
+    _shortDescription = snapshotData['shortDescription'] as String?;
+    _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
+    _title = snapshotData['title'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -143,6 +161,9 @@ Map<String, dynamic> createUsersRecordData({
   bool? isVarified,
   Role? role,
   String? password,
+  String? shortDescription,
+  DateTime? lastActiveTime,
+  String? title,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -158,6 +179,9 @@ Map<String, dynamic> createUsersRecordData({
       'isVarified': isVarified,
       'role': role,
       'password': password,
+      'shortDescription': shortDescription,
+      'last_active_time': lastActiveTime,
+      'title': title,
     }.withoutNulls,
   );
 
@@ -182,7 +206,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.type == e2?.type &&
         e1?.isVarified == e2?.isVarified &&
         e1?.role == e2?.role &&
-        e1?.password == e2?.password;
+        e1?.password == e2?.password &&
+        e1?.shortDescription == e2?.shortDescription &&
+        e1?.lastActiveTime == e2?.lastActiveTime &&
+        e1?.title == e2?.title;
   }
 
   @override
@@ -199,7 +226,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.type,
         e?.isVarified,
         e?.role,
-        e?.password
+        e?.password,
+        e?.shortDescription,
+        e?.lastActiveTime,
+        e?.title
       ]);
 
   @override
