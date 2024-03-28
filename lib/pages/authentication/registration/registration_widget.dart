@@ -110,6 +110,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 24.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                             Text(
@@ -121,6 +122,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ],
@@ -233,6 +235,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             ),
                                           ),
@@ -289,6 +292,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             ),
                                           ),
@@ -369,6 +373,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     child: TextFormField(
                                       controller: _model.emailController,
                                       focusNode: _model.emailFocusNode,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -376,6 +381,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your email',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -385,6 +391,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -397,7 +404,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
                                           ),
+                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model.emailControllerValidator
                                           .asValidator(context),
@@ -458,6 +467,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     child: TextFormField(
                                       controller: _model.passwordController,
                                       focusNode: _model.passwordFocusNode,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -465,6 +475,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your password',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -474,6 +485,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -486,7 +498,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
                                           ),
+                                      minLines: null,
                                       validator: _model
                                           .passwordControllerValidator
                                           .asValidator(context),
@@ -547,6 +561,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     child: TextFormField(
                                       controller: _model.nameController,
                                       focusNode: _model.nameFocusNode,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -554,6 +569,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your name',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -563,6 +579,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -575,7 +592,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
                                           ),
+                                      minLines: null,
                                       validator: _model.nameControllerValidator
                                           .asValidator(context),
                                     ),
@@ -635,6 +654,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     child: TextFormField(
                                       controller: _model.surnameController,
                                       focusNode: _model.surnameFocusNode,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -642,6 +662,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your surname',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -651,6 +672,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -663,7 +685,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
                                           ),
+                                      minLines: null,
                                       validator: _model
                                           .surnameControllerValidator
                                           .asValidator(context),
@@ -724,6 +748,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     child: TextFormField(
                                       controller: _model.usernameController,
                                       focusNode: _model.usernameFocusNode,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -731,6 +756,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your username',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -740,6 +766,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -752,7 +779,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
                                           ),
+                                      minLines: null,
                                       validator: _model
                                           .usernameControllerValidator
                                           .asValidator(context),
@@ -813,6 +842,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     child: TextFormField(
                                       controller: _model.phoneNumberController,
                                       focusNode: _model.phoneNumberFocusNode,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -820,6 +850,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your cell number',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -829,6 +860,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -841,7 +873,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             fontFamily: 'Readex Pro',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
+                                            letterSpacing: 0.0,
                                           ),
+                                      minLines: null,
                                       keyboardType: TextInputType.number,
                                       validator: _model
                                           .phoneNumberControllerValidator
@@ -882,10 +916,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   controller: _model.typeValueController ??=
                                       FormFieldController<String>(null),
                                   optionHeight: 32.0,
-                                  textStyle:
-                                      FlutterFlowTheme.of(context).titleSmall,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                   selectedTextStyle:
-                                      FlutterFlowTheme.of(context).titleSmall,
+                                      FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                   buttonPosition: RadioButtonPosition.left,
                                   direction: Axis.vertical,
                                   radioButtonColor: FlutterFlowTheme.of(context)
@@ -918,8 +961,12 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               ],
                               width: double.infinity,
                               height: 56.0,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                               hintText: 'Please select...',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
@@ -1016,6 +1063,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(

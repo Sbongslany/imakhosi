@@ -112,7 +112,12 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                         children: [
                           Text(
                             'Verfy',
-                            style: FlutterFlowTheme.of(context).headlineLarge,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                           Text(
                             'Enter OTP sent to ${widget.phoneNumber}',
@@ -122,6 +127,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                   fontFamily: 'Readex Pro',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
                                 ),
                           ),
                         ],
@@ -155,8 +161,12 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                 autoDisposeControllers: false,
                                 appContext: context,
                                 length: 6,
-                                textStyle:
-                                    FlutterFlowTheme.of(context).bodyLarge,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyLarge
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 enableActiveFill: false,
@@ -266,6 +276,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
                                                 fontSize: 15.0,
+                                                letterSpacing: 0.0,
                                               ),
                                         ),
                                       ),
@@ -287,6 +298,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -317,6 +329,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
@@ -382,6 +395,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                       fontFamily: 'Readex Pro',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
+                                      letterSpacing: 0.0,
                                     ),
                               ),
                             ],
@@ -429,6 +443,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
                           borderSide: const BorderSide(

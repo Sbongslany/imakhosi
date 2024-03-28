@@ -18,8 +18,6 @@ class SignInPageModel extends FlutterFlowModel<SignInPageWidget> {
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
@@ -34,8 +32,4 @@ class SignInPageModel extends FlutterFlowModel<SignInPageWidget> {
     passwordFocusNode?.dispose();
     passwordController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

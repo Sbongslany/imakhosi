@@ -42,8 +42,6 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   List<String>? healerValue;
   FormFieldController<List<String>>? healerValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -69,9 +67,6 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
     phoneNumberController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get typeValue => typeValueController?.value;
 }

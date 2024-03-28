@@ -129,6 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),

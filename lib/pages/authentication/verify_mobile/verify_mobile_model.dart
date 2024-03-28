@@ -21,8 +21,6 @@ class VerifyMobileModel extends FlutterFlowModel<VerifyMobileWidget> {
   FlutterFlowTimerController timerController =
       FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countDown));
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     pinCodeController = TextEditingController();
@@ -34,8 +32,4 @@ class VerifyMobileModel extends FlutterFlowModel<VerifyMobileWidget> {
     pinCodeController?.dispose();
     timerController.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_page_widget.dart' show HomePageWidget;
+import 'chat2_main_widget.dart' show Chat2MainWidget;
 import 'package:flutter/material.dart';
 
-class HomePageModel extends FlutterFlowModel<HomePageWidget> {
+class Chat2MainModel extends FlutterFlowModel<Chat2MainWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

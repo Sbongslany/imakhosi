@@ -86,6 +86,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                 fontFamily: 'Readex Pro',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 24.0,
+                                letterSpacing: 0.0,
                               ),
                         ),
                         Text(
@@ -96,6 +97,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                 fontFamily: 'Readex Pro',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
                               ),
                         ),
                       ],
@@ -150,6 +152,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                 child: TextFormField(
                                   controller: _model.emailController,
                                   focusNode: _model.emailFocusNode,
+                                  autofocus: false,
                                   textInputAction: TextInputAction.next,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -158,6 +161,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     hintText: 'Enter your email',
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -166,6 +170,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                           fontFamily: 'Readex Pro',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
+                                          letterSpacing: 0.0,
                                         ),
                                     enabledBorder: InputBorder.none,
                                     focusedBorder: InputBorder.none,
@@ -178,7 +183,9 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
+                                        letterSpacing: 0.0,
                                       ),
+                                  minLines: null,
                                   validator: _model.emailControllerValidator
                                       .asValidator(context),
                                 ),
@@ -238,6 +245,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                 child: TextFormField(
                                   controller: _model.passwordController,
                                   focusNode: _model.passwordFocusNode,
+                                  autofocus: false,
                                   textInputAction: TextInputAction.done,
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
@@ -246,6 +254,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     hintText: 'Enter your password',
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -254,6 +263,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                           fontFamily: 'Readex Pro',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
+                                          letterSpacing: 0.0,
                                         ),
                                     enabledBorder: InputBorder.none,
                                     focusedBorder: InputBorder.none,
@@ -279,7 +289,9 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
+                                        letterSpacing: 0.0,
                                       ),
+                                  minLines: null,
                                   validator: _model.passwordControllerValidator
                                       .asValidator(context),
                                 ),
@@ -311,6 +323,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                           ),
@@ -348,6 +361,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
                           borderSide: const BorderSide(
@@ -411,6 +425,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                   Padding(
@@ -425,6 +440,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             fontSize: 10.0,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
@@ -437,6 +453,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ],

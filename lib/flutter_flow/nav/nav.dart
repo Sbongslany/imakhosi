@@ -99,7 +99,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'VerifyMobile',
           path: '/verifyMobile',
           builder: (context, params) => VerifyMobileWidget(
-            phoneNumber: params.getParam('phoneNumber', ParamType.String),
+            phoneNumber: params.getParam(
+              'phoneNumber',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -129,7 +132,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
           builder: (context, params) => Chat2DetailsWidget(
-            chatRef: params.getParam('chatRef', ParamType.Document),
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
           ),
         ),
         FFRoute(
@@ -146,7 +152,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
           builder: (context, params) => Chat2InviteUsersWidget(
-            chatRef: params.getParam('chatRef', ParamType.Document),
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
           ),
         ),
         FFRoute(
@@ -157,15 +166,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
           },
           builder: (context, params) => ImageDetailsWidget(
-            chatMessage: params.getParam('chatMessage', ParamType.Document),
+            chatMessage: params.getParam(
+              'chatMessage',
+              ParamType.Document,
+            ),
           ),
         ),
         FFRoute(
-          name: 'settings',
-          path: '/settings',
+          name: 'BookingHome',
+          path: '/bookingHome',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'settings')
-              : const SettingsWidget(),
+              ? const NavBarPage(initialPage: 'BookingHome')
+              : const BookingHomeWidget(),
+        ),
+        FFRoute(
+          name: 'Profile',
+          path: '/profile',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Profile')
+              : const ProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -299,8 +318,12 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList,
-        collectionNamePath: collectionNamePath);
+    return deserializeParam<T>(
+      param,
+      type,
+      isList,
+      collectionNamePath: collectionNamePath,
+    );
   }
 }
 

@@ -59,6 +59,7 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
                           color: FlutterFlowTheme.of(context).primaryBackground,
+                          letterSpacing: 0.0,
                         ),
                   ),
                   Padding(
@@ -136,6 +137,7 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),

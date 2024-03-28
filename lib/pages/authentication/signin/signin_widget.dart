@@ -85,6 +85,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                 fontFamily: 'Readex Pro',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 24.0,
+                                letterSpacing: 0.0,
                               ),
                         ),
                         Text(
@@ -95,6 +96,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                 fontFamily: 'Readex Pro',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
                               ),
                         ),
                       ],
@@ -132,6 +134,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       fontSize: 15.0,
+                                      letterSpacing: 0.0,
                                     ),
                               ),
                             ),
@@ -162,6 +165,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     hintText: 'Enter your mobile number',
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -170,6 +174,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                           fontFamily: 'Readex Pro',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
+                                          letterSpacing: 0.0,
                                         ),
                                     enabledBorder: InputBorder.none,
                                     focusedBorder: InputBorder.none,
@@ -182,7 +187,9 @@ class _SigninWidgetState extends State<SigninWidget> {
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
+                                        letterSpacing: 0.0,
                                       ),
+                                  minLines: null,
                                   validator: _model.textControllerValidator
                                       .asValidator(context),
                                 ),
@@ -239,6 +246,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
                           borderSide: const BorderSide(
@@ -302,6 +310,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                   Padding(
@@ -316,6 +325,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             fontSize: 10.0,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
@@ -328,6 +338,7 @@ class _SigninWidgetState extends State<SigninWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ],

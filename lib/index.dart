@@ -11,9 +11,12 @@ export '/pages/authentication/sign_in_page/sign_in_page_widget.dart'
     show SignInPageWidget;
 export '/pages/healer_admin/healer_home/healer_home_widget.dart'
     show HealerHomeWidget;
-export '/chat/chat_2_details/chat2_details_widget.dart' show Chat2DetailsWidget;
-export '/chat/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
-export '/chat/chat_2_invite_users/chat2_invite_users_widget.dart'
+export '/pages/chat/chat_2_details/chat2_details_widget.dart'
+    show Chat2DetailsWidget;
+export '/pages/chat/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
+export '/pages/chat/chat_2_invite_users/chat2_invite_users_widget.dart'
     show Chat2InviteUsersWidget;
-export '/chat/image_details/image_details_widget.dart' show ImageDetailsWidget;
-export '/settings/settings_widget.dart' show SettingsWidget;
+export '/pages/chat/image_details/image_details_widget.dart'
+    show ImageDetailsWidget;
+export '/booking_home/booking_home_widget.dart' show BookingHomeWidget;
+export '/profile/profile_widget.dart' show ProfileWidget;
