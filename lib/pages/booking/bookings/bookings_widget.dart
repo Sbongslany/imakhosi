@@ -249,7 +249,7 @@ class _BookingsWidgetState extends State<BookingsWidget>
                                             borderRadius:
                                                 BorderRadius.circular(40.0),
                                             child: Image.network(
-                                              containerUsersRecord.photoUrl,
+                                              'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
                                               width: 60.0,
                                               height: 60.0,
                                               fit: BoxFit.cover,
