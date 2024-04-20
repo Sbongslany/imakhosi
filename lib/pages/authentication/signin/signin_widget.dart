@@ -189,7 +189,6 @@ class _SigninWidgetState extends State<SigninWidget> {
                                             .primaryBackground,
                                         letterSpacing: 0.0,
                                       ),
-                                  minLines: null,
                                   validator: _model.textControllerValidator
                                       .asValidator(context),
                                 ),
@@ -287,6 +286,11 @@ class _SigninWidgetState extends State<SigninWidget> {
                                   setState(
                                       () => _model.checkboxValue = newValue!);
                                 },
+                                side: BorderSide(
+                                  width: 2,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).alternate,
                                 checkColor: FlutterFlowTheme.of(context).info,

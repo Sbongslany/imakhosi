@@ -14,20 +14,20 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
 
   // State field(s) for Email widget.
   FocusNode? emailFocusNode;
-  TextEditingController? emailController;
-  String? Function(BuildContext, String?)? emailControllerValidator;
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for Name widget.
   FocusNode? nameFocusNode;
-  TextEditingController? nameController;
-  String? Function(BuildContext, String?)? nameControllerValidator;
+  TextEditingController? nameTextController;
+  String? Function(BuildContext, String?)? nameTextControllerValidator;
   // State field(s) for Surname widget.
   FocusNode? surnameFocusNode;
-  TextEditingController? surnameController;
-  String? Function(BuildContext, String?)? surnameControllerValidator;
+  TextEditingController? surnameTextController;
+  String? Function(BuildContext, String?)? surnameTextControllerValidator;
   // State field(s) for Username widget.
   FocusNode? usernameFocusNode;
-  TextEditingController? usernameController;
-  String? Function(BuildContext, String?)? usernameControllerValidator;
+  TextEditingController? usernameTextController;
+  String? Function(BuildContext, String?)? usernameTextControllerValidator;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
   // State field(s) for DropDown widget.
@@ -41,16 +41,16 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
   void dispose() {
     unfocusNode.dispose();
     emailFocusNode?.dispose();
-    emailController?.dispose();
+    emailTextController?.dispose();
 
     nameFocusNode?.dispose();
-    nameController?.dispose();
+    nameTextController?.dispose();
 
     surnameFocusNode?.dispose();
-    surnameController?.dispose();
+    surnameTextController?.dispose();
 
     usernameFocusNode?.dispose();
-    usernameController?.dispose();
+    usernameTextController?.dispose();
   }
 
   /// Additional helper methods.

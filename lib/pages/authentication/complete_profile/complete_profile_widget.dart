@@ -31,16 +31,16 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
     super.initState();
     _model = createModel(context, () => CompleteProfileModel());
 
-    _model.emailController ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
 
-    _model.nameController ??= TextEditingController();
+    _model.nameTextController ??= TextEditingController();
     _model.nameFocusNode ??= FocusNode();
 
-    _model.surnameController ??= TextEditingController();
+    _model.surnameTextController ??= TextEditingController();
     _model.surnameFocusNode ??= FocusNode();
 
-    _model.usernameController ??= TextEditingController();
+    _model.usernameTextController ??= TextEditingController();
     _model.usernameFocusNode ??= FocusNode();
   }
 
@@ -364,7 +364,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.emailController,
+                                      controller: _model.emailTextController,
                                       focusNode: _model.emailFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -399,9 +399,9 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
-                                      validator: _model.emailControllerValidator
+                                      validator: _model
+                                          .emailTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -458,7 +458,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.nameController,
+                                      controller: _model.nameTextController,
                                       focusNode: _model.nameFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -493,9 +493,9 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
-                                      validator: _model.nameControllerValidator
+                                      validator: _model
+                                          .nameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -552,7 +552,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.surnameController,
+                                      controller: _model.surnameTextController,
                                       focusNode: _model.surnameFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -587,10 +587,9 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
-                                          .surnameControllerValidator
+                                          .surnameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -647,7 +646,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.usernameController,
+                                      controller: _model.usernameTextController,
                                       focusNode: _model.usernameFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -682,10 +681,9 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
-                                          .usernameControllerValidator
+                                          .usernameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -816,10 +814,11 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                             onPressed: () async {
                               await currentUserReference!.update({
                                 ...createUsersRecordData(
-                                  email: _model.emailController.text,
-                                  displayName: _model.usernameController.text,
-                                  name: _model.nameController.text,
-                                  surname: _model.surnameController.text,
+                                  email: _model.emailTextController.text,
+                                  displayName:
+                                      _model.usernameTextController.text,
+                                  name: _model.nameTextController.text,
+                                  surname: _model.surnameTextController.text,
                                   type: _model.radioButtonValue,
                                   isVarified: false,
                                   photoUrl: _model.uploadedFileUrl,

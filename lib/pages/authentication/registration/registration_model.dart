@@ -14,28 +14,28 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
 
   // State field(s) for Email widget.
   FocusNode? emailFocusNode;
-  TextEditingController? emailController;
-  String? Function(BuildContext, String?)? emailControllerValidator;
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for Password widget.
   FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
+  TextEditingController? passwordTextController;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for Name widget.
   FocusNode? nameFocusNode;
-  TextEditingController? nameController;
-  String? Function(BuildContext, String?)? nameControllerValidator;
+  TextEditingController? nameTextController;
+  String? Function(BuildContext, String?)? nameTextControllerValidator;
   // State field(s) for Surname widget.
   FocusNode? surnameFocusNode;
-  TextEditingController? surnameController;
-  String? Function(BuildContext, String?)? surnameControllerValidator;
+  TextEditingController? surnameTextController;
+  String? Function(BuildContext, String?)? surnameTextControllerValidator;
   // State field(s) for Username widget.
   FocusNode? usernameFocusNode;
-  TextEditingController? usernameController;
-  String? Function(BuildContext, String?)? usernameControllerValidator;
+  TextEditingController? usernameTextController;
+  String? Function(BuildContext, String?)? usernameTextControllerValidator;
   // State field(s) for PhoneNumber widget.
   FocusNode? phoneNumberFocusNode;
-  TextEditingController? phoneNumberController;
-  String? Function(BuildContext, String?)? phoneNumberControllerValidator;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
   // State field(s) for type widget.
   FormFieldController<String>? typeValueController;
   // State field(s) for healer widget.
@@ -49,22 +49,22 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   void dispose() {
     unfocusNode.dispose();
     emailFocusNode?.dispose();
-    emailController?.dispose();
+    emailTextController?.dispose();
 
     passwordFocusNode?.dispose();
-    passwordController?.dispose();
+    passwordTextController?.dispose();
 
     nameFocusNode?.dispose();
-    nameController?.dispose();
+    nameTextController?.dispose();
 
     surnameFocusNode?.dispose();
-    surnameController?.dispose();
+    surnameTextController?.dispose();
 
     usernameFocusNode?.dispose();
-    usernameController?.dispose();
+    usernameTextController?.dispose();
 
     phoneNumberFocusNode?.dispose();
-    phoneNumberController?.dispose();
+    phoneNumberTextController?.dispose();
   }
 
   /// Additional helper methods.

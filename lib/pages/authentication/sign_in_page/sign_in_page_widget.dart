@@ -25,10 +25,10 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
     super.initState();
     _model = createModel(context, () => SignInPageModel());
 
-    _model.emailController ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
   }
 
@@ -150,7 +150,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.emailController,
+                                  controller: _model.emailTextController,
                                   focusNode: _model.emailFocusNode,
                                   autofocus: false,
                                   textInputAction: TextInputAction.next,
@@ -185,8 +185,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                             .primaryBackground,
                                         letterSpacing: 0.0,
                                       ),
-                                  minLines: null,
-                                  validator: _model.emailControllerValidator
+                                  validator: _model.emailTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -243,7 +242,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
-                                  controller: _model.passwordController,
+                                  controller: _model.passwordTextController,
                                   focusNode: _model.passwordFocusNode,
                                   autofocus: false,
                                   textInputAction: TextInputAction.done,
@@ -291,8 +290,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                             .primaryBackground,
                                         letterSpacing: 0.0,
                                       ),
-                                  minLines: null,
-                                  validator: _model.passwordControllerValidator
+                                  validator: _model
+                                      .passwordTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -339,8 +338,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
 
                           final user = await authManager.signInWithEmail(
                             context,
-                            _model.emailController.text,
-                            _model.passwordController.text,
+                            _model.emailTextController.text,
+                            _model.passwordTextController.text,
                           );
                           if (user == null) {
                             return;
@@ -402,6 +401,11 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                   setState(
                                       () => _model.checkboxValue = newValue!);
                                 },
+                                side: BorderSide(
+                                  width: 2,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
                                 activeColor:
                                     FlutterFlowTheme.of(context).alternate,
                                 checkColor: FlutterFlowTheme.of(context).info,

@@ -32,22 +32,22 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
     super.initState();
     _model = createModel(context, () => RegistrationModel());
 
-    _model.emailController ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.nameController ??= TextEditingController();
+    _model.nameTextController ??= TextEditingController();
     _model.nameFocusNode ??= FocusNode();
 
-    _model.surnameController ??= TextEditingController();
+    _model.surnameTextController ??= TextEditingController();
     _model.surnameFocusNode ??= FocusNode();
 
-    _model.usernameController ??= TextEditingController();
+    _model.usernameTextController ??= TextEditingController();
     _model.usernameFocusNode ??= FocusNode();
 
-    _model.phoneNumberController ??= TextEditingController();
+    _model.phoneNumberTextController ??= TextEditingController();
     _model.phoneNumberFocusNode ??= FocusNode();
   }
 
@@ -371,7 +371,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.emailController,
+                                      controller: _model.emailTextController,
                                       focusNode: _model.emailFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -406,9 +406,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
-                                      validator: _model.emailControllerValidator
+                                      validator: _model
+                                          .emailTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -465,7 +465,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.passwordController,
+                                      controller: _model.passwordTextController,
                                       focusNode: _model.passwordFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -500,9 +500,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       validator: _model
-                                          .passwordControllerValidator
+                                          .passwordTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -559,7 +558,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.nameController,
+                                      controller: _model.nameTextController,
                                       focusNode: _model.nameFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -594,8 +593,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
-                                      validator: _model.nameControllerValidator
+                                      validator: _model
+                                          .nameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -652,7 +651,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.surnameController,
+                                      controller: _model.surnameTextController,
                                       focusNode: _model.surnameFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -687,9 +686,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       validator: _model
-                                          .surnameControllerValidator
+                                          .surnameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -746,7 +744,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.usernameController,
+                                      controller: _model.usernameTextController,
                                       focusNode: _model.usernameFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -781,9 +779,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       validator: _model
-                                          .usernameControllerValidator
+                                          .usernameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -840,7 +837,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.phoneNumberController,
+                                      controller:
+                                          _model.phoneNumberTextController,
                                       focusNode: _model.phoneNumberFocusNode,
                                       autofocus: false,
                                       obscureText: false,
@@ -875,10 +873,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
                                           ),
-                                      minLines: null,
                                       keyboardType: TextInputType.number,
                                       validator: _model
-                                          .phoneNumberControllerValidator
+                                          .phoneNumberTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -997,8 +994,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                           child: FFButtonWidget(
                             onPressed: () async {
                               GoRouter.of(context).prepareAuthEvent();
-                              if (_model.passwordController.text !=
-                                  _model.passwordController.text) {
+                              if (_model.passwordTextController.text !=
+                                  _model.passwordTextController.text) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text(
@@ -1012,8 +1009,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               final user =
                                   await authManager.createAccountWithEmail(
                                 context,
-                                _model.emailController.text,
-                                _model.passwordController.text,
+                                _model.emailTextController.text,
+                                _model.passwordTextController.text,
                               );
                               if (user == null) {
                                 return;
@@ -1023,11 +1020,12 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   .doc(user.uid)
                                   .update({
                                 ...createUsersRecordData(
-                                  displayName: _model.usernameController.text,
+                                  displayName:
+                                      _model.usernameTextController.text,
                                   photoUrl: _model.uploadedFileUrl,
                                   phoneNumber:
-                                      _model.phoneNumberController.text,
-                                  name: _model.nameController.text,
+                                      _model.phoneNumberTextController.text,
+                                  name: _model.nameTextController.text,
                                   type: _model.typeValue,
                                   isVarified: false,
                                   role: Role.user,
@@ -1038,13 +1036,6 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   },
                                 ),
                               });
-
-                              if (_model.typeValue != 'Patient') {
-                                context.pushNamedAuth(
-                                    'healer_home', context.mounted);
-
-                                return;
-                              }
 
                               context.pushNamedAuth(
                                   'HomePage', context.mounted);

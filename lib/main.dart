@@ -14,10 +14,9 @@ import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
   await initFirebase();
-
-  await FlutterFlowTheme.initialize();
 
   runApp(const MyApp());
 }
@@ -34,7 +33,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late Stream<BaseAuthUser> userStream;
 
@@ -67,7 +66,6 @@ class _MyAppState extends State<MyApp> {
 
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
@@ -82,10 +80,6 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(
         brightness: Brightness.light,
-        useMaterial3: false,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
         useMaterial3: false,
       ),
       themeMode: _themeMode,
@@ -123,6 +117,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'chat_2_main': const Chat2MainWidget(),
       'BookingHome': const BookingHomeWidget(),
       'Profile': const ProfileWidget(),
+      'Bookings': const BookingsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -168,6 +163,14 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person_3,
+              size: 24.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.book,
               size: 24.0,
             ),
             label: 'Home',

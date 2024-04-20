@@ -1,8 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'booking_home_widget.dart' show BookingHomeWidget;
+import 'bookings_widget.dart' show BookingsWidget;
 import 'package:flutter/material.dart';
 
-class BookingHomeModel extends FlutterFlowModel<BookingHomeWidget> {
+class BookingsModel extends FlutterFlowModel<BookingsWidget> {
+  ///  Local state fields for this page.
+
+  DateTime? start;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
