@@ -74,7 +74,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
             },
           ),
           title: Text(
-            'Traditional Healers',
+            'My Bookings',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: 'Outfit',
                   letterSpacing: 0.0,
@@ -450,7 +450,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primary,
+                                                              .secondary,
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)

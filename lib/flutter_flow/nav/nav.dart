@@ -175,9 +175,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Booking',
           path: '/booking',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Booking')
-              : const BookingWidget(),
+          builder: (context, params) => const BookingWidget(),
         ),
         FFRoute(
           name: 'Profile',
@@ -189,9 +187,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'MyBookings',
           path: '/myBookings',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'MyBookings')
-              : const MyBookingsWidget(),
+          builder: (context, params) => const MyBookingsWidget(),
         ),
         FFRoute(
           name: 'Details',
@@ -208,7 +204,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'BookingHome',
           path: '/bookingHome',
-          builder: (context, params) => const BookingHomeWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'BookingHome')
+              : const BookingHomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
