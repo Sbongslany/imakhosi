@@ -64,7 +64,9 @@ class _BookingWidgetState extends State<BookingWidget>
               pinned: false,
               floating: false,
               backgroundColor: FlutterFlowTheme.of(context).secondary,
-              automaticallyImplyLeading: false,
+              iconTheme:
+                  IconThemeData(color: FlutterFlowTheme.of(context).secondary),
+              automaticallyImplyLeading: true,
               title: Text(
                 'Booking',
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
