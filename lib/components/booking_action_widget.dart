@@ -67,7 +67,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
         padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Icon(
               Icons.menu_book,

@@ -490,7 +490,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                 () async {
                                                                               await showModalBottomSheet(
                                                                                 isScrollControlled: true,
-                                                                                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {
