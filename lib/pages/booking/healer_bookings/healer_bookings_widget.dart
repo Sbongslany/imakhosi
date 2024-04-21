@@ -352,9 +352,10 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                 child: Text(
                                                                   valueOrDefault<
                                                                       String>(
-                                                                    listViewBookingsRecord
-                                                                        .time
-                                                                        ?.toString(),
+                                                                    dateTimeFormat(
+                                                                        'M/d h:mm a',
+                                                                        listViewBookingsRecord
+                                                                            .time),
                                                                     '0',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
