@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/booking_action_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
@@ -58,26 +57,13 @@ class _BookingWidgetState extends State<BookingWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pop();
-            },
-          ),
           title: Text(
-            'Traditional Healers',
+            'Bookings',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   letterSpacing: 0.0,
                 ),
           ),
@@ -309,6 +295,10 @@ class _BookingWidgetState extends State<BookingWidget>
                                             topLeft: Radius.circular(20.0),
                                             topRight: Radius.circular(20.0),
                                           ),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                          ),
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -500,7 +490,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                 () async {
                                                                               await showModalBottomSheet(
                                                                                 isScrollControlled: true,
-                                                                                backgroundColor: Colors.transparent,
+                                                                                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 enableDrag: false,
                                                                                 context: context,
                                                                                 builder: (context) {

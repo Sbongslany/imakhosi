@@ -87,8 +87,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                   time: widget.time,
                   uid: currentUserReference,
                 ));
-
-                context.pushNamed('HomePage');
+                Navigator.pop(context);
               },
               text: 'Book',
               options: FFButtonOptions(
