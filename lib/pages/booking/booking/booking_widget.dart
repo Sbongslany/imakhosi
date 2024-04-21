@@ -111,7 +111,7 @@ class _BookingWidgetState extends State<BookingWidget>
                   children: [
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryBackground,
                       elevation: 4.0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
@@ -303,6 +303,12 @@ class _BookingWidgetState extends State<BookingWidget>
                                               ),
                                             )
                                           ],
+                                          borderRadius: const BorderRadius.only(
+                                            bottomLeft: Radius.circular(20.0),
+                                            bottomRight: Radius.circular(20.0),
+                                            topLeft: Radius.circular(20.0),
+                                            topRight: Radius.circular(20.0),
+                                          ),
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
