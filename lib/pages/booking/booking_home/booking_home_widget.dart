@@ -1,8 +1,10 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'booking_home_model.dart';
 export 'booking_home_model.dart';
 
@@ -22,6 +24,14 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BookingHomeModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (valueOrDefault(currentUserDocument?.type, '') ==
+          'Traditional Healer') {
+        context.pushNamed('HealerBookings');
+      }
+    });
   }
 
   @override

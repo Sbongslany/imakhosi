@@ -207,6 +207,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'BookingHome')
               : const BookingHomeWidget(),
+        ),
+        FFRoute(
+          name: 'HealerBookings',
+          path: '/healerBookings',
+          builder: (context, params) => const HealerBookingsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
