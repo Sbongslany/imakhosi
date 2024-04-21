@@ -18,8 +18,10 @@ export '/pages/chat/chat_2_invite_users/chat2_invite_users_widget.dart'
     show Chat2InviteUsersWidget;
 export '/pages/chat/image_details/image_details_widget.dart'
     show ImageDetailsWidget;
+export '/pages/booking/booking/booking_widget.dart' show BookingWidget;
+export '/profile/profile_widget.dart' show ProfileWidget;
+export '/pages/booking/my_bookings/my_bookings_widget.dart'
+    show MyBookingsWidget;
+export '/pages/booking/details/details_widget.dart' show DetailsWidget;
 export '/pages/booking/booking_home/booking_home_widget.dart'
     show BookingHomeWidget;
-export '/profile/profile_widget.dart' show ProfileWidget;
-export '/pages/booking/bookings/bookings_widget.dart' show BookingsWidget;
-export '/pages/booking/details/details_widget.dart' show DetailsWidget;

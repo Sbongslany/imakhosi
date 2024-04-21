@@ -435,7 +435,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     0.0, 0.0, 0.0, 12.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('BookingHome');
+                                    context.pushNamed('Booking');
                                   },
                                   text: 'Book Appointment',
                                   options: FFButtonOptions(

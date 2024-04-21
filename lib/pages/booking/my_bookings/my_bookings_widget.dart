@@ -7,26 +7,26 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'bookings_model.dart';
-export 'bookings_model.dart';
+import 'my_bookings_model.dart';
+export 'my_bookings_model.dart';
 
-class BookingsWidget extends StatefulWidget {
-  const BookingsWidget({super.key});
+class MyBookingsWidget extends StatefulWidget {
+  const MyBookingsWidget({super.key});
 
   @override
-  State<BookingsWidget> createState() => _BookingsWidgetState();
+  State<MyBookingsWidget> createState() => _MyBookingsWidgetState();
 }
 
-class _BookingsWidgetState extends State<BookingsWidget>
+class _MyBookingsWidgetState extends State<MyBookingsWidget>
     with TickerProviderStateMixin {
-  late BookingsModel _model;
+  late MyBookingsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => BookingsModel());
+    _model = createModel(context, () => MyBookingsModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {

@@ -115,9 +115,9 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'HomePage': const HomePageWidget(),
       'chat_2_main': const Chat2MainWidget(),
-      'BookingHome': const BookingHomeWidget(),
+      'Booking': const BookingWidget(),
       'Profile': const ProfileWidget(),
-      'Bookings': const BookingsWidget(),
+      'MyBookings': const MyBookingsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
