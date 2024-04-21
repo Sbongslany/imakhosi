@@ -261,7 +261,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                     listViewUsersRecordList[listViewIndex];
                                 return Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 1.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: StreamBuilder<List<BookingsRecord>>(
                                     stream: queryBookingsRecord(
                                       parent: listViewUsersRecord.reference,
@@ -359,35 +359,37 @@ class _BookingWidgetState extends State<BookingWidget>
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        12.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              listViewUsersRecord
-                                                                  .name,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Readex Pro',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          12.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                listViewUsersRecord
+                                                                    .name,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ),
                                                           Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12.0,
                                                                         0.0,
                                                                         0.0,
+                                                                        10.0,
                                                                         0.0),
                                                             child: Text(
                                                               dateTimeFormat(
