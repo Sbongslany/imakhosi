@@ -67,7 +67,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
         padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.menu_book,
@@ -78,6 +78,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               'Book your consultation',
               style: FlutterFlowTheme.of(context).titleLarge.override(
                     fontFamily: 'Outfit',
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     letterSpacing: 0.0,
                   ),
             ),
@@ -89,11 +90,14 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                   'Book with ${widget.user} at ${dateTimeFormat('M/d h:mm a', widget.time)}',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        fontSize: 19.0,
                         letterSpacing: 0.0,
                       ),
                 ),
               ],
             ),
+            const Spacer(),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
               child: FFButtonWidget(
@@ -112,16 +116,17 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: FlutterFlowTheme.of(context).secondary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Readex Pro',
                         color: Colors.white,
+                        fontSize: 25.0,
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
-                  borderSide: const BorderSide(
-                    color: Colors.transparent,
-                    width: 1.0,
+                  borderSide: BorderSide(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    width: 5.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
