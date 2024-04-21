@@ -69,7 +69,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
               title: Text(
                 'My Bookings',
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
-                      fontFamily: 'Outfit',
+                      fontFamily: 'Rubik',
                       color: FlutterFlowTheme.of(context).secondary,
                       letterSpacing: 0.0,
                     ),
@@ -480,9 +480,10 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                   .titleSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Readex Pro',
-                                                                    color: Colors
-                                                                        .white,
+                                                                        'Lora',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),

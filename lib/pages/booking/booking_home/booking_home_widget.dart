@@ -89,7 +89,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -160,6 +160,9 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Mukta',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
                                               fontSize: 25.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,
@@ -240,6 +243,9 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Mukta',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
                                               fontSize: 25.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,

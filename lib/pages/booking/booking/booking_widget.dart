@@ -121,7 +121,7 @@ class _BookingWidgetState extends State<BookingWidget>
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: FlutterFlowCalendar(
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: FlutterFlowTheme.of(context).secondary,
                             iconColor:
                                 FlutterFlowTheme.of(context).primaryBackground,
                             weekFormat: true,
