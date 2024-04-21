@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'booking_action_model.dart';
 export 'booking_action_model.dart';
 
@@ -71,10 +72,10 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
           children: [
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-              child: Icon(
-                Icons.menu_book,
+              child: FaIcon(
+                FontAwesomeIcons.table,
                 color: FlutterFlowTheme.of(context).secondaryText,
-                size: 44.0,
+                size: 74.0,
               ),
             ),
             Padding(
@@ -84,6 +85,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                 style: FlutterFlowTheme.of(context).titleLarge.override(
                       fontFamily: 'Outfit',
                       color: FlutterFlowTheme.of(context).primaryBackground,
+                      fontSize: 30.0,
                       letterSpacing: 0.0,
                     ),
               ),
