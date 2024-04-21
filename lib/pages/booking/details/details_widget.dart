@@ -136,7 +136,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     child: Image.network(
                                       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jb3RyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                                       width: double.infinity,
-                                      height: 330.0,
+                                      height: 230.0,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -148,7 +148,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .primaryBackground,
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
@@ -626,14 +626,6 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                         ],
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Container(
-                                  width: double.infinity,
-                                  height: 100.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
                                   ),
                                 ),
                               ],

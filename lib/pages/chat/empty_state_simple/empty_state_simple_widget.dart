@@ -59,7 +59,7 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).headlineSmall.override(
                     fontFamily: 'Outfit',
-                    color: FlutterFlowTheme.of(context).primaryText,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     letterSpacing: 0.0,
                   ),
             ),
@@ -71,6 +71,7 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).labelMedium.override(
                     fontFamily: 'Readex Pro',
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     letterSpacing: 0.0,
                   ),
             ),

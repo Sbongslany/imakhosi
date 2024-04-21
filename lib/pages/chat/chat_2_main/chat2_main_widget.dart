@@ -57,6 +57,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                 'My Chats',
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
                       fontFamily: 'Outfit',
+                      color: FlutterFlowTheme.of(context).primaryBackground,
                       letterSpacing: 0.0,
                     ),
               ),
@@ -68,7 +69,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                     borderRadius: 12.0,
                     borderWidth: 1.0,
                     buttonSize: 40.0,
-                    fillColor: FlutterFlowTheme.of(context).accent1,
+                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     icon: Icon(
                       Icons.add_comment,
                       color: FlutterFlowTheme.of(context).primaryText,
