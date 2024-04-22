@@ -46,7 +46,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           floatHeaderSlivers: true,
           headerSliverBuilder: (context, _) => [
             SliverAppBar(
-              expandedHeight: 50.0,
+              expandedHeight: 70.0,
               pinned: false,
               floating: false,
               backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -1076,17 +1076,41 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                             ),
                           ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Align(
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 10.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Align(
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 0.0, 5.0),
+                                      child: Text(
+                                        'Shops',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Rubik',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Align(
                                   alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 5.0),
+                                        20.0, 0.0, 20.0, 5.0),
                                     child: Text(
-                                      'Shops',
+                                      'See all',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1094,32 +1118,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w200,
                                           ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 20.0, 5.0),
-                                  child: Text(
-                                    'see all',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Rubik',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w200,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           Container(
                             decoration: const BoxDecoration(),
