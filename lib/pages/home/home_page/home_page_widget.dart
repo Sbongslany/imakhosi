@@ -559,6 +559,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             fontFamily:
                                                                 'Readex Pro',
                                                             letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                           ),
                                                     ),
                                                   ),
@@ -719,6 +721,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             fontFamily:
                                                                 'Readex Pro',
                                                             letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                           ),
                                                     ),
                                                   ),
