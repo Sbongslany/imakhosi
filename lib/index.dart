@@ -27,3 +27,4 @@ export '/pages/booking/booking_home/booking_home_widget.dart'
     show BookingHomeWidget;
 export '/pages/booking/healer_bookings/healer_bookings_widget.dart'
     show HealerBookingsWidget;
+export '/pages/shop/shop_home/shop_home_widget.dart' show ShopHomeWidget;

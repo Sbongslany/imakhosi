@@ -1,10 +1,15 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'healer_bookings_model.dart';
 export 'healer_bookings_model.dart';
 
@@ -66,7 +71,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
@@ -77,7 +82,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                 ),
               ),
               bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(70.0),
+                preferredSize: Size.fromHeight(70.0),
                 child: Container(),
               ),
               centerTitle: true,
@@ -111,7 +116,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 10.0, 16.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
@@ -177,7 +182,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 8.0, 8.0, 0.0),
                               child: StreamBuilder<List<BookingsRecord>>(
                                 stream: queryBookingsRecord(
@@ -213,7 +218,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                           listViewBookingsRecordList[
                                               listViewIndex];
                                       return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 10.0),
                                         child: StreamBuilder<UsersRecord>(
                                           stream: UsersRecord.getDocument(
@@ -243,7 +248,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                             return Material(
                                               color: Colors.transparent,
                                               elevation: 5.0,
-                                              shape: const RoundedRectangleBorder(
+                                              shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(20.0),
@@ -268,14 +273,14 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .alternate,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -292,7 +297,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(8.0),
+                                                  padding: EdgeInsets.all(8.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.min,
@@ -321,7 +326,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -343,7 +348,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -383,14 +388,14 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
                                                                       24.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -414,7 +419,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
