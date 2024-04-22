@@ -1,3 +1,4 @@
+import '/components/shop_card_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
@@ -107,249 +108,364 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                      child: Container(
-                        decoration: const BoxDecoration(),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              const Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              const Duration(milliseconds: 500),
-                                          imageUrl:
-                                              'https://picsum.photos/seed/442/600',
-                                          fit: BoxFit.cover,
-                                        ),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Align(
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 20.0, 0.0, 5.0),
+                                child: Text(
+                                  'Traditional Healers',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Rubik',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w300,
                                       ),
-                                      Text(
-                                        'User',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              const Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              const Duration(milliseconds: 500),
-                                          imageUrl:
-                                              'https://picsum.photos/seed/442/600',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Text(
-                                        'User',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              const Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              const Duration(milliseconds: 500),
-                                          imageUrl:
-                                              'https://picsum.photos/seed/442/600',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Text(
-                                        'User',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              const Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              const Duration(milliseconds: 500),
-                                          imageUrl:
-                                              'https://picsum.photos/seed/442/600',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Text(
-                                        'User',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              const Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              const Duration(milliseconds: 500),
-                                          imageUrl:
-                                              'https://picsum.photos/seed/442/600',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Text(
-                                        'User',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: CachedNetworkImage(
-                                          fadeInDuration:
-                                              const Duration(milliseconds: 500),
-                                          fadeOutDuration:
-                                              const Duration(milliseconds: 500),
-                                          imageUrl:
-                                              'https://picsum.photos/seed/442/600',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Text(
-                                        'User',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  20.0, 20.0, 20.0, 5.0),
+                              child: Text(
+                                'see all',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w200,
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      decoration: const BoxDecoration(),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 500),
+                                        imageUrl:
+                                            'https://picsum.photos/seed/442/600',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Text(
+                                      'User',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 500),
+                                        imageUrl:
+                                            'https://picsum.photos/seed/442/600',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Text(
+                                      'User',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 500),
+                                        imageUrl:
+                                            'https://picsum.photos/seed/442/600',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Text(
+                                      'User',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 500),
+                                        imageUrl:
+                                            'https://picsum.photos/seed/442/600',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Text(
+                                      'User',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 500),
+                                        imageUrl:
+                                            'https://picsum.photos/seed/442/600',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Text(
+                                      'User',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 60.0,
+                                      height: 60.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            const Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            const Duration(milliseconds: 500),
+                                        imageUrl:
+                                            'https://picsum.photos/seed/442/600',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    Text(
+                                      'User',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Align(
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 20.0, 0.0, 5.0),
+                                child: Text(
+                                  'Traditional Healers',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Rubik',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  20.0, 20.0, 20.0, 5.0),
+                              child: Text(
+                                'see all',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w200,
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.shopCardModel1,
+                        updateCallback: () => setState(() {}),
+                        child: const ShopCardWidget(),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.shopCardModel2,
+                        updateCallback: () => setState(() {}),
+                        child: const ShopCardWidget(),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.shopCardModel3,
+                        updateCallback: () => setState(() {}),
+                        child: const ShopCardWidget(),
                       ),
                     ),
                   ],
