@@ -113,158 +113,241 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 60.0,
-                                      height: 60.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          fadeInDuration:
+                                              const Duration(milliseconds: 500),
+                                          fadeOutDuration:
+                                              const Duration(milliseconds: 500),
+                                          imageUrl:
+                                              'https://picsum.photos/seed/442/600',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                      child: CachedNetworkImage(
-                                        fadeInDuration:
-                                            const Duration(milliseconds: 500),
-                                        fadeOutDuration:
-                                            const Duration(milliseconds: 500),
-                                        imageUrl:
-                                            'https://picsum.photos/seed/442/600',
-                                        fit: BoxFit.cover,
+                                      Text(
+                                        'User',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
-                                    ),
-                                    Text(
-                                      'User',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 60.0,
-                                      height: 60.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          fadeInDuration:
+                                              const Duration(milliseconds: 500),
+                                          fadeOutDuration:
+                                              const Duration(milliseconds: 500),
+                                          imageUrl:
+                                              'https://picsum.photos/seed/442/600',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                      child: CachedNetworkImage(
-                                        fadeInDuration:
-                                            const Duration(milliseconds: 500),
-                                        fadeOutDuration:
-                                            const Duration(milliseconds: 500),
-                                        imageUrl:
-                                            'https://picsum.photos/seed/442/600',
-                                        fit: BoxFit.cover,
+                                      Text(
+                                        'User',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
-                                    ),
-                                    Text(
-                                      'User',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 60.0,
-                                      height: 60.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          fadeInDuration:
+                                              const Duration(milliseconds: 500),
+                                          fadeOutDuration:
+                                              const Duration(milliseconds: 500),
+                                          imageUrl:
+                                              'https://picsum.photos/seed/442/600',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                      child: CachedNetworkImage(
-                                        fadeInDuration:
-                                            const Duration(milliseconds: 500),
-                                        fadeOutDuration:
-                                            const Duration(milliseconds: 500),
-                                        imageUrl:
-                                            'https://picsum.photos/seed/442/600',
-                                        fit: BoxFit.cover,
+                                      Text(
+                                        'User',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
-                                    ),
-                                    Text(
-                                      'User',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 60.0,
-                                      height: 60.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          fadeInDuration:
+                                              const Duration(milliseconds: 500),
+                                          fadeOutDuration:
+                                              const Duration(milliseconds: 500),
+                                          imageUrl:
+                                              'https://picsum.photos/seed/442/600',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                      child: CachedNetworkImage(
-                                        fadeInDuration:
-                                            const Duration(milliseconds: 500),
-                                        fadeOutDuration:
-                                            const Duration(milliseconds: 500),
-                                        imageUrl:
-                                            'https://picsum.photos/seed/442/600',
-                                        fit: BoxFit.cover,
+                                      Text(
+                                        'User',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
-                                    ),
-                                    Text(
-                                      'User',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          fadeInDuration:
+                                              const Duration(milliseconds: 500),
+                                          fadeOutDuration:
+                                              const Duration(milliseconds: 500),
+                                          imageUrl:
+                                              'https://picsum.photos/seed/442/600',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      Text(
+                                        'User',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 10.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          fadeInDuration:
+                                              const Duration(milliseconds: 500),
+                                          fadeOutDuration:
+                                              const Duration(milliseconds: 500),
+                                          imageUrl:
+                                              'https://picsum.photos/seed/442/600',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      Text(
+                                        'User',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
