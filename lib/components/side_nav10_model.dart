@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'booking_action_widget.dart' show BookingActionWidget;
+import 'side_nav10_widget.dart' show SideNav10Widget;
 import 'package:flutter/material.dart';
 
-class BookingActionModel extends FlutterFlowModel<BookingActionWidget> {
+class SideNav10Model extends FlutterFlowModel<SideNav10Widget> {
   @override
   void initState(BuildContext context) {}
 
