@@ -545,7 +545,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryText,
+                                                                      .primary,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -707,7 +707,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryText,
+                                                                      .primary,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
