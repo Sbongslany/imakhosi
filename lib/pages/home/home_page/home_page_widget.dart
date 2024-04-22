@@ -568,7 +568,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '216 Members',
+                                                      'Johannesburg',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -588,6 +588,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                           ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      child: Wrap(
+                                        spacing: 8.0,
+                                        runSpacing: 4.0,
+                                        alignment: WrapAlignment.start,
+                                        crossAxisAlignment:
+                                            WrapCrossAlignment.start,
+                                        direction: Axis.horizontal,
+                                        runAlignment: WrapAlignment.start,
+                                        verticalDirection:
+                                            VerticalDirection.down,
+                                        clipBehavior: Clip.none,
+                                        children: [
                                           Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -619,8 +637,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               10.0),
-                                                      child: Image.network(
-                                                        'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -652,25 +679,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        12.0,
-                                                                        0.0),
-                                                            child: Icon(
-                                                              Icons
-                                                                  .fitness_center,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
+                                                          Icon(
+                                                            Icons.attach_money,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
                                                           ),
                                                           Text(
-                                                            'Fitness',
+                                                            '150',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -694,7 +711,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'The Running Ragamuffins',
+                                                      'Isiwasho',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -711,7 +728,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '216 Members',
+                                                      'Johannesburg',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -731,6 +748,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                           ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      child: Wrap(
+                                        spacing: 8.0,
+                                        runSpacing: 4.0,
+                                        alignment: WrapAlignment.start,
+                                        crossAxisAlignment:
+                                            WrapCrossAlignment.start,
+                                        direction: Axis.horizontal,
+                                        runAlignment: WrapAlignment.start,
+                                        verticalDirection:
+                                            VerticalDirection.down,
+                                        clipBehavior: Clip.none,
+                                        children: [
                                           Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -762,8 +797,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               10.0),
-                                                      child: Image.network(
-                                                        'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -795,25 +839,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        12.0,
-                                                                        0.0),
-                                                            child: Icon(
-                                                              Icons
-                                                                  .fitness_center,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
+                                                          Icon(
+                                                            Icons.attach_money,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
                                                           ),
                                                           Text(
-                                                            'Fitness',
+                                                            '150',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -837,7 +871,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'The Running Ragamuffins',
+                                                      'Isiwasho',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -854,7 +888,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '216 Members',
+                                                      'Johannesburg',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -874,6 +908,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                           ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      child: Wrap(
+                                        spacing: 8.0,
+                                        runSpacing: 4.0,
+                                        alignment: WrapAlignment.start,
+                                        crossAxisAlignment:
+                                            WrapCrossAlignment.start,
+                                        direction: Axis.horizontal,
+                                        runAlignment: WrapAlignment.start,
+                                        verticalDirection:
+                                            VerticalDirection.down,
+                                        clipBehavior: Clip.none,
+                                        children: [
                                           Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -905,8 +957,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               10.0),
-                                                      child: Image.network(
-                                                        'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -938,25 +999,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        12.0,
-                                                                        0.0),
-                                                            child: Icon(
-                                                              Icons
-                                                                  .fitness_center,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
+                                                          Icon(
+                                                            Icons.attach_money,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
                                                           ),
                                                           Text(
-                                                            'Fitness',
+                                                            '150',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -980,7 +1031,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'The Running Ragamuffins',
+                                                      'Isiwasho',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -997,7 +1048,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '216 Members',
+                                                      'Johannesburg',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
