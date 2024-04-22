@@ -162,15 +162,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
-                              child: FutureBuilder<List<BookingsRecord>>(
-                                future: queryBookingsRecordOnce(
-                                  queryBuilder: (bookingsRecord) =>
-                                      bookingsRecord
-                                          .where(
-                                            'uid',
-                                            isEqualTo: currentUserReference,
-                                          )
-                                          .orderBy('time'),
+                              child: StreamBuilder<List<UsersRecord>>(
+                                stream: queryUsersRecord(
+                                  queryBuilder: (usersRecord) =>
+                                      usersRecord.where(
+                                    'type',
+                                    isEqualTo: 'Traditional Healer',
+                                  ),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -189,21 +187,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                     );
                                   }
-                                  List<BookingsRecord> rowBookingsRecordList =
-                                      snapshot.data!;
+                                  List<UsersRecord> rowUsersRecordList =
+                                      snapshot.data!
+                                          .where((u) => u.uid != currentUserUid)
+                                          .toList();
                                   return SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: List.generate(
-                                          rowBookingsRecordList.length,
+                                          rowUsersRecordList.length,
                                           (rowIndex) {
-                                        final rowBookingsRecord =
-                                            rowBookingsRecordList[rowIndex];
-                                        return StreamBuilder<UsersRecord>(
-                                          stream: UsersRecord.getDocument(
-                                              rowBookingsRecord
-                                                  .parentReference),
+                                        final rowUsersRecord =
+                                            rowUsersRecordList[rowIndex];
+                                        return StreamBuilder<
+                                            List<BookingsRecord>>(
+                                          stream: queryBookingsRecord(
+                                            parent: rowUsersRecord.reference,
+                                          ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -224,7 +225,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 ),
                                               );
                                             }
-                                            final containerUsersRecord =
+                                            List<BookingsRecord>
+                                                containerBookingsRecordList =
                                                 snapshot.data!;
                                             return Container(
                                               decoration: const BoxDecoration(),
@@ -282,7 +284,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '${containerUsersRecord.name} ${containerUsersRecord.surname}',
+                                                        '${rowUsersRecord.name} ${rowUsersRecord.surname}',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
