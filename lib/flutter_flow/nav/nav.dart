@@ -1,16 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
+import '/backend/schema/enums/enums.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -75,25 +81,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const SignInPageWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : SignInPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const SignInPageWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : SignInPageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'HomePage')
-              : const HomePageWidget(),
+              ? NavBarPage(initialPage: 'HomePage')
+              : HomePageWidget(),
         ),
         FFRoute(
           name: 'signin',
           path: '/signin',
-          builder: (context, params) => const SigninWidget(),
+          builder: (context, params) => SigninWidget(),
         ),
         FFRoute(
           name: 'VerifyMobile',
@@ -108,22 +114,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'CompleteProfile',
           path: '/completeProfile',
-          builder: (context, params) => const CompleteProfileWidget(),
+          builder: (context, params) => CompleteProfileWidget(),
         ),
         FFRoute(
           name: 'Registration',
           path: '/registration',
-          builder: (context, params) => const RegistrationWidget(),
+          builder: (context, params) => RegistrationWidget(),
         ),
         FFRoute(
           name: 'SignInPage',
           path: '/signInPage',
-          builder: (context, params) => const SignInPageWidget(),
+          builder: (context, params) => SignInPageWidget(),
         ),
         FFRoute(
           name: 'healer_home',
           path: '/healerHome',
-          builder: (context, params) => const HealerHomeWidget(),
+          builder: (context, params) => HealerHomeWidget(),
         ),
         FFRoute(
           name: 'chat_2_Details',
@@ -141,7 +147,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'chat_2_main',
           path: '/chat2Main',
-          builder: (context, params) => const Chat2MainWidget(),
+          builder: (context, params) => Chat2MainWidget(),
         ),
         FFRoute(
           name: 'chat_2_InviteUsers',
@@ -173,19 +179,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Booking',
           path: '/booking',
-          builder: (context, params) => const BookingWidget(),
+          builder: (context, params) => BookingWidget(),
         ),
         FFRoute(
           name: 'Profile',
           path: '/profile',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Profile')
-              : const ProfileWidget(),
+              ? NavBarPage(initialPage: 'Profile')
+              : ProfileWidget(),
         ),
         FFRoute(
           name: 'MyBookings',
           path: '/myBookings',
-          builder: (context, params) => const MyBookingsWidget(),
+          builder: (context, params) => MyBookingsWidget(),
         ),
         FFRoute(
           name: 'Details',
@@ -203,20 +209,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'BookingHome',
           path: '/bookingHome',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'BookingHome')
-              : const BookingHomeWidget(),
+              ? NavBarPage(initialPage: 'BookingHome')
+              : BookingHomeWidget(),
         ),
         FFRoute(
           name: 'HealerBookings',
           path: '/healerBookings',
-          builder: (context, params) => const HealerBookingsWidget(),
+          builder: (context, params) => HealerBookingsWidget(),
         ),
         FFRoute(
           name: 'ShopHome',
           path: '/shopHome',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'ShopHome')
-              : const ShopHomeWidget(),
+              ? NavBarPage(initialPage: 'ShopHome')
+              : ShopHomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -455,7 +461,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
