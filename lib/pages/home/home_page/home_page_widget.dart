@@ -46,7 +46,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           floatHeaderSlivers: true,
           headerSliverBuilder: (context, _) => [
             SliverAppBar(
-              expandedHeight: 70.0,
+              expandedHeight: 100.0,
               pinned: false,
               floating: false,
               backgroundColor: FlutterFlowTheme.of(context).primary,
