@@ -55,9 +55,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 size: 24.0,
               ),
               title: Text(
-                'Page Title',
+                'iMakhosi',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Outfit',
+                      fontFamily: 'Montserrat',
                       color: Colors.white,
                       fontSize: 22.0,
                       letterSpacing: 0.0,
@@ -83,7 +83,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               centerTitle: true,
-              elevation: 2.0,
             )
           ],
           body: Builder(
