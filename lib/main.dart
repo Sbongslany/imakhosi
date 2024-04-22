@@ -138,7 +138,7 @@ class _NavBarPageState extends State<NavBarPage> {
         }),
         backgroundColor: FlutterFlowTheme.of(context).secondary,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
-        unselectedItemColor: const Color(0x8A000000),
+        unselectedItemColor: const Color(0xFFA1A1A1),
         selectedBackgroundColor: const Color(0x00000000),
         borderRadius: 8.0,
         itemBorderRadius: 8.0,
@@ -155,7 +155,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   FontAwesomeIcons.home,
                   color: currentIndex == 0
                       ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
+                      : const Color(0xFFA1A1A1),
                   size: 40.0,
                 ),
                 Text(
@@ -164,7 +164,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   style: TextStyle(
                     color: currentIndex == 0
                         ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
+                        : const Color(0xFFA1A1A1),
                     fontSize: 11.0,
                   ),
                 ),
@@ -179,7 +179,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   FontAwesomeIcons.calendarDay,
                   color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
+                      : const Color(0xFFA1A1A1),
                   size: 40.0,
                 ),
                 Text(
@@ -188,7 +188,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   style: TextStyle(
                     color: currentIndex == 1
                         ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
+                        : const Color(0xFFA1A1A1),
                     fontSize: 11.0,
                   ),
                 ),
@@ -203,7 +203,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   Icons.shopify_sharp,
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
+                      : const Color(0xFFA1A1A1),
                   size: 40.0,
                 ),
                 Text(
@@ -212,7 +212,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   style: TextStyle(
                     color: currentIndex == 2
                         ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
+                        : const Color(0xFFA1A1A1),
                     fontSize: 11.0,
                   ),
                 ),
@@ -227,7 +227,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   Icons.person_3,
                   color: currentIndex == 3
                       ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
+                      : const Color(0xFFA1A1A1),
                   size: 40.0,
                 ),
                 Text(
@@ -236,7 +236,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   style: TextStyle(
                     color: currentIndex == 3
                         ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
+                        : const Color(0xFFA1A1A1),
                     fontSize: 11.0,
                   ),
                 ),
