@@ -277,13 +277,15 @@ class _UsersWidgetState extends State<UsersWidget>
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondary,
+                                                        .secondaryBackground,
                                               ),
                                             ),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
                                                 children: [
                                                   InkWell(
                                                     splashColor:
@@ -326,9 +328,12 @@ class _UsersWidgetState extends State<UsersWidget>
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.min,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
                                                         crossAxisAlignment:
                                                             CrossAxisAlignment
-                                                                .start,
+                                                                .center,
                                                         children: [
                                                           SingleChildScrollView(
                                                             scrollDirection:
@@ -338,28 +343,20 @@ class _UsersWidgetState extends State<UsersWidget>
                                                                   MainAxisSize
                                                                       .min,
                                                               children: [
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    gridViewUsersRecord
-                                                                        .displayName,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          fontSize:
-                                                                              13.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
+                                                                Text(
+                                                                  gridViewUsersRecord
+                                                                      .displayName,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        fontSize:
+                                                                            13.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                 ),
                                                               ],
                                                             ),
@@ -376,33 +373,80 @@ class _UsersWidgetState extends State<UsersWidget>
                                                               mainAxisSize:
                                                                   MainAxisSize
                                                                       .min,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
                                                               children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      gridViewUsersRecord
-                                                                          .name,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    gridViewUsersRecord
+                                                                        .name,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              13.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w300,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    gridViewUsersRecord
+                                                                        .surname,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              13.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w300,
+                                                                        ),
                                                                   ),
                                                                 ),
                                                               ],
                                                             ),
+                                                          ),
+                                                          Text(
+                                                            gridViewUsersRecord
+                                                                .shortDescription,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w300,
+                                                                ),
                                                           ),
                                                         ],
                                                       ),
