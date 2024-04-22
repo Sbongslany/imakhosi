@@ -175,7 +175,7 @@ class _UsersWidgetState extends State<UsersWidget>
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 8.0, 0.0),
+                                8.0, 0.0, 8.0, 0.0),
                             child: StreamBuilder<List<UsersRecord>>(
                               stream: queryUsersRecord(
                                 queryBuilder: (usersRecord) =>
@@ -200,24 +200,31 @@ class _UsersWidgetState extends State<UsersWidget>
                                     ),
                                   );
                                 }
-                                List<UsersRecord> listViewUsersRecordList =
+                                List<UsersRecord> gridViewUsersRecordList =
                                     snapshot.data!
                                         .where((u) => u.uid != currentUserUid)
                                         .toList();
-                                return ListView.builder(
+                                return GridView.builder(
                                   padding: EdgeInsets.zero,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 10.0,
+                                    mainAxisSpacing: 10.0,
+                                    childAspectRatio: 1.0,
+                                  ),
                                   scrollDirection: Axis.vertical,
-                                  itemCount: listViewUsersRecordList.length,
-                                  itemBuilder: (context, listViewIndex) {
-                                    final listViewUsersRecord =
-                                        listViewUsersRecordList[listViewIndex];
+                                  itemCount: gridViewUsersRecordList.length,
+                                  itemBuilder: (context, gridViewIndex) {
+                                    final gridViewUsersRecord =
+                                        gridViewUsersRecordList[gridViewIndex];
                                     return Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child:
                                           StreamBuilder<List<BookingsRecord>>(
                                         stream: queryBookingsRecord(
-                                          parent: listViewUsersRecord.reference,
+                                          parent: gridViewUsersRecord.reference,
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -293,7 +300,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                         queryParameters: {
                                                           'users':
                                                               serializeParam(
-                                                            listViewUsersRecord
+                                                            gridViewUsersRecord
                                                                 .reference,
                                                             ParamType
                                                                 .DocumentReference,
@@ -339,18 +346,16 @@ class _UsersWidgetState extends State<UsersWidget>
                                                                           0.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    (listViewUsersRecord
-                                                                            .healer
-                                                                            .take(5)
-                                                                            .toList()
-                                                                            .isNotEmpty)
-                                                                        .toString(),
+                                                                    gridViewUsersRecord
+                                                                        .displayName,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
                                                                               'Readex Pro',
+                                                                          fontSize:
+                                                                              13.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -382,32 +387,8 @@ class _UsersWidgetState extends State<UsersWidget>
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      listViewUsersRecord
+                                                                      gridViewUsersRecord
                                                                           .name,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      listViewUsersRecord
-                                                                          .surname,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyLarge
