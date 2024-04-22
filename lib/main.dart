@@ -183,7 +183,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 40.0,
                 ),
                 Text(
-                  'Home',
+                  'Book',
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 1
@@ -207,7 +207,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 40.0,
                 ),
                 Text(
-                  'Home',
+                  'Shop',
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 2
@@ -231,7 +231,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   size: 40.0,
                 ),
                 Text(
-                  'Home',
+                  'Profile',
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: currentIndex == 3
