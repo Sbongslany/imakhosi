@@ -217,6 +217,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'ShopHome')
               : const ShopHomeWidget(),
+        ),
+        FFRoute(
+          name: 'Users',
+          path: '/users',
+          builder: (context, params) => const UsersWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
