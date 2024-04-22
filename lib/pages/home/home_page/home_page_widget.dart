@@ -487,7 +487,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
-                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN-nUep-wOzLcFqpkmPS6vVnr3nXjYuOTeTw&s',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -551,7 +551,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Isiwasho',
+                                                      'Isigubhu',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -647,7 +647,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
-                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJoCyKDwh4UAVOZ-KewGRRFtvYDAKavfAsPw&s',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -687,7 +687,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             size: 24.0,
                                                           ),
                                                           Text(
-                                                            '150',
+                                                            '500',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -728,7 +728,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Johannesburg',
+                                                      'Durban',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -807,7 +807,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
-                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_YSEvWX_ZgL3J0TqCFxBcsqEuusFwrLRuqA&s',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -847,7 +847,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             size: 24.0,
                                                           ),
                                                           Text(
-                                                            '150',
+                                                            '700',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -871,7 +871,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Isiwasho',
+                                                      'Beads',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -888,7 +888,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(8.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Johannesburg',
+                                                      'Pretoria',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -967,7 +967,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
-                                                            'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                                                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF182VWCR6ZOR8GapsPOaK9h1AyHO9Ejxh1w&s',
                                                         width: double.infinity,
                                                         height: 120.0,
                                                         fit: BoxFit.cover,
@@ -1007,7 +1007,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             size: 24.0,
                                                           ),
                                                           Text(
-                                                            '150',
+                                                            '2000',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -1181,7 +1181,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       fadeOutDuration: const Duration(
                                                           milliseconds: 500),
                                                       imageUrl:
-                                                          'https://unsplash.com/photos/gray-and-blue-open-signage-c9FQyqIECds',
+                                                          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHxlbnwwfHwwfHx8MA%3D%3D',
                                                       width: double.infinity,
                                                       height: 120.0,
                                                       fit: BoxFit.cover,
@@ -1208,38 +1208,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
+                                                                      5.0,
                                                                       0.0,
-                                                                      12.0,
-                                                                      0.0),
-                                                          child: Icon(
-                                                            Icons
-                                                                .fitness_center,
-                                                            color: FlutterFlowTheme
+                                                                      5.0),
+                                                          child: Text(
+                                                            'Shop 1',
+                                                            style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          'Fitness',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
                                                         ),
                                                       ],
                                                     ),
@@ -1319,7 +1314,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       fadeOutDuration: const Duration(
                                                           milliseconds: 500),
                                                       imageUrl:
-                                                          'https://unsplash.com/photos/gray-and-blue-open-signage-c9FQyqIECds',
+                                                          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHxlbnwwfHwwfHx8MA%3D%3D',
                                                       width: double.infinity,
                                                       height: 120.0,
                                                       fit: BoxFit.cover,
@@ -1346,38 +1341,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
+                                                                      5.0,
                                                                       0.0,
-                                                                      12.0,
-                                                                      0.0),
-                                                          child: Icon(
-                                                            Icons
-                                                                .fitness_center,
-                                                            color: FlutterFlowTheme
+                                                                      5.0),
+                                                          child: Text(
+                                                            'Shop 2',
+                                                            style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          'Fitness',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
                                                         ),
                                                       ],
                                                     ),
@@ -1457,7 +1447,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       fadeOutDuration: const Duration(
                                                           milliseconds: 500),
                                                       imageUrl:
-                                                          'https://unsplash.com/photos/gray-and-blue-open-signage-c9FQyqIECds',
+                                                          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHxlbnwwfHwwfHx8MA%3D%3D',
                                                       width: double.infinity,
                                                       height: 120.0,
                                                       fit: BoxFit.cover,
@@ -1484,38 +1474,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
+                                                                      5.0,
                                                                       0.0,
-                                                                      12.0,
-                                                                      0.0),
-                                                          child: Icon(
-                                                            Icons
-                                                                .fitness_center,
-                                                            color: FlutterFlowTheme
+                                                                      5.0),
+                                                          child: Text(
+                                                            'Shop 3',
+                                                            style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          'Fitness',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
                                                         ),
                                                       ],
                                                     ),
@@ -1595,7 +1580,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       fadeOutDuration: const Duration(
                                                           milliseconds: 500),
                                                       imageUrl:
-                                                          'https://unsplash.com/photos/gray-and-blue-open-signage-c9FQyqIECds',
+                                                          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHxlbnwwfHwwfHx8MA%3D%3D',
                                                       width: double.infinity,
                                                       height: 120.0,
                                                       fit: BoxFit.cover,
@@ -1622,38 +1607,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
+                                                                      5.0,
                                                                       0.0,
-                                                                      12.0,
-                                                                      0.0),
-                                                          child: Icon(
-                                                            Icons
-                                                                .fitness_center,
-                                                            color: FlutterFlowTheme
+                                                                      5.0),
+                                                          child: Text(
+                                                            'Shop 4',
+                                                            style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
-                                                            size: 24.0,
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          'Fitness',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
                                                         ),
                                                       ],
                                                     ),
