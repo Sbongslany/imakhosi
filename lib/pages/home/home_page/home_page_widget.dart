@@ -68,10 +68,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               actions: [
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                  child: Icon(
-                    Icons.wechat_rounded,
-                    color: FlutterFlowTheme.of(context).secondary,
-                    size: 34.0,
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed('chat_2_main');
+                    },
+                    child: Icon(
+                      Icons.wechat_rounded,
+                      color: FlutterFlowTheme.of(context).secondary,
+                      size: 34.0,
+                    ),
                   ),
                 ),
               ],

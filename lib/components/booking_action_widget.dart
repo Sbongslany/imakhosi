@@ -128,7 +128,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                   color: FlutterFlowTheme.of(context).secondary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Readex Pro',
-                        color: Colors.white,
+                        color: FlutterFlowTheme.of(context).primary,
                         fontSize: 25.0,
                         letterSpacing: 0.0,
                       ),
