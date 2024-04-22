@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'healer_bookings_model.dart';
 export 'healer_bookings_model.dart';
@@ -53,7 +54,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
               expandedHeight: 100.0,
               pinned: false,
               floating: false,
-              backgroundColor: FlutterFlowTheme.of(context).secondary,
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               iconTheme:
                   IconThemeData(color: FlutterFlowTheme.of(context).secondary),
               automaticallyImplyLeading: true,
@@ -91,12 +92,12 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: Image.network(
+                      image: CachedNetworkImageProvider(
                         'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
-                      ).image,
+                      ),
                     ),
                   ),
                   child: ClipRRect(
@@ -260,7 +261,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .secondary,
                                                   boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 0.0,
@@ -398,7 +399,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                       0.0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondary,
+                                                              .primary,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -408,7 +409,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                         'Lora',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primaryText,
+                                                                        .secondary,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),

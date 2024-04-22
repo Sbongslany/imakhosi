@@ -61,6 +61,18 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
               automaticallyImplyLeading: false,
               actions: const [],
               flexibleSpace: FlexibleSpaceBar(
+                title: Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Text(
+                    'Consultation',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Rubik',
+                          color: FlutterFlowTheme.of(context).secondary,
+                          fontSize: 25.0,
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ),
                 background: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.network(
@@ -115,7 +127,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                               },
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 5.0,
+                                elevation: 10.0,
                                 shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(10.0),
@@ -139,6 +151,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
+                                      width: 3.0,
                                     ),
                                   ),
                                   alignment: const AlignmentDirectional(0.0, 0.0),
@@ -198,7 +211,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                               },
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 5.0,
+                                elevation: 10.0,
                                 shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(10.0),
@@ -222,6 +235,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
+                                      width: 3.0,
                                     ),
                                   ),
                                   alignment: const AlignmentDirectional(0.0, 0.0),

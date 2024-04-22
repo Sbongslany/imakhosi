@@ -70,7 +70,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: CachedNetworkImageProvider(
-                  'https://images.unsplash.com/photo-1510218129079-74e00c5a90ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMHx8c3Vuc2V0fGVufDB8fHx8MTcxMTA1Mzg5OHww&ixlib=rb-4.0.3&q=80&w=1080',
+                  'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
                 ),
               ),
             ),
@@ -100,8 +100,8 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                   ),

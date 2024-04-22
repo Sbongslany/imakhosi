@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -47,7 +48,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -68,7 +69,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             body: NestedScrollView(
               floatHeaderSlivers: true,
               headerSliverBuilder: (context, _) => [
@@ -76,8 +77,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                   expandedHeight: 100.0,
                   pinned: false,
                   floating: false,
-                  backgroundColor:
-                      FlutterFlowTheme.of(context).primaryBackground,
+                  backgroundColor: FlutterFlowTheme.of(context).primary,
                   iconTheme: IconThemeData(
                       color: FlutterFlowTheme.of(context).secondary),
                   automaticallyImplyLeading: true,
@@ -110,12 +110,12 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                     child: Container(
                       width: double.infinity,
                       height: double.infinity,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: Image.network(
+                          image: CachedNetworkImageProvider(
                             'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxsaW9ufGVufDB8fHx8MTcxMzcxNzM3MXww&ixlib=rb-4.0.3&q=80&w=1080',
-                          ).image,
+                          ),
                         ),
                       ),
                       child: ClipRRect(

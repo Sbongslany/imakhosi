@@ -1040,7 +1040,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               context.pushNamedAuth(
                                   'HomePage', context.mounted);
                             },
-                            text: 'Continue',
+                            text: 'Register',
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 55.0,
@@ -1048,12 +1048,12 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0x4DFFFFFF),
+                              color: FlutterFlowTheme.of(context).secondary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
