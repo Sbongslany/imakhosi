@@ -126,7 +126,7 @@ class _BookingWidgetState extends State<BookingWidget>
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: FlutterFlowCalendar(
-                            color: FlutterFlowTheme.of(context).secondary,
+                            color: FlutterFlowTheme.of(context).primary,
                             iconColor:
                                 FlutterFlowTheme.of(context).primaryBackground,
                             weekFormat: true,
@@ -499,7 +499,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                             clipBehavior:
                                                                                 Clip.antiAliasWithSaveLayer,
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).secondary,
+                                                                                FlutterFlowTheme.of(context).primary,
                                                                             elevation:
                                                                                 4.0,
                                                                             shape:
@@ -542,6 +542,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                   dateTimeFormat('jm', availableSlotsItem),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Readex Pro',
+                                                                                        color: FlutterFlowTheme.of(context).secondary,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
