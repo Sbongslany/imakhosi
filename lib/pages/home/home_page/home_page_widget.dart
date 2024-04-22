@@ -238,40 +238,75 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondary,
-                                                        ),
-                                                      ),
-                                                      child: Container(
-                                                        width: 90.0,
-                                                        height: 90.0,
-                                                        clipBehavior:
-                                                            Clip.antiAlias,
-                                                        decoration:
-                                                            const BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child:
-                                                            CachedNetworkImage(
-                                                          fadeInDuration:
-                                                              const Duration(
-                                                                  milliseconds:
-                                                                      500),
-                                                          fadeOutDuration:
-                                                              const Duration(
-                                                                  milliseconds:
-                                                                      500),
-                                                          imageUrl:
-                                                              'https://picsum.photos/seed/442/600',
-                                                          fit: BoxFit.cover,
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  5.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          context.pushNamed(
+                                                            'Details',
+                                                            queryParameters: {
+                                                              'users':
+                                                                  serializeParam(
+                                                                rowUsersRecord
+                                                                    .reference,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+                                                        },
+                                                        child: Container(
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            border: Border.all(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondary,
+                                                            ),
+                                                          ),
+                                                          child: Container(
+                                                            width: 90.0,
+                                                            height: 90.0,
+                                                            clipBehavior:
+                                                                Clip.antiAlias,
+                                                            decoration:
+                                                                const BoxDecoration(
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fadeInDuration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          500),
+                                                              fadeOutDuration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          500),
+                                                              imageUrl:
+                                                                  'https://picsum.photos/seed/442/600',
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -374,7 +409,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 10.0, 16.0),
+                                          10.0, 0.0, 10.0, 0.0),
                                       child: Wrap(
                                         spacing: 8.0,
                                         runSpacing: 4.0,
@@ -390,7 +425,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 12.0, 0.0, 12.0),
+                                                    0.0, 12.0, 0.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1105,7 +1140,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   alignment: const AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 20.0, 0.0, 5.0),
+                                        20.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       'Shops',
                                       style: FlutterFlowTheme.of(context)
@@ -1125,7 +1160,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 20.0, 20.0, 5.0),
+                                      20.0, 0.0, 20.0, 5.0),
                                   child: Text(
                                     'see all',
                                     style: FlutterFlowTheme.of(context)
@@ -1170,7 +1205,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 12.0),
+                                                  0.0, 0.0, 0.0, 12.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
