@@ -485,7 +485,11 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                               .headlineSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Outfit',
+                                                                    'Lato',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondary,
+                                                                fontSize: 18.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
