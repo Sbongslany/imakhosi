@@ -2,17 +2,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'shop_home_model.dart';
 export 'shop_home_model.dart';
@@ -55,8 +51,8 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(-60.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(-60.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +70,8 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 120.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 120.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -93,8 +89,8 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -170,7 +166,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                   actions: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: Icon(
                         Icons.wechat_rounded,
                         color: FlutterFlowTheme.of(context).secondary,
@@ -195,7 +191,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                   return Container(
                     width: double.infinity,
                     height: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(
@@ -216,7 +212,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 10.0, 16.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -224,7 +220,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(5.0),
                                       bottomRight: Radius.circular(5.0),
                                       topLeft: Radius.circular(5.0),
@@ -235,7 +231,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 0.0, 0.0),
                                         child: FaIcon(
                                           FontAwesomeIcons.search,
@@ -247,7 +243,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 5.0, 10.0, 5.0),
                                           child: TextFormField(
                                             controller:
@@ -257,7 +253,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.inpSearchTextController',
-                                              Duration(milliseconds: 2000),
+                                              const Duration(milliseconds: 2000),
                                               () async {
                                                 await queryShopsRecordOnce()
                                                     .then(
@@ -272,11 +268,11 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                                           record,
                                                                           [
                                                                     record
-                                                                        .name!,
+                                                                        .name,
                                                                     record
-                                                                        .address!,
+                                                                        .address,
                                                                     record
-                                                                        .category!
+                                                                        .category
                                                                   ]),
                                                             )
                                                             .toList(),
@@ -341,7 +337,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 20.0, 0.0),
                                         child: Icon(
                                           Icons.close,
@@ -355,7 +351,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   'Shops',
@@ -371,7 +367,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                     animationsMap['textOnPageLoadAnimation']!),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Builder(
                                   builder: (context) {
@@ -390,7 +386,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                         final shopsItem = shops[shopsIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 8.0),
                                           child: Container(
                                             width: double.infinity,
@@ -398,7 +394,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: [
+                                              boxShadow: const [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x520E151B),
@@ -412,7 +408,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(12.0),
+                                              padding: const EdgeInsets.all(12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -433,7 +429,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -443,17 +439,44 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        Text(
-                                                          shopsItem.name,
-                                                          style: FlutterFlowTheme
+                                                        Card(
+                                                          clipBehavior: Clip
+                                                              .antiAliasWithSaveLayer,
+                                                          color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Readex Pro',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                              .secondary,
+                                                          elevation: 4.0,
+                                                          shape:
+                                                              RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        5.0,
+                                                                        10.0,
+                                                                        5.0),
+                                                            child: Text(
+                                                              shopsItem.name,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
                                                         ),
                                                         Text(
                                                           shopsItem.category,
@@ -472,7 +495,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 5.0,
                                                                 0.0, 0.0),
                                                     child: Text(

@@ -3,10 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'shop_card_model.dart';
 export 'shop_card_model.dart';
 
@@ -49,8 +46,8 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 50.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 50.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -73,11 +70,11 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
       child: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 2.0,
               color: Color(0x520E151B),
@@ -89,7 +86,7 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
           ],
           borderRadius: BorderRadius.circular(12.0),
         ),
-        child: Container(
+        child: SizedBox(
           height: 300.0,
           child: Stack(
             children: [
@@ -115,7 +112,7 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
                           sigmaY: 2.0,
                         ),
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xB2FFFFFF),
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(12.0),
@@ -125,7 +122,7 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -142,7 +139,7 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
                                             .titleMedium
                                             .override(
                                               fontFamily: 'Readex Pro',
-                                              color: Color(0xFF0F1113),
+                                              color: const Color(0xFF0F1113),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -152,14 +149,14 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
                                             .headlineSmall
                                             .override(
                                               fontFamily: 'Outfit',
-                                              color: Color(0xFF0F1113),
+                                              color: const Color(0xFF0F1113),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                     ],
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Text(
                                       'Description here  about the product possibly have an amazing thing here okay.',

@@ -12,8 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'verify_mobile_model.dart';
 export 'verify_mobile_model.dart';
 
@@ -87,7 +85,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            image: DecorationImage(
+            image: const DecorationImage(
               fit: BoxFit.cover,
               image: CachedNetworkImageProvider(
                 'https://images.unsplash.com/photo-1547083723-7c73eaf54cc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNnx8YmVhdXRpZnVsJTIwb2NlYW58ZW58MHx8fHwxNzExMDEwOTI2fDA&ixlib=rb-4.0.3&q=80&w=1080',
@@ -102,13 +100,13 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                 sigmaY: 8.0,
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,23 +136,23 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0x33FFFFFF),
-                          borderRadius: BorderRadius.only(
+                          color: const Color(0x33FFFFFF),
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
                             topLeft: Radius.circular(12.0),
                             topRight: Radius.circular(12.0),
                           ),
                           border: Border.all(
-                            color: Color(0x99FFFFFF),
+                            color: const Color(0x99FFFFFF),
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 48.0, 24.0, 20.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -186,7 +184,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                   fieldHeight: 36.0,
                                   fieldWidth: 36.0,
                                   borderWidth: 2.0,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                     bottomLeft: Radius.circular(12.0),
                                     bottomRight: Radius.circular(12.0),
                                     topLeft: Radius.circular(12.0),
@@ -211,10 +209,9 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                   GoRouter.of(context).prepareAuthEvent();
                                   final smsCodeVal =
                                       _model.pinCodeController!.text;
-                                  if (smsCodeVal == null ||
-                                      smsCodeVal.isEmpty) {
+                                  if (smsCodeVal.isEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
+                                      const SnackBar(
                                         content: Text(
                                             'Enter SMS verification code.'),
                                       ),
@@ -239,7 +236,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                     .asValidator(context),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -252,7 +249,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: FlutterFlowTimer(
                                           initialTime: _model.timerMilliseconds,
@@ -264,7 +261,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                           ),
                                           controller: _model.timerController,
                                           updateStateInterval:
-                                              Duration(milliseconds: 1000),
+                                              const Duration(milliseconds: 1000),
                                           onChanged: (value, displayTime,
                                               shouldUpdate) {
                                             _model.timerMilliseconds = value;
@@ -323,7 +320,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
                                 child: Text(
                                   'Did you receive  the OTP ?',
@@ -344,7 +341,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -358,7 +355,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                         !phoneNumberVal.startsWith('+')) {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
-                                        SnackBar(
+                                        const SnackBar(
                                           content: Text(
                                               'Phone Number is required and has to start with +.'),
                                         ),
@@ -409,14 +406,14 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                           animationsMap['columnOnPageLoadAnimation']!),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           GoRouter.of(context).prepareAuthEvent();
                           final smsCodeVal = _model.pinCodeController!.text;
-                          if (smsCodeVal == null || smsCodeVal.isEmpty) {
+                          if (smsCodeVal.isEmpty) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
+                              const SnackBar(
                                 content: Text('Enter SMS verification code.'),
                               ),
                             );
@@ -438,11 +435,11 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 55.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0x4DFFFFFF),
+                          color: const Color(0x4DFFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
@@ -450,7 +447,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
