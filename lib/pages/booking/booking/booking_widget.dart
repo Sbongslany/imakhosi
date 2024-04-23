@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'booking_model.dart';
@@ -284,289 +285,328 @@ class _BookingWidgetState extends State<BookingWidget>
                                         listViewUsersRecordList[listViewIndex];
                                     return Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
-                                      child:
-                                          StreamBuilder<List<BookingsRecord>>(
-                                        stream: queryBookingsRecord(
-                                          parent: listViewUsersRecord.reference,
-                                        ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                          }
-                                          List<BookingsRecord>
-                                              containerBookingsRecordList =
-                                              snapshot.data!;
-                                          return Container(
-                                            width: double.infinity,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 0.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  offset: const Offset(
-                                                    0.0,
-                                                    1.0,
-                                                  ),
-                                                )
-                                              ],
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft:
-                                                    Radius.circular(20.0),
-                                                bottomRight:
-                                                    Radius.circular(20.0),
-                                                topLeft: Radius.circular(20.0),
-                                                topRight: Radius.circular(20.0),
-                                              ),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                              ),
-                                            ),
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                        'Details',
-                                                        queryParameters: {
-                                                          'users':
-                                                              serializeParam(
-                                                            listViewUsersRecord
-                                                                .reference,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                        }.withoutNulls,
-                                                      );
-                                                    },
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40.0),
-                                                      child: Image.network(
-                                                        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                                        width: 60.0,
-                                                        height: 60.0,
-                                                        fit: BoxFit.cover,
-                                                      ),
+                                          10.0, 0.0, 10.0, 5.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        child: ExpandableNotifier(
+                                          initialExpanded: false,
+                                          child: ExpandablePanel(
+                                            header: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      listViewUsersRecord.name,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondary,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                     ),
                                                   ),
-                                                  Expanded(
-                                                    child:
-                                                        SingleChildScrollView(
-                                                      child: Column(
+                                                ),
+                                              ],
+                                            ),
+                                            collapsed: Container(),
+                                            expanded: Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: StreamBuilder<
+                                                  List<BookingsRecord>>(
+                                                stream: queryBookingsRecord(
+                                                  parent: listViewUsersRecord
+                                                      .reference,
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<BookingsRecord>
+                                                      containerBookingsRecordList =
+                                                      snapshot.data!;
+                                                  return Container(
+                                                    width: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          blurRadius: 0.0,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          offset: const Offset(
+                                                            0.0,
+                                                            1.0,
+                                                          ),
+                                                        )
+                                                      ],
+                                                      borderRadius:
+                                                          const BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(
+                                                                5.0),
+                                                        bottomRight:
+                                                            Radius.circular(
+                                                                5.0),
+                                                        topLeft:
+                                                            Radius.circular(
+                                                                5.0),
+                                                        topRight:
+                                                            Radius.circular(
+                                                                5.0),
+                                                      ),
+                                                      border: Border.all(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(8.0),
+                                                      child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.min,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
                                                         children: [
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Expanded(
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'Details',
+                                                                queryParameters:
+                                                                    {
+                                                                  'users':
+                                                                      serializeParam(
                                                                     listViewUsersRecord
-                                                                        .name,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
+                                                                        .reference,
+                                                                    ParamType
+                                                                        .DocumentReference,
                                                                   ),
-                                                                ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40.0),
+                                                              child:
+                                                                  Image.network(
+                                                                'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                                                width: 60.0,
+                                                                height: 60.0,
+                                                                fit: BoxFit
+                                                                    .cover,
                                                               ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child:
+                                                                SingleChildScrollView(
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              12.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            listViewUsersRecord.name,
+                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             10.0,
                                                                             0.0),
-                                                                child: Text(
-                                                                  dateTimeFormat(
-                                                                      'MMMEd',
-                                                                      functions
-                                                                          .getAvailSlots(
-                                                                              containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(),
-                                                                              _model.start!)
-                                                                          .first),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        4.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Builder(
-                                                                    builder:
-                                                                        (context) {
-                                                                      final availableSlots = functions
-                                                                          .getAvailSlots(
-                                                                              containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(),
-                                                                              _model.start!)
-                                                                          .toList();
-                                                                      return Wrap(
-                                                                        spacing:
-                                                                            0.0,
-                                                                        runSpacing:
-                                                                            0.0,
-                                                                        alignment:
-                                                                            WrapAlignment.start,
-                                                                        crossAxisAlignment:
-                                                                            WrapCrossAlignment.start,
-                                                                        direction:
-                                                                            Axis.horizontal,
-                                                                        runAlignment:
-                                                                            WrapAlignment.start,
-                                                                        verticalDirection:
-                                                                            VerticalDirection.down,
-                                                                        clipBehavior:
-                                                                            Clip.none,
-                                                                        children: List.generate(
-                                                                            availableSlots.length,
-                                                                            (availableSlotsIndex) {
-                                                                          final availableSlotsItem =
-                                                                              availableSlots[availableSlotsIndex];
-                                                                          return Card(
-                                                                            clipBehavior:
-                                                                                Clip.antiAliasWithSaveLayer,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            elevation:
-                                                                                4.0,
-                                                                            shape:
-                                                                                RoundedRectangleBorder(
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 12.0, 5.0),
-                                                                              child: InkWell(
-                                                                                splashColor: Colors.transparent,
-                                                                                focusColor: Colors.transparent,
-                                                                                hoverColor: Colors.transparent,
-                                                                                highlightColor: Colors.transparent,
-                                                                                onTap: () async {
-                                                                                  await showModalBottomSheet(
-                                                                                    isScrollControlled: true,
-                                                                                    backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    enableDrag: false,
-                                                                                    context: context,
-                                                                                    builder: (context) {
-                                                                                      return GestureDetector(
-                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                        child: Padding(
-                                                                                          padding: MediaQuery.viewInsetsOf(context),
-                                                                                          child: SizedBox(
-                                                                                            height: 500.0,
-                                                                                            child: BookingActionWidget(
-                                                                                              user: listViewUsersRecord.name,
-                                                                                              time: availableSlotsItem,
-                                                                                              userid: listViewUsersRecord.reference,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      );
-                                                                                    },
-                                                                                  ).then((value) => safeSetState(() {}));
-                                                                                },
-                                                                                child: Text(
-                                                                                  dateTimeFormat('jm', availableSlotsItem),
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Readex Pro',
-                                                                                        color: FlutterFlowTheme.of(context).secondary,
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
+                                                                        child:
+                                                                            Text(
+                                                                          dateTimeFormat(
+                                                                              'MMMEd',
+                                                                              functions.getAvailSlots(containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(), _model.start!).first),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Readex Pro',
+                                                                                letterSpacing: 0.0,
                                                                               ),
-                                                                            ),
-                                                                          );
-                                                                        }),
-                                                                      );
-                                                                    },
+                                                                        ),
+                                                                      ),
+                                                                    ],
                                                                   ),
-                                                                ),
-                                                              ],
+                                                                  Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .min,
+                                                                      children: [
+                                                                        Expanded(
+                                                                          child:
+                                                                              Builder(
+                                                                            builder:
+                                                                                (context) {
+                                                                              final availableSlots = functions.getAvailSlots(containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(), _model.start!).toList();
+                                                                              return Wrap(
+                                                                                spacing: 0.0,
+                                                                                runSpacing: 0.0,
+                                                                                alignment: WrapAlignment.start,
+                                                                                crossAxisAlignment: WrapCrossAlignment.start,
+                                                                                direction: Axis.horizontal,
+                                                                                runAlignment: WrapAlignment.start,
+                                                                                verticalDirection: VerticalDirection.down,
+                                                                                clipBehavior: Clip.none,
+                                                                                children: List.generate(availableSlots.length, (availableSlotsIndex) {
+                                                                                  final availableSlotsItem = availableSlots[availableSlotsIndex];
+                                                                                  return Card(
+                                                                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    elevation: 4.0,
+                                                                                    shape: RoundedRectangleBorder(
+                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 12.0, 5.0),
+                                                                                      child: InkWell(
+                                                                                        splashColor: Colors.transparent,
+                                                                                        focusColor: Colors.transparent,
+                                                                                        hoverColor: Colors.transparent,
+                                                                                        highlightColor: Colors.transparent,
+                                                                                        onTap: () async {
+                                                                                          await showModalBottomSheet(
+                                                                                            isScrollControlled: true,
+                                                                                            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                            enableDrag: false,
+                                                                                            context: context,
+                                                                                            builder: (context) {
+                                                                                              return GestureDetector(
+                                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                child: Padding(
+                                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                                  child: SizedBox(
+                                                                                                    height: 500.0,
+                                                                                                    child: BookingActionWidget(
+                                                                                                      user: listViewUsersRecord.name,
+                                                                                                      time: availableSlotsItem,
+                                                                                                      userid: listViewUsersRecord.reference,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ).then((value) => safeSetState(() {}));
+                                                                                        },
+                                                                                        child: Text(
+                                                                                          dateTimeFormat('jm', availableSlotsItem),
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Readex Pro',
+                                                                                                color: FlutterFlowTheme.of(context).secondary,
+                                                                                                letterSpacing: 0.0,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }),
+                                                                              );
+                                                                            },
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ],
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  );
+                                                },
                                               ),
                                             ),
-                                          );
-                                        },
+                                            theme: const ExpandableThemeData(
+                                              tapHeaderToExpand: false,
+                                              tapBodyToExpand: false,
+                                              tapBodyToCollapse: false,
+                                              headerAlignment:
+                                                  ExpandablePanelHeaderAlignment
+                                                      .center,
+                                              hasIcon: true,
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     );
                                   },

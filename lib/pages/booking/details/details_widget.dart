@@ -171,15 +171,6 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                       ),
                                             ),
                                           ),
-                                          Text(
-                                            'Primary Care, Intentional Medicine',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
