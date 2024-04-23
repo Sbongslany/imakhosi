@@ -59,3 +59,10 @@ double getAvarage(List<int> reviews) {
   int sum = reviews.reduce(((value, element) => value + element));
   return sum / reviews.length;
 }
+
+List<ShopsRecord> getShopList(
+  List<ShopsRecord> list,
+  List<ShopsRecord> searchResults,
+) {
+  return searchResults.length > 0 ? searchResults : list;
+}

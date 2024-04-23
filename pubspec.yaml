@@ -33,6 +33,7 @@ dependencies:
   cloud_firestore_web: 3.10.7
   collection: 1.18.0
   dropdown_button2: 2.3.9
+  easy_debounce: 2.0.1
   file_picker: 6.1.1
   firebase_auth: 4.17.7
   firebase_auth_platform_interface: 7.1.7
@@ -91,6 +92,7 @@ dependencies:
   stop_watch_timer: 3.0.2
   stream_transform: 2.1.0
   table_calendar: 3.0.9
+  text_search: 1.0.1
   timeago: 3.2.2
   universal_io: 2.2.2
   url_launcher: 6.2.5

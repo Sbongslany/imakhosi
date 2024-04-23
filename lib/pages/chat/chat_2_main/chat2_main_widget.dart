@@ -51,10 +51,24 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
               expandedHeight: 100.0,
               pinned: false,
               floating: false,
-              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               iconTheme:
                   IconThemeData(color: FlutterFlowTheme.of(context).secondary),
               automaticallyImplyLeading: true,
+              leading: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.safePop();
+                },
+                child: Icon(
+                  Icons.chevron_left,
+                  color: FlutterFlowTheme.of(context).secondary,
+                  size: 54.0,
+                ),
+              ),
               title: Text(
                 'My Chats',
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
@@ -101,7 +115,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                   ),
                 ),
               ),
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             )
           ],
@@ -112,12 +126,12 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: Image.network(
+                      image: CachedNetworkImageProvider(
                         'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxsaW9ufGVufDB8fHx8MTcxMzcxNzM3MXww&ixlib=rb-4.0.3&q=80&w=1080',
-                      ).image,
+                      ),
                     ),
                   ),
                   child: ClipRRect(
