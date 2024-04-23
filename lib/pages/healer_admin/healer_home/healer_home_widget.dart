@@ -1,8 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'healer_home_model.dart';
 export 'healer_home_model.dart';
 
@@ -44,7 +47,7 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 36.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 36.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,11 +67,11 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: Container(
                       width: 36.0,
                       height: 36.0,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         color: Color(0x4DFFFFFF),
                         shape: BoxShape.circle,
                       ),
@@ -99,8 +102,8 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
               width: 200.0,
               height: 55.0,
               decoration: BoxDecoration(
-                color: const Color(0x32FFFFFF),
-                borderRadius: const BorderRadius.only(
+                color: Color(0x32FFFFFF),
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(12.0),
                   bottomRight: Radius.circular(12.0),
                   topLeft: Radius.circular(12.0),
@@ -111,7 +114,7 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -120,7 +123,7 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
                       width: 36.0,
                       height: 36.0,
                       clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
                       child: Image.network(
@@ -130,7 +133,7 @@ class _HealerHomeWidgetState extends State<HealerHomeWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'United States',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(

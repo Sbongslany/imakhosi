@@ -10,7 +10,10 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'complete_profile_model.dart';
 export 'complete_profile_model.dart';
 
@@ -67,14 +70,14 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
             height: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
                 image: CachedNetworkImageProvider(
                   'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
                 ),
               ),
             ),
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(0.0),
               child: BackdropFilter(
@@ -83,7 +86,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                   sigmaY: 8.0,
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -121,7 +124,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -184,27 +187,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               width: double.infinity,
                               height: 90.0,
                               decoration: BoxDecoration(
-                                color: const Color(0x32FFFFFF),
-                                borderRadius: const BorderRadius.only(
+                                color: Color(0x32FFFFFF),
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(12.0),
                                   bottomRight: Radius.circular(12.0),
                                   topLeft: Radius.circular(12.0),
                                   topRight: Radius.circular(12.0),
                                 ),
                                 border: Border.all(
-                                  color: const Color(0x9AFFFFFF),
+                                  color: Color(0x9AFFFFFF),
                                 ),
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (_model.uploadedFileUrl == '')
+                                  if (_model.uploadedFileUrl == null ||
+                                      _model.uploadedFileUrl == '')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.upload_sharp,
@@ -216,7 +220,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Upload your image',
@@ -235,12 +239,12 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: 36.0,
                                             height: 36.0,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                               color: Color(0x4DFFFFFF),
                                               shape: BoxShape.circle,
                                             ),
@@ -255,13 +259,14 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         ),
                                       ],
                                     ),
-                                  if (_model.uploadedFileUrl != '')
+                                  if (_model.uploadedFileUrl != null &&
+                                      _model.uploadedFileUrl != '')
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.upload_sharp,
@@ -273,7 +278,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Update your profile picture',
@@ -292,13 +297,13 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
                                           child: Container(
                                             width: 36.0,
                                             height: 36.0,
                                             decoration: BoxDecoration(
-                                              color: const Color(0x4DFFFFFF),
+                                              color: Color(0x4DFFFFFF),
                                               image: DecorationImage(
                                                 fit: BoxFit.cover,
                                                 image: Image.network(
@@ -317,28 +322,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
-                              borderRadius: const BorderRadius.only(
+                              color: Color(0x32FFFFFF),
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x9AFFFFFF),
+                                color: Color(0x9AFFFFFF),
                               ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.mail_rounded,
@@ -348,7 +353,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Container(
                                     width: 1.0,
@@ -361,7 +366,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.emailTextController,
@@ -411,28 +416,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
-                              borderRadius: const BorderRadius.only(
+                              color: Color(0x32FFFFFF),
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x9AFFFFFF),
+                                color: Color(0x9AFFFFFF),
                               ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person,
@@ -442,7 +447,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Container(
                                     width: 1.0,
@@ -455,7 +460,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.nameTextController,
@@ -505,28 +510,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
-                              borderRadius: const BorderRadius.only(
+                              color: Color(0x32FFFFFF),
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x9AFFFFFF),
+                                color: Color(0x9AFFFFFF),
                               ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person_remove,
@@ -536,7 +541,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Container(
                                     width: 1.0,
@@ -549,7 +554,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.surnameTextController,
@@ -599,28 +604,28 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
-                              borderRadius: const BorderRadius.only(
+                              color: Color(0x32FFFFFF),
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x9AFFFFFF),
+                                color: Color(0x9AFFFFFF),
                               ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person,
@@ -630,7 +635,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 0.0),
                                   child: Container(
                                     width: 1.0,
@@ -643,7 +648,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.usernameTextController,
@@ -693,21 +698,21 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
-                              borderRadius: const BorderRadius.only(
+                              color: Color(0x32FFFFFF),
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x9AFFFFFF),
+                                color: Color(0x9AFFFFFF),
                               ),
                             ),
                             child: Row(
@@ -751,11 +756,11 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                         ),
                         Container(
                           width: double.infinity,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Visibility(
                             visible: _model.radioButtonValue == 'Healer',
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -764,7 +769,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     multiSelectController: _model
                                             .dropDownValueController ??=
                                         FormFieldController<List<String>>(null),
-                                    options: const [
+                                    options: [
                                       'Mthandazi',
                                       'Prophet',
                                       'Sangoma',
@@ -793,7 +798,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                     borderWidth: 2.0,
                                     borderRadius: 8.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -808,7 +813,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -836,11 +841,11 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 55.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0x4DFFFFFF),
+                              color: Color(0x4DFFFFFF),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -849,7 +854,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
