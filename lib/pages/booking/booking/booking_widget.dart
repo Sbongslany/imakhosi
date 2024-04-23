@@ -496,7 +496,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            dateTimeFormat('MMMEd',
+                                                                            dateTimeFormat('MMMMEEEEd',
                                                                                 functions.getAvailSlots(containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(), _model.start!).first),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
