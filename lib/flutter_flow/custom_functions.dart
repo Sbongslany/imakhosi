@@ -66,3 +66,12 @@ List<ShopsRecord> getShopList(
 ) {
   return searchResults.length > 0 ? searchResults : list;
 }
+
+List<String> getUniqueCategories(List<String> categories) {
+  return categories.toSet().toList();
+}
+
+double getRatings(List<int> ratings) {
+  int sum = ratings.reduce((int value, int element) => value + element);
+  return sum / ratings.length;
+}

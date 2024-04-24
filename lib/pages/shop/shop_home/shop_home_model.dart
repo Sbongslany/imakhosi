@@ -4,6 +4,10 @@ import 'shop_home_widget.dart' show ShopHomeWidget;
 import 'package:flutter/material.dart';
 
 class ShopHomeModel extends FlutterFlowModel<ShopHomeWidget> {
+  ///  Local state fields for this page.
+
+  String? shopFilter;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

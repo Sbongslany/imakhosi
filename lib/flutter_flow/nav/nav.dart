@@ -216,12 +216,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/shopHome',
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'ShopHome')
-              : const ShopHomeWidget(),
+              : ShopHomeWidget(
+                  category: params.getParam(
+                    'category',
+                    ParamType.String,
+                  ),
+                ),
         ),
         FFRoute(
           name: 'Users',
           path: '/users',
           builder: (context, params) => const UsersWidget(),
+        ),
+        FFRoute(
+          name: 'Browse',
+          path: '/browse',
+          builder: (context, params) => const BrowseWidget(),
+        ),
+        FFRoute(
+          name: 'ShopDetails',
+          path: '/shopDetails',
+          builder: (context, params) => ShopDetailsWidget(
+            shopRef: params.getParam(
+              'shopRef',
+              ParamType.DocumentReference,
+              false,
+              ['shops'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

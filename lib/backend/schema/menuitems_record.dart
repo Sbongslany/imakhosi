@@ -6,6 +6,7 @@ import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
 class MenuitemsRecord extends FirestoreRecord {
   MenuitemsRecord._(
@@ -20,10 +21,16 @@ class MenuitemsRecord extends FirestoreRecord {
   String get name => _name ?? '';
   bool hasName() => _name != null;
 
+  // "price" field.
+  double? _price;
+  double get price => _price ?? 0.0;
+  bool hasPrice() => _price != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
+    _price = castToType<double>(snapshotData['price']);
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -67,10 +74,12 @@ class MenuitemsRecord extends FirestoreRecord {
 
 Map<String, dynamic> createMenuitemsRecordData({
   String? name,
+  double? price,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'name': name,
+      'price': price,
     }.withoutNulls,
   );
 
@@ -82,11 +91,12 @@ class MenuitemsRecordDocumentEquality implements Equality<MenuitemsRecord> {
 
   @override
   bool equals(MenuitemsRecord? e1, MenuitemsRecord? e2) {
-    return e1?.name == e2?.name;
+    return e1?.name == e2?.name && e1?.price == e2?.price;
   }
 
   @override
-  int hash(MenuitemsRecord? e) => const ListEquality().hash([e?.name]);
+  int hash(MenuitemsRecord? e) =>
+      const ListEquality().hash([e?.name, e?.price]);
 
   @override
   bool isValidKey(Object? o) => o is MenuitemsRecord;

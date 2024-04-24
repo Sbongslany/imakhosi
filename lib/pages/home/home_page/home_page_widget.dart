@@ -1220,7 +1220,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 5.0),
                                       child: Text(
-                                        'Products',
+                                        'Categories',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1241,18 +1241,28 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 20.0, 5.0),
-                                    child: Text(
-                                      'See all',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Rubik',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            fontSize: 13.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w200,
-                                          ),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed('Browse');
+                                      },
+                                      child: Text(
+                                        'See all',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Rubik',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              fontSize: 13.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w200,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                 ),
