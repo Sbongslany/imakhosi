@@ -188,7 +188,10 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                       timestampTextReviewRecordList =
                                       snapshot.data!;
                                   return Text(
-                                    '( ${functions.getRatings(timestampTextReviewRecordList.map((e) => e.rating).toList()).toString()} ) ${timestampTextReviewRecordList.length.toString()} reviews',
+                                    valueOrDefault<String>(
+                                      '( ${functions.getRatings(timestampTextReviewRecordList.map((e) => e.rating).toList()).toString()} ) ${timestampTextReviewRecordList.length.toString()} reviews',
+                                      '0',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
