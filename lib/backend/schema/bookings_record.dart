@@ -25,11 +25,17 @@ class BookingsRecord extends FirestoreRecord {
   DocumentReference? get uid => _uid;
   bool hasUid() => _uid != null;
 
+  // "accepted" field.
+  bool? _accepted;
+  bool get accepted => _accepted ?? false;
+  bool hasAccepted() => _accepted != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _time = snapshotData['time'] as DateTime?;
     _uid = snapshotData['uid'] as DocumentReference?;
+    _accepted = snapshotData['accepted'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -74,11 +80,13 @@ class BookingsRecord extends FirestoreRecord {
 Map<String, dynamic> createBookingsRecordData({
   DateTime? time,
   DocumentReference? uid,
+  bool? accepted,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'time': time,
       'uid': uid,
+      'accepted': accepted,
     }.withoutNulls,
   );
 
@@ -90,11 +98,14 @@ class BookingsRecordDocumentEquality implements Equality<BookingsRecord> {
 
   @override
   bool equals(BookingsRecord? e1, BookingsRecord? e2) {
-    return e1?.time == e2?.time && e1?.uid == e2?.uid;
+    return e1?.time == e2?.time &&
+        e1?.uid == e2?.uid &&
+        e1?.accepted == e2?.accepted;
   }
 
   @override
-  int hash(BookingsRecord? e) => const ListEquality().hash([e?.time, e?.uid]);
+  int hash(BookingsRecord? e) =>
+      const ListEquality().hash([e?.time, e?.uid, e?.accepted]);
 
   @override
   bool isValidKey(Object? o) => o is BookingsRecord;
