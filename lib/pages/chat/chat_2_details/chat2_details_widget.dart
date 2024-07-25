@@ -114,7 +114,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                   ),
                 );
               }
+
               final conditionalBuilderUsersRecord = snapshot.data!;
+
               return Builder(
                 builder: (context) {
                   if (widget.chatRef!.users.length <= 2) {
@@ -182,6 +184,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                     maxChars: 40,
                                     replacement: '…',
                                   ),
+                                  minFontSize: 10.0,
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
@@ -190,7 +193,6 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                             .primary,
                                         letterSpacing: 0.0,
                                       ),
-                                  minFontSize: 10.0,
                                 ),
                               ),
                             ],
@@ -235,8 +237,10 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                           ),
                                         );
                                       }
+
                                       final secondUserUsersRecord =
                                           snapshot.data!;
+
                                       return Container(
                                         width: 32.0,
                                         height: 32.0,

@@ -58,7 +58,9 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
             ),
           );
         }
+
         final shopDetailsShopsRecord = snapshot.data!;
+
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).alternate,
@@ -195,6 +197,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                         List<ReviewRecord>
                                             timestampTextReviewRecordList =
                                             snapshot.data!;
+
                                         return Text(
                                           valueOrDefault<String>(
                                             '( ${functions.getRatings(timestampTextReviewRecordList.map((e) => e.rating).toList()).toString()} ) ${timestampTextReviewRecordList.length.toString()} reviews',
@@ -294,6 +297,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                             }
                             List<MenuitemsRecord> listViewMenuitemsRecordList =
                                 snapshot.data!;
+
                             return ListView.builder(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,

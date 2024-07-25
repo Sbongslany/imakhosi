@@ -62,7 +62,9 @@ class _DetailsWidgetState extends State<DetailsWidget> {
             ),
           );
         }
+
         final detailsUsersRecord = snapshot.data!;
+
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -214,6 +216,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                         ? ratingBarReviewsRecordList
                                                             .first
                                                         : null;
+
                                                 return RatingBar.builder(
                                                   onRatingUpdate: (newValue) =>
                                                       setState(() => _model
@@ -270,6 +273,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                               List<ReviewsRecord>
                                                   listViewReviewsRecordList =
                                                   snapshot.data!;
+
                                               return ListView.builder(
                                                 padding: EdgeInsets.zero,
                                                 shrinkWrap: true,

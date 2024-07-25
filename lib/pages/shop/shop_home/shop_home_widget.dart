@@ -41,9 +41,8 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.shopFilter = widget.category;
-      });
+      _model.shopFilter = widget.category;
+      setState(() {});
     });
 
     _model.inpSearchTextController ??= TextEditingController();
@@ -151,6 +150,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
           );
         }
         List<ShopsRecord> shopHomeShopsRecordList = snapshot.data!;
+
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -394,6 +394,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                             shopHomeShopsRecordList.toList(),
                                             _model.simpleSearchResults.toList())
                                         .toList();
+
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       primary: false,

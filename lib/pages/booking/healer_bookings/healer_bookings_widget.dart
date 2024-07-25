@@ -204,6 +204,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                   List<BookingsRecord>
                                       listViewBookingsRecordList =
                                       snapshot.data!;
+
                                   return ListView.builder(
                                     padding: EdgeInsets.zero,
                                     scrollDirection: Axis.vertical,
@@ -239,8 +240,10 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                 ),
                                               );
                                             }
+
                                             final containerUsersRecord =
                                                 snapshot.data!;
+
                                             return Material(
                                               color: Colors.transparent,
                                               elevation: 5.0,

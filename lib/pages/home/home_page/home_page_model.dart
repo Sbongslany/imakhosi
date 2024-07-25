@@ -9,7 +9,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
-
   int carouselCurrentIndex = 1;
 
   @override

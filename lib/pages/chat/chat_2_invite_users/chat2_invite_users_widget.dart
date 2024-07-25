@@ -40,15 +40,13 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget.chatRef != null) {
         // addChatUsers_ToList
-        setState(() {
-          _model.friendsList =
-              widget.chatRef!.users.toList().cast<DocumentReference>();
-        });
+        _model.friendsList =
+            widget.chatRef!.users.toList().cast<DocumentReference>();
+        setState(() {});
       } else {
         // addUser_ToList
-        setState(() {
-          _model.addToFriendsList(currentUserReference!);
-        });
+        _model.addToFriendsList(currentUserReference!);
+        setState(() {});
       }
     });
   }
@@ -354,18 +352,16 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                       newValue!);
                                               if (newValue!) {
                                                 // addUser
-                                                setState(() {
-                                                  _model.addToFriendsList(
-                                                      listViewUsersRecord
-                                                          .reference);
-                                                });
+                                                _model.addToFriendsList(
+                                                    listViewUsersRecord
+                                                        .reference);
+                                                setState(() {});
                                               } else {
                                                 // removeUsser
-                                                setState(() {
-                                                  _model.removeFromFriendsList(
-                                                      listViewUsersRecord
-                                                          .reference);
-                                                });
+                                                _model.removeFromFriendsList(
+                                                    listViewUsersRecord
+                                                        .reference);
+                                                setState(() {});
                                               }
                                             },
                                             title: Text(

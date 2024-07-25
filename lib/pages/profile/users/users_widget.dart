@@ -205,6 +205,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                     snapshot.data!
                                         .where((u) => u.uid != currentUserUid)
                                         .toList();
+
                                 return GridView.builder(
                                   padding: EdgeInsets.zero,
                                   gridDelegate:
@@ -249,6 +250,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                           List<BookingsRecord>
                                               containerBookingsRecordList =
                                               snapshot.data!;
+
                                           return Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(

@@ -31,9 +31,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.start = getCurrentTimestamp;
-      });
+      _model.start = getCurrentTimestamp;
+      setState(() {});
     });
 
     _model.textController ??= TextEditingController();
@@ -209,6 +208,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                 }
                                 List<BookingsRecord>
                                     listViewBookingsRecordList = snapshot.data!;
+
                                 return ListView.builder(
                                   padding: EdgeInsets.zero,
                                   scrollDirection: Axis.vertical,
@@ -243,8 +243,10 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                               ),
                                             );
                                           }
+
                                           final containerUsersRecord =
                                               snapshot.data!;
+
                                           return Material(
                                             color: Colors.transparent,
                                             elevation: 5.0,

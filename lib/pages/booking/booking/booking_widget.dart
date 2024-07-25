@@ -33,9 +33,8 @@ class _BookingWidgetState extends State<BookingWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.start = getCurrentTimestamp;
-      });
+      _model.start = getCurrentTimestamp;
+      setState(() {});
     });
 
     _model.textController ??= TextEditingController();
@@ -145,10 +144,9 @@ class _BookingWidgetState extends State<BookingWidget>
                                   return;
                                 }
                                 _model.calendarSelectedDay = newSelectedDate;
-                                setState(() {
-                                  _model.start =
-                                      _model.calendarSelectedDay?.start;
-                                });
+                                _model.start =
+                                    _model.calendarSelectedDay?.start;
+                                setState(() {});
                                 setState(() {});
                               },
                               titleStyle: FlutterFlowTheme.of(context)
@@ -281,6 +279,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                       snapshot.data!
                                           .where((u) => u.uid != currentUserUid)
                                           .toList();
+
                                   return ListView.builder(
                                     padding: EdgeInsets.zero,
                                     scrollDirection: Axis.vertical,
@@ -366,6 +365,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                     List<BookingsRecord>
                                                         containerBookingsRecordList =
                                                         snapshot.data!;
+
                                                     return Container(
                                                       width: double.infinity,
                                                       decoration: BoxDecoration(
@@ -522,6 +522,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                 Builder(
                                                                               builder: (context) {
                                                                                 final availableSlots = functions.getAvailSlots(containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(), _model.start!).toList();
+
                                                                                 return Wrap(
                                                                                   spacing: 0.0,
                                                                                   runSpacing: 0.0,

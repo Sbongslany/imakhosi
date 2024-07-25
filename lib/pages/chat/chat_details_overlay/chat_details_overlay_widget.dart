@@ -163,6 +163,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           builder: (context) {
                             final chatUsers =
                                 widget.chatRef?.users.toList() ?? [];
+
                             return ListView.separated(
                               padding: EdgeInsets.zero,
                               scrollDirection: Axis.vertical,
@@ -191,8 +192,10 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                         ),
                                       );
                                     }
+
                                     final userListSmallUsersRecord =
                                         snapshot.data!;
+
                                     return wrapWithModel(
                                       model:
                                           _model.userListSmallModels.getModel(

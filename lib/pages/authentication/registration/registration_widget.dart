@@ -948,7 +948,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             child: FlutterFlowDropDown<String>(
                               multiSelectController:
                                   _model.healerValueController ??=
-                                      FormFieldController<List<String>>(null),
+                                      FormListFieldController<String>(null),
                               options: const [
                                 'Mthandazi',
                                 'Prophet',

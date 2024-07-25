@@ -44,9 +44,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.showDelete = false;
-      });
+      _model.showDelete = false;
+      setState(() {});
     });
 
     animationsMap.addAll({
@@ -196,9 +195,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        setState(() {
-                          _model.showDelete = true;
-                        });
+                        _model.showDelete = true;
+                        setState(() {});
                       },
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 200),

@@ -206,6 +206,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                     ),
                                   );
                                 }
+
                                 return ListView.builder(
                                   padding: EdgeInsets.zero,
                                   scrollDirection: Axis.vertical,
@@ -314,8 +315,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             ),
                                                           );
                                                         }
+
                                                         final rowUsersRecord =
                                                             snapshot.data!;
+
                                                         return Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -561,8 +564,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             ),
                                                           );
                                                         }
+
                                                         final rowUsersRecord =
                                                             snapshot.data!;
+
                                                         return Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -615,8 +620,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                               ),
                                                                             );
                                                                           }
+
                                                                           final containerUsersRecord =
                                                                               snapshot.data!;
+
                                                                           return Container(
                                                                             width:
                                                                                 32.0,

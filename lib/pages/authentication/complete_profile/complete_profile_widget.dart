@@ -763,7 +763,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   FlutterFlowDropDown<String>(
                                     multiSelectController: _model
                                             .dropDownValueController ??=
-                                        FormFieldController<List<String>>(null),
+                                        FormListFieldController<String>(null),
                                     options: const [
                                       'Mthandazi',
                                       'Prophet',

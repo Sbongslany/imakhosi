@@ -252,7 +252,8 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: FlutterFlowTimer(
-                                          initialTime: _model.timerMilliseconds,
+                                          initialTime:
+                                              _model.timerInitialTimeMs,
                                           getDisplayTime: (value) =>
                                               StopWatchTimer.getDisplayTime(
                                             value,

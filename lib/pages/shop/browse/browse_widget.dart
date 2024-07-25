@@ -55,6 +55,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
           );
         }
         List<ShopsRecord> browseShopsRecordList = snapshot.data!;
+
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -119,6 +120,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                                   .map((e) => e.category)
                                   .toList())
                               .toList();
+
                           return GridView.builder(
                             padding: EdgeInsets.zero,
                             gridDelegate:

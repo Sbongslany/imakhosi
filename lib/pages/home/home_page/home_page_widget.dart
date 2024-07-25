@@ -423,6 +423,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       snapshot.data!
                                           .where((u) => u.uid != currentUserUid)
                                           .toList();
+
                                   return SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
                                     child: Row(
@@ -460,6 +461,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             List<BookingsRecord>
                                                 containerBookingsRecordList =
                                                 snapshot.data!;
+
                                             return Container(
                                               decoration: const BoxDecoration(),
                                               child: Padding(

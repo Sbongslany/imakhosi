@@ -182,7 +182,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                       ),
                     );
                   }
+
                   final columnUsersRecord = snapshot.data!;
+
                   return Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,

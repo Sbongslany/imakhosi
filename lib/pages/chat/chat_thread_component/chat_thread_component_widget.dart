@@ -74,26 +74,28 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                     )
                     .orderBy('timestamp', descending: true),
                 limit: 200,
-              )..listen((snapshot) async {
+              )..listen((snapshot) {
                   List<ChatMessagesRecord> listViewChatMessagesRecordList =
                       snapshot;
                   if (_model.listViewPreviousSnapshot != null &&
                       !const ListEquality(ChatMessagesRecordDocumentEquality())
                           .equals(listViewChatMessagesRecordList,
                               _model.listViewPreviousSnapshot)) {
-                    if (!widget.chatRef!.lastMessageSeenBy
-                        .contains(currentUserReference)) {
-                      await widget.chatRef!.reference.update({
-                        ...mapToFirestore(
-                          {
-                            'last_message_seen_by':
-                                FieldValue.arrayUnion([currentUserReference]),
-                          },
-                        ),
-                      });
-                    }
+                    () async {
+                      if (!widget.chatRef!.lastMessageSeenBy
+                          .contains(currentUserReference)) {
+                        await widget.chatRef!.reference.update({
+                          ...mapToFirestore(
+                            {
+                              'last_message_seen_by':
+                                  FieldValue.arrayUnion([currentUserReference]),
+                            },
+                          ),
+                        });
+                      }
 
-                    setState(() {});
+                      setState(() {});
+                    }();
                   }
                   _model.listViewPreviousSnapshot = snapshot;
                 }),
@@ -128,6 +130,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                     body: 'You have not sent any messages in this chat yet.',
                   );
                 }
+
                 return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(
                     0,
@@ -346,10 +349,9 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                             }
 
                             if (_model.uploadedFileUrl != '') {
-                              setState(() {
-                                _model.addToImagesUploaded(
-                                    _model.uploadedFileUrl);
-                              });
+                              _model
+                                  .addToImagesUploaded(_model.uploadedFileUrl);
+                              setState(() {});
                             }
                           },
                         ),
@@ -386,7 +388,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                           .getDocumentFromData(
                                               createChatMessagesRecordData(
                                                 user: currentUserReference,
-                                                chat: widget.chatRef?.reference,
+                                                chat:
+                                                    widget.chatRef?.reference,
                                                 text:
                                                     _model.textController.text,
                                                 timestamp: getCurrentTimestamp,
@@ -431,9 +434,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                         _model.uploadedFileUrl = '';
                                       });
 
-                                      setState(() {
-                                        _model.imagesUploaded = [];
-                                      });
+                                      _model.imagesUploaded = [];
+                                      setState(() {});
 
                                       setState(() {});
                                     },
@@ -566,8 +568,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                             .getDocumentFromData(
                                                 createChatMessagesRecordData(
                                                   user: currentUserReference,
-                                                  chat:
-                                                      widget.chatRef?.reference,
+                                                  chat: widget
+                                                      .chatRef?.reference,
                                                   text: _model
                                                       .textController.text,
                                                   timestamp:
@@ -585,8 +587,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                             currentUserReference!);
                                         // updateChatDocument
 
-                                        firestoreBatch
-                                            .update(widget.chatRef!.reference, {
+                                        firestoreBatch.update(
+                                            widget.chatRef!.reference, {
                                           ...createChatsRecordData(
                                             lastMessageTime:
                                                 getCurrentTimestamp,
@@ -616,9 +618,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                           _model.uploadedFileUrl = '';
                                         });
 
-                                        setState(() {
-                                          _model.imagesUploaded = [];
-                                        });
+                                        _model.imagesUploaded = [];
+                                        setState(() {});
                                       } finally {
                                         await firestoreBatch.commit();
                                       }
