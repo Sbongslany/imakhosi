@@ -405,9 +405,10 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                         ),
                                                       ),
                                                       FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
+                                                        onPressed: () async {
+                                                          await listViewBookingsRecord
+                                                              .uid!
+                                                              .delete();
                                                         },
                                                         text: 'Reject',
                                                         options:
