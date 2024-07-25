@@ -408,7 +408,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
                                                                                   title: const Text('Cancel Consultation'),
-                                                                                  content: const Text('Please confirm if you wanna cancel '),
+                                                                                  content: const Text('Please confirm if you wanna accept '),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),

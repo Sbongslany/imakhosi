@@ -114,7 +114,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 10.0, 16.0, 0.0),
+                              16.0, 20.0, 16.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController,
                             focusNode: _model.textFieldFocusNode,
@@ -180,7 +180,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                         Expanded(
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 8.0, 0.0),
+                                8.0, 20.0, 8.0, 0.0),
                             child: FutureBuilder<List<BookingsRecord>>(
                               future: queryBookingsRecordOnce(
                                 queryBuilder: (bookingsRecord) => bookingsRecord
@@ -416,32 +416,47 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                           BorderRadius.circular(
                                                                               8.0),
                                                                     ),
-                                                                    child:
-                                                                        Visibility(
-                                                                      visible:
-                                                                          listViewBookingsRecord.accepted ==
-                                                                              true,
-                                                                      child:
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        if (listViewBookingsRecord.accepted ==
+                                                                            true)
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            5.0,
-                                                                            10.0,
-                                                                            5.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Accepted',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Readex Pro',
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                fontSize: 10.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.normal,
-                                                                              ),
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                5.0,
+                                                                                1.0,
+                                                                                5.0),
+                                                                            child:
+                                                                                Text(
+                                                                              'Accepted',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Readex Pro',
+                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    fontSize: 10.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.credit_score,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBackground,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
                                                                         ),
-                                                                      ),
+                                                                      ],
                                                                     ),
                                                                   ),
                                                                 ],
