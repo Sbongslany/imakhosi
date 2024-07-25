@@ -384,8 +384,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                               .instance
                                                               .refFromURL(
                                                                   listViewBookingsRecord
-                                                                      .reference
-                                                                      .id)
+                                                                      .uid!.id)
                                                               .delete();
                                                         },
                                                         text: 'Reject',
