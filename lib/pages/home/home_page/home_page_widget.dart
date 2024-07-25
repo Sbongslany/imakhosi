@@ -1357,7 +1357,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -1403,7 +1403,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         .antiAliasWithSaveLayer,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondary,
+                                                        .primary,
                                                     elevation: 4.0,
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -1440,7 +1440,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary,
+                                                                      .secondary,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1484,7 +1484,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Readex Pro',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1519,7 +1519,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -1565,7 +1565,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         .antiAliasWithSaveLayer,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondary,
+                                                        .primary,
                                                     elevation: 4.0,
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -1602,7 +1602,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary,
+                                                                      .secondary,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1646,7 +1646,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Readex Pro',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1681,7 +1681,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -1727,7 +1727,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         .antiAliasWithSaveLayer,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondary,
+                                                        .primary,
                                                     elevation: 4.0,
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -1764,7 +1764,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryText,
+                                                                      .secondary,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1806,7 +1806,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Readex Pro',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -1841,7 +1841,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primaryBackground,
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -1887,7 +1887,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         .antiAliasWithSaveLayer,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondary,
+                                                        .primary,
                                                     elevation: 4.0,
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -1924,7 +1924,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryText,
+                                                                      .secondary,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1966,7 +1966,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Readex Pro',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
