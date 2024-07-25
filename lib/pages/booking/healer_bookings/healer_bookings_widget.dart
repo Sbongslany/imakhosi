@@ -388,7 +388,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                     context)
                                                                 .primary,
                                                         icon: Icon(
-                                                          Icons.add,
+                                                          Icons.check,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondary,
