@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -112,6 +113,29 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Align(
+                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 5.0, 0.0),
+                            child: FlutterFlowIconButton(
+                              borderColor: FlutterFlowTheme.of(context).primary,
+                              borderRadius: 20.0,
+                              borderWidth: 1.0,
+                              buttonSize: 40.0,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              icon: Icon(
+                                Icons.refresh,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
+                              ),
+                              onPressed: () async {
+                                context.pushNamed('MyBookings');
+                              },
+                            ),
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 20.0, 16.0, 0.0),
