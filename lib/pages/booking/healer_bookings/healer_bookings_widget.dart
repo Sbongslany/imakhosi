@@ -385,8 +385,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                   valueOrDefault<
                                                                       String>(
                                                                     listViewBookingsRecord
-                                                                        .uid
-                                                                        ?.id,
+                                                                        .reference
+                                                                        .id,
                                                                     '0',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
