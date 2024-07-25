@@ -387,6 +387,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
+                                                        disabledColor:
+                                                            const Color(0xFF878A87),
                                                         icon: Icon(
                                                           Icons.check,
                                                           color: FlutterFlowTheme
@@ -394,45 +396,42 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                               .secondary,
                                                           size: 24.0,
                                                         ),
-                                                        onPressed: () async {
-                                                          var confirmDialogResponse =
-                                                              await showDialog<
-                                                                      bool>(
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (alertDialogContext) {
-                                                                      return AlertDialog(
-                                                                        title: const Text(
-                                                                            'Cancel Consultation'),
-                                                                        content:
-                                                                            const Text('Please confirm if you wanna cancel '),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext, false),
-                                                                            child:
-                                                                                const Text('Cancel'),
-                                                                          ),
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext, true),
-                                                                            child:
-                                                                                const Text('Confirm'),
-                                                                          ),
-                                                                        ],
-                                                                      );
-                                                                    },
-                                                                  ) ??
-                                                                  false;
+                                                        onPressed:
+                                                            (listViewBookingsRecord
+                                                                        .accepted ==
+                                                                    true)
+                                                                ? null
+                                                                : () async {
+                                                                    var confirmDialogResponse =
+                                                                        await showDialog<bool>(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  title: const Text('Cancel Consultation'),
+                                                                                  content: const Text('Please confirm if you wanna cancel '),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: const Text('Cancel'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: const Text('Confirm'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ) ??
+                                                                            false;
 
-                                                          await listViewBookingsRecord
-                                                              .reference
-                                                              .update(
-                                                                  createBookingsRecordData(
-                                                            accepted: true,
-                                                          ));
-                                                        },
+                                                                    await listViewBookingsRecord
+                                                                        .reference
+                                                                        .update(
+                                                                            createBookingsRecordData(
+                                                                      accepted:
+                                                                          true,
+                                                                    ));
+                                                                  },
                                                       ),
                                                       Padding(
                                                         padding:

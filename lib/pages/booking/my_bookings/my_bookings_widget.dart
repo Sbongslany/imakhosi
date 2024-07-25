@@ -402,26 +402,48 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                           ),
                                                                     ),
                                                                   ),
-                                                                  if (listViewBookingsRecord
-                                                                          .accepted ==
-                                                                      true)
-                                                                    Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                  Card(
+                                                                    clipBehavior:
+                                                                        Clip.antiAliasWithSaveLayer,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .success,
+                                                                    elevation:
+                                                                        4.0,
+                                                                    shape:
+                                                                        RoundedRectangleBorder(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
+                                                                    ),
+                                                                    child:
+                                                                        Visibility(
+                                                                      visible:
+                                                                          listViewBookingsRecord.accepted ==
+                                                                              true,
                                                                       child:
-                                                                          Text(
-                                                                        'Accepted',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Readex Pro',
-                                                                              letterSpacing: 0.0,
-                                                                            ),
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            10.0,
+                                                                            5.0,
+                                                                            10.0,
+                                                                            5.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Accepted',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Readex Pro',
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                fontSize: 10.0,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.normal,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ),
+                                                                  ),
                                                                 ],
                                                               ),
                                                             ),
