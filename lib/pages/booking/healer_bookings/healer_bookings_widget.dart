@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'healer_bookings_model.dart';
 export 'healer_bookings_model.dart';
@@ -378,9 +379,14 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                         ),
                                                       ),
                                                       FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
+                                                        onPressed: () async {
+                                                          await FirebaseStorage
+                                                              .instance
+                                                              .refFromURL(
+                                                                  listViewBookingsRecord
+                                                                      .reference
+                                                                      .id)
+                                                              .delete();
                                                         },
                                                         text: 'Reject',
                                                         options:
