@@ -343,7 +343,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                               MainAxisSize.min,
                                                           crossAxisAlignment:
                                                               CrossAxisAlignment
-                                                                  .start,
+                                                                  .stretch,
                                                           children: [
                                                             Padding(
                                                               padding:
