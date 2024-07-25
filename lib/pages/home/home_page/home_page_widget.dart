@@ -136,10 +136,23 @@ class _HomePageWidgetState extends State<HomePageWidget>
               floating: false,
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
-              leading: Icon(
-                Icons.menu,
-                color: FlutterFlowTheme.of(context).secondary,
-                size: 34.0,
+              leading: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  GoRouter.of(context).prepareAuthEvent();
+                  await authManager.signOut();
+                  GoRouter.of(context).clearRedirectLocation();
+
+                  context.goNamedAuth('SignInPage', context.mounted);
+                },
+                child: Icon(
+                  Icons.menu,
+                  color: FlutterFlowTheme.of(context).secondary,
+                  size: 34.0,
+                ),
               ),
               title: Text(
                 'iMakhosi',
