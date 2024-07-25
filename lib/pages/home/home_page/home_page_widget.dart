@@ -132,6 +132,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
           headerSliverBuilder: (context, _) => [
             SliverAppBar(
               expandedHeight: 100.0,
+              collapsedHeight: 50.0,
               pinned: false,
               floating: false,
               backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -239,7 +240,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              fontSize: 13.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w100,
                                             ),
@@ -269,7 +270,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              fontSize: 13.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w200,
                                             ),
@@ -360,7 +361,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              fontSize: 13.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w100,
                                             ),
@@ -390,7 +391,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              fontSize: 13.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w200,
                                             ),
@@ -517,8 +518,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           );
                                                         },
                                                         child: Container(
-                                                          width: 100.0,
-                                                          height: 100.0,
+                                                          width: 70.0,
+                                                          height: 70.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             shape:
@@ -530,8 +531,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             ),
                                                           ),
                                                           child: Container(
-                                                            width: 90.0,
-                                                            height: 90.0,
+                                                            width: 70.0,
+                                                            height: 70.0,
                                                             clipBehavior:
                                                                 Clip.antiAlias,
                                                             decoration:
@@ -621,6 +622,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w100,
                                             ),
@@ -650,6 +652,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w200,
                                             ),
@@ -793,21 +796,116 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         ),
                                                   ),
                                                 ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.45,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    4.0, 4.0, 4.0, 12.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          8.0, 4.0, 0.0, 0.0),
+                                                          0.0, 0.0, 0.0, 12.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10.0),
+                                                    child: CachedNetworkImage(
+                                                      fadeInDuration: const Duration(
+                                                          milliseconds: 500),
+                                                      fadeOutDuration: const Duration(
+                                                          milliseconds: 500),
+                                                      imageUrl:
+                                                          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHxlbnwwfHwwfHx8MA%3D%3D',
+                                                      width: double.infinity,
+                                                      height: 120.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Card(
+                                                  clipBehavior: Clip
+                                                      .antiAliasWithSaveLayer,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  elevation: 4.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 4.0,
+                                                                8.0, 4.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      5.0),
+                                                          child: Text(
+                                                            'Shop 1',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 0.0, 0.0),
                                                   child: Text(
-                                                    '216 Members',
+                                                    'The Running Ragamuffins',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .labelSmall
+                                                        .bodyLarge
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -926,25 +1024,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    '216 Members',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
                                               ],
                                             ),
                                           ),
@@ -1059,25 +1138,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         ),
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    '216 Members',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
                                               ],
                                             ),
                                           ),
@@ -1188,158 +1248,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         .override(
                                                           fontFamily:
                                                               'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    '216 Members',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  0.45,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    4.0, 4.0, 4.0, 12.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 12.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHxlbnwwfHwwfHx8MA%3D%3D',
-                                                      width: double.infinity,
-                                                      height: 120.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Card(
-                                                  clipBehavior: Clip
-                                                      .antiAliasWithSaveLayer,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  elevation: 4.0,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(8.0, 4.0,
-                                                                8.0, 4.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0,
-                                                                      5.0),
-                                                          child: Text(
-                                                            'Shop 1',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 0.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    'The Running Ragamuffins',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 4.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    '216 Members',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1376,7 +1284,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              fontSize: 13.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w100,
                                             ),
@@ -1406,7 +1314,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              fontSize: 13.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w200,
                                             ),
