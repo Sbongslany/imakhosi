@@ -373,33 +373,6 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                       ),
                                                                 ),
                                                               ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    listViewBookingsRecord
-                                                                        .reference
-                                                                        .id,
-                                                                    '0',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
                                                             ],
                                                           ),
                                                         ),
@@ -437,7 +410,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                   ) ??
                                                                   false;
                                                           await listViewBookingsRecord
-                                                              .uid!
+                                                              .reference
                                                               .delete();
                                                         },
                                                         text: 'Reject',
