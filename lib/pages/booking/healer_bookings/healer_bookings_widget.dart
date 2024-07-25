@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'healer_bookings_model.dart';
 export 'healer_bookings_model.dart';
@@ -374,18 +373,41 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                       ),
                                                                 ),
                                                               ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    listViewBookingsRecord
+                                                                        .uid
+                                                                        ?.id,
+                                                                    '0',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
                                                             ],
                                                           ),
                                                         ),
                                                       ),
                                                       FFButtonWidget(
-                                                        onPressed: () async {
-                                                          await FirebaseStorage
-                                                              .instance
-                                                              .refFromURL(
-                                                                  listViewBookingsRecord
-                                                                      .uid!.id)
-                                                              .delete();
+                                                        onPressed: () {
+                                                          print(
+                                                              'Button pressed ...');
                                                         },
                                                         text: 'Reject',
                                                         options:
