@@ -471,7 +471,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             0.0),
                                                                         child:
                                                                             Text(
-                                                                          '${containerUsersRecord.name} ${containerUsersRecord.surname}',
+                                                                          '${containerUsersRecord.name} ${containerUsersRecord.displayName}',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(

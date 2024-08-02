@@ -345,30 +345,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                             0.0, 0.0),
                                                     child: Text(
                                                       listViewUsersRecord
-                                                          .surname,
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            fontSize: 15.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                  Align(
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
-                                                      listViewUsersRecord
-                                                          .surname,
+                                                          .displayName,
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
