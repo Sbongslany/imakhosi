@@ -480,22 +480,20 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              12.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0),
                                                                           child:
-                                                                              Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              listViewUsersRecord.name,
-                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Readex Pro',
-                                                                                    letterSpacing: 0.0,
-                                                                                  ),
-                                                                            ),
+                                                                              Text(
+                                                                            listViewUsersRecord.name,
+                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontSize: 13.0,
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
                                                                           ),
                                                                         ),
                                                                         Expanded(
@@ -504,6 +502,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                             listViewUsersRecord.displayName,
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                   fontFamily: 'Readex Pro',
+                                                                                  fontSize: 13.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -520,6 +519,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                 functions.getAvailSlots(containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(), _model.start!).first),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Readex Pro',
+                                                                                  fontSize: 13.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
