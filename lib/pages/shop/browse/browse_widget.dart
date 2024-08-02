@@ -1,12 +1,9 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'browse_model.dart';
 export 'browse_model.dart';
 
@@ -86,7 +83,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                           letterSpacing: 0.0,
                         ),
                   ),
-                  actions: [],
+                  actions: const [],
                   flexibleSpace: FlexibleSpaceBar(
                     background: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
@@ -105,7 +102,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                   return Container(
                     width: double.infinity,
                     height: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(
@@ -115,7 +112,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
                       child: Builder(
                         builder: (context) {
                           final categories = functions
@@ -127,7 +124,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                           return GridView.builder(
                             padding: EdgeInsets.zero,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               crossAxisSpacing: 10.0,
                               mainAxisSpacing: 10.0,
@@ -181,7 +178,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 5.0),
                                           child: Text(
                                             categoriesItem,

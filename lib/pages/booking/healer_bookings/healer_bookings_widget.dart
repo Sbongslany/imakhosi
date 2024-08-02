@@ -1,19 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'healer_bookings_model.dart';
 export 'healer_bookings_model.dart';
 
@@ -75,7 +67,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
@@ -86,7 +78,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                 ),
               ),
               bottom: PreferredSize(
-                preferredSize: Size.fromHeight(70.0),
+                preferredSize: const Size.fromHeight(70.0),
                 child: Container(),
               ),
               centerTitle: true,
@@ -100,7 +92,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
@@ -120,7 +112,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 10.0, 16.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
@@ -186,7 +178,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 8.0, 8.0, 0.0),
                               child: StreamBuilder<List<BookingsRecord>>(
                                 stream: queryBookingsRecord(
@@ -223,7 +215,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                           listViewBookingsRecordList[
                                               listViewIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 10.0),
                                         child: StreamBuilder<UsersRecord>(
                                           stream: UsersRecord.getDocument(
@@ -255,7 +247,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                             return Material(
                                               color: Colors.transparent,
                                               elevation: 5.0,
-                                              shape: RoundedRectangleBorder(
+                                              shape: const RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(20.0),
@@ -280,14 +272,14 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .alternate,
-                                                      offset: Offset(
+                                                      offset: const Offset(
                                                         0.0,
                                                         1.0,
                                                       ),
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      BorderRadius.only(
+                                                      const BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -304,7 +296,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(8.0),
+                                                  padding: const EdgeInsets.all(8.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.min,
@@ -333,7 +325,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -355,7 +347,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             12.0,
                                                                             0.0,
@@ -396,7 +388,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                     context)
                                                                 .primary,
                                                         disabledColor:
-                                                            Color(0xFF878A87),
+                                                            const Color(0xFF878A87),
                                                         icon: Icon(
                                                           Icons.check,
                                                           color: FlutterFlowTheme
@@ -415,16 +407,16 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                               context: context,
                                                                               builder: (alertDialogContext) {
                                                                                 return AlertDialog(
-                                                                                  title: Text('Cancel Consultation'),
-                                                                                  content: Text('Please confirm if you wanna accept '),
+                                                                                  title: const Text('Cancel Consultation'),
+                                                                                  content: const Text('Please confirm if you wanna accept '),
                                                                                   actions: [
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: Text('Cancel'),
+                                                                                      child: const Text('Cancel'),
                                                                                     ),
                                                                                     TextButton(
                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: Text('Confirm'),
+                                                                                      child: const Text('Confirm'),
                                                                                     ),
                                                                                   ],
                                                                                 );
@@ -443,7 +435,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -479,17 +471,17 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Cancel Consultation'),
+                                                                              const Text('Cancel Consultation'),
                                                                           content:
-                                                                              Text('Please confirm if you wanna cancel '),
+                                                                              const Text('Please confirm if you wanna cancel '),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('Cancel'),
+                                                                              child: const Text('Cancel'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('Confirm'),
+                                                                              child: const Text('Confirm'),
                                                                             ),
                                                                           ],
                                                                         );
