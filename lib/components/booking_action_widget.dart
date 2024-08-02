@@ -121,7 +121,6 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                       .set(createHistoryRecordData(
                     uid: currentUserReference?.id,
                     time: widget.time,
-                    accepted: false,
                   ));
                   Navigator.pop(context);
                 },
