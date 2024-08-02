@@ -611,7 +611,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                 ),
                                               ),
                                               theme: const ExpandableThemeData(
-                                                tapHeaderToExpand: false,
+                                                tapHeaderToExpand: true,
                                                 tapBodyToExpand: true,
                                                 tapBodyToCollapse: true,
                                                 headerAlignment:
