@@ -437,18 +437,20 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        if ((listViewBookingsRecord
-                                                                    .accepted ==
-                                                                true) &&
-                                                            (listViewBookingsRecord
-                                                                    .time! <
-                                                                getCurrentTimestamp))
+                                                        if (listViewBookingsRecord
+                                                                .accepted ==
+                                                            true)
                                                           Card(
                                                             clipBehavior: Clip
                                                                 .antiAliasWithSaveLayer,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .success,
+                                                            color: listViewBookingsRecord
+                                                                        .time! <
+                                                                    getCurrentTimestamp
+                                                                ? const Color(
+                                                                    0x9B4C8883)
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .success,
                                                             elevation: 4.0,
                                                             shape:
                                                                 RoundedRectangleBorder(
