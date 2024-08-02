@@ -327,9 +327,9 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                       'Readex Pro',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary,
+                                                                      .secondary,
                                                                   fontSize:
-                                                                      15.0,
+                                                                      20.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -354,8 +354,8 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                 'Readex Pro',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primary,
-                                                            fontSize: 15.0,
+                                                                .secondary,
+                                                            fontSize: 20.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
