@@ -85,8 +85,9 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                 style: FlutterFlowTheme.of(context).titleLarge.override(
                       fontFamily: 'Outfit',
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      fontSize: 30.0,
+                      fontSize: 25.0,
                       letterSpacing: 0.0,
+                      fontWeight: FontWeight.w300,
                     ),
               ),
             ),
@@ -95,16 +96,26 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Book with ${widget.user} at ${dateTimeFormat('M/d h:mm a', widget.time)}',
+                  'Book with ${widget.user}',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Readex Pro',
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        fontSize: 15.0,
+                        fontSize: 25.0,
                         letterSpacing: 0.0,
-                        fontWeight: FontWeight.w200,
+                        fontWeight: FontWeight.w800,
                       ),
                 ),
               ],
+            ),
+            Text(
+              ' at ${dateTimeFormat('M/d h:mm a', widget.time)}',
+              style: FlutterFlowTheme.of(context).bodySmall.override(
+                    fontFamily: 'Readex Pro',
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    fontSize: 25.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w800,
+                  ),
             ),
             const Spacer(),
             Padding(
@@ -128,7 +139,8 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                       content: Text(
                         'Booking submmited',
                         style: TextStyle(
-                          color: FlutterFlowTheme.of(context).primaryText,
+                          color: FlutterFlowTheme.of(context).secondary,
+                          fontSize: 18.0,
                         ),
                       ),
                       duration: const Duration(milliseconds: 4000),
