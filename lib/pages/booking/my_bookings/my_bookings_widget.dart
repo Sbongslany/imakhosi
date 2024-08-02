@@ -1,20 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/booking/review/review_widget.dart';
-import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'my_bookings_model.dart';
 export 'my_bookings_model.dart';
 
@@ -86,7 +80,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
@@ -105,7 +99,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
               return Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: CachedNetworkImageProvider(
@@ -123,7 +117,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                     child: Column(
                       children: [
                         Align(
-                          alignment: Alignment(0.0, 0),
+                          alignment: const Alignment(0.0, 0),
                           child: TabBar(
                             labelColor:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -135,11 +129,11 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                   fontFamily: 'Readex Pro',
                                   letterSpacing: 0.0,
                                 ),
-                            unselectedLabelStyle: TextStyle(),
+                            unselectedLabelStyle: const TextStyle(),
                             indicatorColor:
                                 FlutterFlowTheme.of(context).primaryBackground,
-                            padding: EdgeInsets.all(4.0),
-                            tabs: [
+                            padding: const EdgeInsets.all(4.0),
+                            tabs: const [
                               Tab(
                                 text: 'My Bookings',
                               ),
@@ -162,9 +156,9 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    alignment: const AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 5.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -188,7 +182,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 20.0, 16.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController,
@@ -261,17 +255,17 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 20.0, 8.0, 0.0),
-                                      child: FutureBuilder<List<HistoryRecord>>(
-                                        future: queryHistoryRecordOnce(
-                                          queryBuilder: (historyRecord) =>
-                                              historyRecord
+                                      child:
+                                          FutureBuilder<List<BookingsRecord>>(
+                                        future: queryBookingsRecordOnce(
+                                          queryBuilder: (bookingsRecord) =>
+                                              bookingsRecord
                                                   .where(
                                                     'uid',
                                                     isEqualTo:
-                                                        currentUserReference
-                                                            ?.id,
+                                                        currentUserReference,
                                                   )
                                                   .orderBy('time'),
                                         ),
@@ -294,29 +288,30 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                               ),
                                             );
                                           }
-                                          List<HistoryRecord>
-                                              listViewHistoryRecordList =
+                                          List<BookingsRecord>
+                                              listViewBookingsRecordList =
                                               snapshot.data!;
 
                                           return ListView.builder(
                                             padding: EdgeInsets.zero,
                                             scrollDirection: Axis.vertical,
-                                            itemCount: listViewHistoryRecordList
-                                                .length,
+                                            itemCount:
+                                                listViewBookingsRecordList
+                                                    .length,
                                             itemBuilder:
                                                 (context, listViewIndex) {
-                                              final listViewHistoryRecord =
-                                                  listViewHistoryRecordList[
+                                              final listViewBookingsRecord =
+                                                  listViewBookingsRecordList[
                                                       listViewIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child:
                                                     StreamBuilder<UsersRecord>(
                                                   stream:
                                                       UsersRecord.getDocument(
-                                                          listViewHistoryRecord
+                                                          listViewBookingsRecord
                                                               .parentReference),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
@@ -346,7 +341,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                       color: Colors.transparent,
                                                       elevation: 5.0,
                                                       shape:
-                                                          RoundedRectangleBorder(
+                                                          const RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius.only(
                                                           bottomLeft:
@@ -376,14 +371,14 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .alternate,
-                                                              offset: Offset(
+                                                              offset: const Offset(
                                                                 0.0,
                                                                 1.0,
                                                               ),
                                                             )
                                                           ],
                                                           borderRadius:
-                                                              BorderRadius.only(
+                                                              const BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
                                                                     20.0),
@@ -405,7 +400,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(
+                                                              const EdgeInsets.all(
                                                                   8.0),
                                                           child: Row(
                                                             mainAxisSize:
@@ -468,7 +463,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             .stretch,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             0.0,
@@ -485,7 +480,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             4.0,
                                                                             0.0,
@@ -496,9 +491,9 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                               MainAxisSize.min,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
-                                                                                dateTimeFormat('MMMMEEEEd', listViewHistoryRecord.time!),
+                                                                                dateTimeFormat('MMMMEEEEd', listViewBookingsRecord.time!),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       letterSpacing: 0.0,
@@ -517,15 +512,15 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     MainAxisSize
                                                                         .max,
                                                                 children: [
-                                                                  if (listViewHistoryRecord
+                                                                  if (listViewBookingsRecord
                                                                           .accepted ==
                                                                       true)
                                                                     Card(
                                                                       clipBehavior:
                                                                           Clip.antiAliasWithSaveLayer,
-                                                                      color: listViewHistoryRecord.time! <
+                                                                      color: listViewBookingsRecord.time! <
                                                                               getCurrentTimestamp
-                                                                          ? Color(
+                                                                          ? const Color(
                                                                               0x9B4C8883)
                                                                           : FlutterFlowTheme.of(context)
                                                                               .success,
@@ -539,7 +534,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                       child:
                                                                           Visibility(
                                                                         visible:
-                                                                            listViewHistoryRecord.accepted ==
+                                                                            listViewBookingsRecord.accepted ==
                                                                                 true,
                                                                         child:
                                                                             Row(
@@ -549,10 +544,10 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                               MainAxisAlignment.start,
                                                                           children:
                                                                               [
-                                                                            if (listViewHistoryRecord.accepted ==
+                                                                            if (listViewBookingsRecord.accepted ==
                                                                                 true)
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 1.0, 5.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 1.0, 5.0),
                                                                                 child: Text(
                                                                                   'Accepted',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -565,18 +560,18 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 ),
                                                                               ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                               child: Icon(
                                                                                 Icons.credit_score,
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 size: 17.0,
                                                                               ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 6.0)),
+                                                                          ].divide(const SizedBox(width: 6.0)),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  if (listViewHistoryRecord
+                                                                  if (listViewBookingsRecord
                                                                           .accepted ==
                                                                       false)
                                                                     Card(
@@ -601,7 +596,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         children:
                                                                             [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 5.0,
                                                                                 1.0,
@@ -619,7 +614,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -631,10 +626,10 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                               size: 17.0,
                                                                             ),
                                                                           ),
-                                                                        ].divide(SizedBox(width: 9.0)),
+                                                                        ].divide(const SizedBox(width: 9.0)),
                                                                       ),
                                                                     ),
-                                                                  if (listViewHistoryRecord
+                                                                  if (listViewBookingsRecord
                                                                           .time! <
                                                                       getCurrentTimestamp)
                                                                     FFButtonWidget(
@@ -655,7 +650,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: Container(
+                                                                                child: SizedBox(
                                                                                   height: 350.0,
                                                                                   child: ReviewWidget(
                                                                                     userId: containerUsersRecord.reference,
@@ -673,12 +668,12 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                           FFButtonOptions(
                                                                         height:
                                                                             25.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -696,7 +691,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         elevation:
                                                                             3.0,
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -725,15 +720,16 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 20.0, 8.0, 0.0),
-                                child: FutureBuilder<List<BookingsRecord>>(
-                                  future: queryBookingsRecordOnce(
-                                    queryBuilder: (bookingsRecord) =>
-                                        bookingsRecord
+                                child: FutureBuilder<List<HistoryRecord>>(
+                                  future: queryHistoryRecordOnce(
+                                    queryBuilder: (historyRecord) =>
+                                        historyRecord
                                             .where(
                                               'uid',
-                                              isEqualTo: currentUserReference,
+                                              isEqualTo:
+                                                  currentUserReference?.id,
                                             )
                                             .orderBy('time'),
                                   ),
@@ -754,26 +750,26 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                         ),
                                       );
                                     }
-                                    List<BookingsRecord>
-                                        listViewBookingsRecordList =
+                                    List<HistoryRecord>
+                                        listViewHistoryRecordList =
                                         snapshot.data!;
 
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       scrollDirection: Axis.vertical,
                                       itemCount:
-                                          listViewBookingsRecordList.length,
+                                          listViewHistoryRecordList.length,
                                       itemBuilder: (context, listViewIndex) {
-                                        final listViewBookingsRecord =
-                                            listViewBookingsRecordList[
+                                        final listViewHistoryRecord =
+                                            listViewHistoryRecordList[
                                                 listViewIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
                                           child: StreamBuilder<UsersRecord>(
                                             stream: UsersRecord.getDocument(
-                                                listViewBookingsRecord
+                                                listViewHistoryRecord
                                                     .parentReference),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -802,7 +798,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                               return Material(
                                                 color: Colors.transparent,
                                                 elevation: 5.0,
-                                                shape: RoundedRectangleBorder(
+                                                shape: const RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.only(
                                                     bottomLeft:
@@ -828,14 +824,14 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .alternate,
-                                                        offset: Offset(
+                                                        offset: const Offset(
                                                           0.0,
                                                           1.0,
                                                         ),
                                                       )
                                                     ],
                                                     borderRadius:
-                                                        BorderRadius.only(
+                                                        const BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(20.0),
                                                       bottomRight:
@@ -854,7 +850,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(8.0),
+                                                        const EdgeInsets.all(8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.min,
@@ -908,7 +904,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                       .stretch,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -928,7 +924,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -940,7 +936,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             .min,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
                                                                             0.0,
@@ -949,7 +945,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             Text(
                                                                           dateTimeFormat(
                                                                               'MMMMEEEEd',
-                                                                              listViewBookingsRecord.time!),
+                                                                              listViewHistoryRecord.time!),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(

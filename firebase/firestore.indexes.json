@@ -29,7 +29,7 @@
       ]
     },
     {
-      "collectionGroup": "history",
+      "collectionGroup": "bookings",
       "queryScope": "COLLECTION_GROUP",
       "fields": [
         {
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "collectionGroup": "bookings",
+      "collectionGroup": "history",
       "queryScope": "COLLECTION_GROUP",
       "fields": [
         {

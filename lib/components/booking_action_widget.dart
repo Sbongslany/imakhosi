@@ -3,11 +3,8 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'booking_action_model.dart';
 export 'booking_action_model.dart';
 
@@ -60,7 +57,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
             'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
           ).image,
         ),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(20.0),
@@ -68,13 +65,13 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
               child: FaIcon(
                 FontAwesomeIcons.table,
                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -82,7 +79,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Text(
                 'Book your consultation',
                 style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -98,7 +95,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Book with ${widget!.user} at ${dateTimeFormat('M/d h:mm a', widget!.time)}',
+                  'Book with ${widget.user} at ${dateTimeFormat('M/d h:mm a', widget.time)}',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Readex Pro',
                         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -109,21 +106,21 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 40.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 40.0),
               child: FFButtonWidget(
                 onPressed: () async {
-                  await BookingsRecord.createDoc(widget!.userid!)
+                  await BookingsRecord.createDoc(widget.userid!)
                       .set(createBookingsRecordData(
-                    time: widget!.time,
+                    time: widget.time,
                     uid: currentUserReference,
                   ));
 
-                  await HistoryRecord.createDoc(widget!.userid!)
+                  await HistoryRecord.createDoc(widget.userid!)
                       .set(createHistoryRecordData(
                     uid: currentUserReference?.id,
-                    time: widget!.time,
+                    time: widget.time,
                   ));
                   Navigator.pop(context);
                 },
@@ -131,9 +128,9 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Readex Pro',
