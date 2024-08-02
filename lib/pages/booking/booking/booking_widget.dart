@@ -64,7 +64,7 @@ class _BookingWidgetState extends State<BookingWidget>
               expandedHeight: 100.0,
               pinned: false,
               floating: false,
-              backgroundColor: FlutterFlowTheme.of(context).secondary,
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               iconTheme:
                   IconThemeData(color: FlutterFlowTheme.of(context).secondary),
               automaticallyImplyLeading: true,
@@ -294,7 +294,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                         child: Container(
                                           width: double.infinity,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .secondary,
                                           child: ExpandableNotifier(
                                             initialExpanded: false,
                                             child: ExpandablePanel(
@@ -302,30 +302,38 @@ class _BookingWidgetState extends State<BookingWidget>
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        listViewUsersRecord
-                                                            .name,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                    child: Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          listViewUsersRecord
+                                                              .name,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 20.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),

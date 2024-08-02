@@ -346,16 +346,16 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                             BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
-                                                                  20.0),
+                                                                  0.0),
                                                           bottomRight:
                                                               Radius.circular(
-                                                                  20.0),
+                                                                  10.0),
                                                           topLeft:
                                                               Radius.circular(
-                                                                  20.0),
+                                                                  10.0),
                                                           topRight:
                                                               Radius.circular(
-                                                                  20.0),
+                                                                  0.0),
                                                         ),
                                                       ),
                                                       child: Container(
@@ -381,21 +381,22 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                               const BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    20.0),
+                                                                    0.0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    20.0),
+                                                                    10.0),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    20.0),
+                                                                    10.0),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    20.0),
+                                                                    0.0),
                                                           ),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
+                                                            width: 1.0,
                                                           ),
                                                         ),
                                                         child: Padding(
