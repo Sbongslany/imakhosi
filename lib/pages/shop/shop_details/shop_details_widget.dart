@@ -1,8 +1,12 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'shop_details_model.dart';
 export 'shop_details_model.dart';
 
@@ -39,7 +43,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<ShopsRecord>(
-      stream: ShopsRecord.getDocument(widget.shopRef!),
+      stream: ShopsRecord.getDocument(widget!.shopRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -96,7 +100,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                         letterSpacing: 0.0,
                       ),
                 ),
-                actions: const [],
+                actions: [],
                 flexibleSpace: FlexibleSpaceBar(
                   background: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
@@ -129,7 +133,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12.0),
                             child: Image.network(
@@ -144,7 +148,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -170,11 +174,11 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                     size: 18.0,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 5.0, 8.0),
                                     child: StreamBuilder<List<ReviewRecord>>(
                                       stream: queryReviewRecord(
-                                        parent: widget.shopRef,
+                                        parent: widget!.shopRef,
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
@@ -219,7 +223,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 8.0, 0.0, 8.0),
                                     child: Text(
                                       shopDetailsShopsRecord.category,
@@ -278,7 +282,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                         ),
                         StreamBuilder<List<MenuitemsRecord>>(
                           stream: queryMenuitemsRecord(
-                            parent: widget.shopRef,
+                            parent: widget!.shopRef,
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
@@ -363,7 +367,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 2.0, 0.0, 2.0),
                                               child: ClipRRect(
                                                 borderRadius:

@@ -24,10 +24,15 @@ service cloud.firestore {
 
     match /users/{parent}/bookings/{document} {
       allow create: if request.auth.uid == parent;
-      allow read: if request.auth.uid == parent;
+      allow read: if true;
       allow write: if true;
       allow delete: if request.auth.uid == parent;
     }
+
+    match /{path=**}/bookings/{document} {
+      allow read: if true;
+    }
+
 
     match /users/{parent}/reviews/{document} {
       allow create: if request.auth.uid == parent;

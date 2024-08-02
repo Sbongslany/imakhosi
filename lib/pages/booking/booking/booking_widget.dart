@@ -1,15 +1,22 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/booking_action_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'booking_model.dart';
 export 'booking_model.dart';
 
@@ -81,7 +88,7 @@ class _BookingWidgetState extends State<BookingWidget>
                   ),
                 ],
               ),
-              actions: const [],
+              actions: [],
               flexibleSpace: FlexibleSpaceBar(
                 background: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
@@ -100,7 +107,7 @@ class _BookingWidgetState extends State<BookingWidget>
               return Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: CachedNetworkImageProvider(
@@ -117,7 +124,7 @@ class _BookingWidgetState extends State<BookingWidget>
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,7 +189,7 @@ class _BookingWidgetState extends State<BookingWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 4.0, 5.0, 0.0),
                             child: TextFormField(
                               controller: _model.textController,
@@ -248,7 +255,7 @@ class _BookingWidgetState extends State<BookingWidget>
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 8.0, 8.0, 0.0),
                               child: StreamBuilder<List<UsersRecord>>(
                                 stream: queryUsersRecord(
@@ -289,7 +296,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                           listViewUsersRecordList[
                                               listViewIndex];
                                       return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
                                         child: Container(
                                           width: double.infinity,
@@ -304,7 +311,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -333,7 +340,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                               ),
                                               collapsed: Container(),
                                               expanded: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: StreamBuilder<
@@ -379,14 +386,14 @@ class _BookingWidgetState extends State<BookingWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   5.0),
@@ -408,7 +415,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(8.0),
+                                                            EdgeInsets.all(8.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.min,
@@ -473,7 +480,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                         Expanded(
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -489,7 +496,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               10.0,
@@ -507,7 +514,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                       ],
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           0.0,
@@ -542,7 +549,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                         borderRadius: BorderRadius.circular(8.0),
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 12.0, 5.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(12.0, 5.0, 12.0, 5.0),
                                                                                         child: InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -559,7 +566,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                                   onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                   child: Padding(
                                                                                                     padding: MediaQuery.viewInsetsOf(context),
-                                                                                                    child: SizedBox(
+                                                                                                    child: Container(
                                                                                                       height: 500.0,
                                                                                                       child: BookingActionWidget(
                                                                                                         user: listViewUsersRecord.name,
@@ -602,7 +609,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                   },
                                                 ),
                                               ),
-                                              theme: const ExpandableThemeData(
+                                              theme: ExpandableThemeData(
                                                 tapHeaderToExpand: false,
                                                 tapBodyToExpand: true,
                                                 tapBodyToCollapse: true,
