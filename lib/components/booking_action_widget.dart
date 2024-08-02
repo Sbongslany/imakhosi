@@ -123,6 +123,18 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                     time: widget.time,
                   ));
                   Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'Booking submmited',
+                        style: TextStyle(
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                      ),
+                      duration: const Duration(milliseconds: 4000),
+                      backgroundColor: FlutterFlowTheme.of(context).success,
+                    ),
+                  );
                 },
                 text: 'Book',
                 options: FFButtonOptions(
