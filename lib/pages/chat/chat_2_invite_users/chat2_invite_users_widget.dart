@@ -7,13 +7,10 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/chat/empty_state_simple/empty_state_simple_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 import 'chat2_invite_users_model.dart';
 export 'chat2_invite_users_model.dart';
 
@@ -41,10 +38,10 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget!.chatRef != null) {
+      if (widget.chatRef != null) {
         // addChatUsers_ToList
         _model.friendsList =
-            widget!.chatRef!.users.toList().cast<DocumentReference>();
+            widget.chatRef!.users.toList().cast<DocumentReference>();
         setState(() {});
       } else {
         // addUser_ToList
@@ -71,7 +68,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100.0),
+          preferredSize: const Size.fromHeight(100.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
@@ -88,7 +85,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                       ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                   child: Text(
                     'Select users from below to start a chat.',
                     style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -102,7 +99,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
             ),
             actions: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
                 child: FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).alternate,
                   borderRadius: 12.0,
@@ -138,7 +135,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            image: DecorationImage(
+            image: const DecorationImage(
               fit: BoxFit.cover,
               image: CachedNetworkImageProvider(
                 'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxsaW9ufGVufDB8fHx8MTcxMzcxNzM3MXww&ixlib=rb-4.0.3&q=80&w=1080',
@@ -153,14 +150,14 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 0.0, 0.0),
                             child: Text(
                               'Invite Friends',
@@ -176,7 +173,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             ((valueOrDefault<int>(
@@ -194,7 +191,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               2.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'Selected',
@@ -214,13 +211,13 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: PagedListView<DocumentSnapshot<Object?>?,
                           UsersRecord>(
                         pagingController: _model.setListViewController(
                           UsersRecord.collection.orderBy('display_name'),
                         ),
-                        padding: EdgeInsets.fromLTRB(
+                        padding: const EdgeInsets.fromLTRB(
                           0,
                           0,
                           0,
@@ -271,7 +268,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                               visible: listViewUsersRecord.reference !=
                                   currentUserReference,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 8.0),
                                 child: Container(
                                   width: 100.0,
@@ -296,7 +293,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Container(
                                           width: 44.0,
@@ -314,15 +311,15 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2.0),
+                                            padding: const EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: CachedNetworkImage(
                                                 fadeInDuration:
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                 fadeOutDuration:
-                                                    Duration(milliseconds: 200),
+                                                    const Duration(milliseconds: 200),
                                                 imageUrl: listViewUsersRecord
                                                     .photoUrl,
                                                 width: 44.0,
@@ -410,7 +407,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                 ListTileControlAffinity
                                                     .trailing,
                                             contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 8.0, 0.0),
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -432,7 +429,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                 ],
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Container(
                   width: double.infinity,
                   height: 140.0,
@@ -442,22 +439,22 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                         FlutterFlowTheme.of(context).accent4,
                         FlutterFlowTheme.of(context).secondaryBackground
                       ],
-                      stops: [0.0, 1.0],
-                      begin: AlignmentDirectional(0.0, -1.0),
-                      end: AlignmentDirectional(0, 1.0),
+                      stops: const [0.0, 1.0],
+                      begin: const AlignmentDirectional(0.0, -1.0),
+                      end: const AlignmentDirectional(0, 1.0),
                     ),
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         if (_model.friendsList.length >= 2) {
-                          if (widget!.chatRef != null) {
+                          if (widget.chatRef != null) {
                             // updateChat
 
-                            await widget!.chatRef!.reference.update({
+                            await widget.chatRef!.reference.update({
                               ...mapToFirestore(
                                 {
                                   'users': _model.friendsList,
@@ -469,7 +466,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                 await queryChatsRecordOnce(
                               queryBuilder: (chatsRecord) => chatsRecord.where(
                                 'group_chat_id',
-                                isEqualTo: widget!.chatRef?.groupChatId,
+                                isEqualTo: widget.chatRef?.groupChatId,
                               ),
                               singleRecord: true,
                             ).then((s) => s.firstOrNull);
@@ -555,7 +552,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                              duration: Duration(milliseconds: 3000),
+                              duration: const Duration(milliseconds: 3000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).primary,
                             ),
@@ -564,16 +561,16 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
 
                         setState(() {});
                       },
-                      text: widget!.chatRef != null
+                      text: widget.chatRef != null
                           ? 'Add to Chat'
                           : 'Send Invites',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -582,7 +579,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 2.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
