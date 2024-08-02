@@ -437,31 +437,107 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        Card(
-                                                          clipBehavior: Clip
-                                                              .antiAliasWithSaveLayer,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .success,
-                                                          elevation: 4.0,
-                                                          shape:
-                                                              RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        4.0),
+                                                        if (listViewBookingsRecord
+                                                                .accepted ==
+                                                            true)
+                                                          Card(
+                                                            clipBehavior: Clip
+                                                                .antiAliasWithSaveLayer,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .success,
+                                                            elevation: 4.0,
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4.0),
+                                                            ),
+                                                            child: Visibility(
+                                                              visible:
+                                                                  listViewBookingsRecord
+                                                                          .accepted ==
+                                                                      true,
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  if (listViewBookingsRecord
+                                                                          .accepted ==
+                                                                      true)
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          5.0,
+                                                                          1.0,
+                                                                          5.0),
+                                                                      child:
+                                                                          Text(
+                                                                        'Accepted',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                              fontSize: 10.0,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.normal,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .credit_score,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      size:
+                                                                          17.0,
+                                                                    ),
+                                                                  ),
+                                                                ].divide(const SizedBox(
+                                                                    width:
+                                                                        6.0)),
+                                                              ),
+                                                            ),
                                                           ),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              if (listViewBookingsRecord
-                                                                      .accepted ==
-                                                                  true)
+                                                        if (listViewBookingsRecord
+                                                                .accepted ==
+                                                            false)
+                                                          Card(
+                                                            clipBehavior: Clip
+                                                                .antiAliasWithSaveLayer,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            elevation: 4.0,
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.0),
+                                                            ),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
                                                                 Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -470,7 +546,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                           1.0,
                                                                           5.0),
                                                                   child: Text(
-                                                                    'Accepted',
+                                                                    'Pending',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -488,26 +564,26 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         ),
                                                                   ),
                                                                 ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .credit_score,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  size: 24.0,
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .tips_and_updates_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    size: 17.0,
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                              ].divide(const SizedBox(
+                                                                  width: 9.0)),
+                                                            ),
                                                           ),
-                                                        ),
                                                         if (listViewBookingsRecord
                                                                 .time! <
                                                             getCurrentTimestamp)
@@ -602,7 +678,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          2.0),
                                                             ),
                                                           ),
                                                       ],
