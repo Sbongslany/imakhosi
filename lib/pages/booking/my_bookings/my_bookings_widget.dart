@@ -475,7 +475,9 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                               .bodyLarge
                                                                               .override(
                                                                                 fontFamily: 'Readex Pro',
+                                                                                fontSize: 20.0,
                                                                                 letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w800,
                                                                               ),
                                                                         ),
                                                                       ),
