@@ -39,7 +39,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).secondary,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
@@ -108,11 +108,10 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Container(
-                        width: 157.0,
+                        width: 200.0,
                         height: 180.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(16.0),
                             bottomRight: Radius.circular(16.0),
@@ -125,21 +124,28 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                               12.0, 12.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  FaIcon(
-                                    FontAwesomeIcons.solidHeart,
-                                    color: Color(0xFFF31B2A),
-                                    size: 15.0,
+                              const Align(
+                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      FaIcon(
+                                        FontAwesomeIcons.solidHeart,
+                                        color: Color(0xFFF31B2A),
+                                        size: 15.0,
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/PngItem_5550642_(2)_1.png',
+                                child: Image.network(
+                                  staggeredViewFavouriteRecord.image,
                                   width: 153.0,
                                   height: 80.0,
                                   fit: BoxFit.cover,
@@ -162,40 +168,34 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                   ),
                                 ],
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 0.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          staggeredViewFavouriteRecord.name,
-                                          '-',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 13.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 1.0, 0.0, 0.0),
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        staggeredViewFavouriteRecord.name,
+                                        '-',
                                       ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Raleway',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            fontSize: 13.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
-                              const Spacer(),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 0.0, 0.0),
+                                    0.0, 4.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -251,15 +251,6 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                       ),
                                     ),
                                   ],
-                                ),
-                              ),
-                              Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  shape: BoxShape.circle,
                                 ),
                               ),
                             ],
