@@ -34,7 +34,7 @@ class _BookingWidgetState extends State<BookingWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.start = getCurrentTimestamp;
-      setState(() {});
+      safeSetState(() {});
     });
 
     _model.textController ??= TextEditingController();
@@ -51,9 +51,7 @@ class _BookingWidgetState extends State<BookingWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -146,8 +144,8 @@ class _BookingWidgetState extends State<BookingWidget>
                                 _model.calendarSelectedDay = newSelectedDate;
                                 _model.start =
                                     _model.calendarSelectedDay?.start;
-                                setState(() {});
-                                setState(() {});
+                                safeSetState(() {});
+                                safeSetState(() {});
                               },
                               titleStyle: FlutterFlowTheme.of(context)
                                   .headlineSmall
@@ -158,25 +156,25 @@ class _BookingWidgetState extends State<BookingWidget>
                               dayOfWeekStyle: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               dateStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               selectedDateStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               inactiveDateStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -194,7 +192,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -238,7 +236,7 @@ class _BookingWidgetState extends State<BookingWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: null,
@@ -324,7 +322,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Readex Pro',
+                                                                      'Raleway',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondary,
@@ -490,7 +488,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                               Text(
                                                                             listViewUsersRecord.name,
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontFamily: 'Raleway',
                                                                                   fontSize: 13.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -501,7 +499,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                               Text(
                                                                             listViewUsersRecord.displayName,
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontFamily: 'Raleway',
                                                                                   fontSize: 13.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -515,10 +513,10 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            dateTimeFormat('MMMMEEEEd',
+                                                                            dateTimeFormat("MMMMEEEEd",
                                                                                 functions.getAvailSlots(containerBookingsRecordList.map((e) => e.time).withoutNulls.toList(), _model.start!).first),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontFamily: 'Raleway',
                                                                                   fontSize: 13.0,
                                                                                   letterSpacing: 0.0,
                                                                                 ),
@@ -576,7 +574,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                               context: context,
                                                                                               builder: (context) {
                                                                                                 return GestureDetector(
-                                                                                                  onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                  onTap: () => FocusScope.of(context).unfocus(),
                                                                                                   child: Padding(
                                                                                                     padding: MediaQuery.viewInsetsOf(context),
                                                                                                     child: SizedBox(
@@ -593,9 +591,9 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                                             ).then((value) => safeSetState(() {}));
                                                                                           },
                                                                                           child: Text(
-                                                                                            dateTimeFormat('jm', availableSlotsItem),
+                                                                                            dateTimeFormat("jm", availableSlotsItem),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Readex Pro',
+                                                                                                  fontFamily: 'Raleway',
                                                                                                   color: FlutterFlowTheme.of(context).secondary,
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),

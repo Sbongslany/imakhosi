@@ -42,7 +42,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.shopFilter = widget.category;
-      setState(() {});
+      safeSetState(() {});
     });
 
     _model.inpSearchTextController ??= TextEditingController();
@@ -152,9 +152,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
         List<ShopsRecord> shopHomeShopsRecordList = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -305,34 +303,36 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                     .onError((_, __) => _model
                                                             .simpleSearchResults =
                                                         [])
-                                                    .whenComplete(
-                                                        () => setState(() {}));
+                                                    .whenComplete(() =>
+                                                        safeSetState(() {}));
                                               },
                                             ),
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               hintText: 'Search',
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: InputBorder.none,
                                               focusedBorder: InputBorder.none,
                                               errorBorder: InputBorder.none,
@@ -342,7 +342,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Readex Pro',
+                                                  fontFamily: 'Raleway',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -376,7 +376,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .secondary,
                                         letterSpacing: 0.0,
@@ -510,7 +510,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                                     .bodyLarge
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Readex Pro',
+                                                                          'Raleway',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -578,7 +578,7 @@ class _ShopHomeWidgetState extends State<ShopHomeWidget>
                                                               .labelMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Readex Pro',
+                                                                    'Raleway',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,

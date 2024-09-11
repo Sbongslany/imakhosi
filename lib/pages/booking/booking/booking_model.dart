@@ -10,7 +10,6 @@ class BookingModel extends FlutterFlowModel<BookingWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Calendar widget.
   DateTimeRange? calendarSelectedDay;
   // State field(s) for TextField widget.
@@ -28,7 +27,6 @@ class BookingModel extends FlutterFlowModel<BookingWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

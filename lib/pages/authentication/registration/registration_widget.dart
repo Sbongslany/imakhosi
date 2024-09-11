@@ -61,9 +61,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -106,7 +104,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 24.0,
@@ -118,7 +116,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 12.0,
@@ -145,7 +143,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                setState(() => _model.isDataUploading = true);
+                                safeSetState(
+                                    () => _model.isDataUploading = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 var downloadUrls = <String>[];
@@ -176,13 +175,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         selectedMedia.length &&
                                     downloadUrls.length ==
                                         selectedMedia.length) {
-                                  setState(() {
+                                  safeSetState(() {
                                     _model.uploadedLocalFile =
                                         selectedUploadedFiles.first;
                                     _model.uploadedFileUrl = downloadUrls.first;
                                   });
                                 } else {
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                               }
@@ -227,16 +226,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Upload your image',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -284,16 +283,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Update your profile picture',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -379,7 +378,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -387,7 +386,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -401,7 +400,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -473,7 +472,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -481,7 +480,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -495,7 +494,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -566,7 +565,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -574,7 +573,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -588,7 +587,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -659,7 +658,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -667,7 +666,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -681,7 +680,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -752,7 +751,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -760,7 +759,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -774,7 +773,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -846,7 +845,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -854,7 +853,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -868,7 +867,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -909,21 +908,21 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                 FlutterFlowRadioButton(
                                   options: ['Traditional Healer', 'Patient']
                                       .toList(),
-                                  onChanged: (val) => setState(() {}),
+                                  onChanged: (val) => safeSetState(() {}),
                                   controller: _model.typeValueController ??=
                                       FormFieldController<String>(null),
                                   optionHeight: 32.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   selectedTextStyle:
                                       FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                   buttonPosition: RadioButtonPosition.left,
@@ -961,7 +960,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               hintText: 'Please select...',
@@ -985,7 +984,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               isSearchable: false,
                               isMultiSelect: true,
                               onMultiSelectChanged: (val) =>
-                                  setState(() => _model.healerValue = val),
+                                  safeSetState(() => _model.healerValue = val),
                             ),
                           ),
                         Padding(
@@ -1052,7 +1051,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),

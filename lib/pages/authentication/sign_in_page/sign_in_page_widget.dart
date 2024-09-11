@@ -42,9 +42,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -83,7 +81,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'Raleway',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 24.0,
                                 letterSpacing: 0.0,
@@ -94,7 +92,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'Raleway',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
@@ -159,7 +157,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -167,7 +165,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           letterSpacing: 0.0,
@@ -180,7 +178,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         letterSpacing: 0.0,
@@ -251,7 +249,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -259,7 +257,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           letterSpacing: 0.0,
@@ -269,7 +267,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     errorBorder: InputBorder.none,
                                     focusedErrorBorder: InputBorder.none,
                                     suffixIcon: InkWell(
-                                      onTap: () => setState(
+                                      onTap: () => safeSetState(
                                         () => _model.passwordVisibility =
                                             !_model.passwordVisibility,
                                       ),
@@ -285,7 +283,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         letterSpacing: 0.0,
@@ -318,7 +316,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   fontSize: 12.0,
@@ -358,7 +356,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                           color: const Color(0x4DFFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
@@ -398,7 +396,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                               child: Checkbox(
                                 value: _model.checkboxValue ??= false,
                                 onChanged: (newValue) async {
-                                  setState(
+                                  safeSetState(
                                       () => _model.checkboxValue = newValue!);
                                 },
                                 side: BorderSide(
@@ -425,7 +423,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,
@@ -440,7 +438,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             fontSize: 10.0,
@@ -453,7 +451,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 10.0,

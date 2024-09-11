@@ -66,9 +66,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
         final detailsUsersRecord = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -219,7 +217,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
 
                                                 return RatingBar.builder(
                                                   onRatingUpdate: (newValue) =>
-                                                      setState(() => _model
+                                                      safeSetState(() => _model
                                                               .ratingBarValue =
                                                           newValue),
                                                   itemBuilder:
@@ -302,7 +300,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Readex Pro',
+                                                                      'Raleway',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -317,7 +315,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Readex Pro',
+                                                                      'Raleway',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -393,7 +391,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Readex Pro',
+                                                                      'Raleway',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
@@ -474,7 +472,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Readex Pro',
+                                                                        'Raleway',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -496,14 +494,15 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                 const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Bio',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodySmall
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                             ),
                                           ),
                                           Align(
@@ -520,8 +519,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -556,8 +554,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -603,8 +600,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           letterSpacing: 0.0,
                                                         ),
                                                 borderSide: BorderSide(

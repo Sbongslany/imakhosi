@@ -137,7 +137,7 @@ class _SideNav10WidgetState extends State<SideNav10Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -189,7 +189,7 @@ class _SideNav10WidgetState extends State<SideNav10Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).accent4,
                                   letterSpacing: 0.0,
                                 ),
@@ -241,7 +241,7 @@ class _SideNav10WidgetState extends State<SideNav10Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).accent4,
                                   letterSpacing: 0.0,
                                 ),
@@ -293,7 +293,7 @@ class _SideNav10WidgetState extends State<SideNav10Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).accent4,
                                   letterSpacing: 0.0,
                                 ),
@@ -364,7 +364,7 @@ class _SideNav10WidgetState extends State<SideNav10Widget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -376,7 +376,7 @@ class _SideNav10WidgetState extends State<SideNav10Widget> {
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .accent4,

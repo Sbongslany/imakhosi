@@ -62,9 +62,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -169,7 +167,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -188,7 +186,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -313,8 +311,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -399,8 +396,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -427,7 +423,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -442,7 +438,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelSmall
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
@@ -481,10 +477,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                     context: context,
                     builder: (context) {
                       return GestureDetector(
-                        onTap: () => _model.unfocusNode.canRequestFocus
-                            ? FocusScope.of(context)
-                                .requestFocus(_model.unfocusNode)
-                            : FocusScope.of(context).unfocus(),
+                        onTap: () => FocusScope.of(context).unfocus(),
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
                           child: ChatDetailsOverlayWidget(
@@ -505,7 +498,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
           top: true,
           child: wrapWithModel(
             model: _model.chatThreadComponentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             updateOnChange: true,
             child: ChatThreadComponentWidget(
               chatRef: widget.chatRef,

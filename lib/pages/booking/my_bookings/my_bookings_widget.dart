@@ -33,14 +33,14 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.start = getCurrentTimestamp;
-      setState(() {});
+      safeSetState(() {});
     });
 
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
   }
@@ -55,9 +55,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -126,7 +124,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   letterSpacing: 0.0,
                                 ),
                             unselectedLabelStyle: const TextStyle(),
@@ -194,7 +192,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -245,7 +243,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                       maxLines: null,
@@ -475,7 +473,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: 'Readex Pro',
+                                                                                fontFamily: 'Raleway',
                                                                                 fontSize: 20.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w800,
@@ -496,9 +494,9 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             Padding(
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
-                                                                                dateTimeFormat('MMMMEEEEd', listViewBookingsRecord.time!),
+                                                                                dateTimeFormat("MMMMEEEEd", listViewBookingsRecord.time!),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Readex Pro',
+                                                                                      fontFamily: 'Raleway',
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                               ),
@@ -506,9 +504,9 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             Padding(
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
-                                                                                dateTimeFormat('Hm', listViewBookingsRecord.time!),
+                                                                                dateTimeFormat("Hm", listViewBookingsRecord.time!),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Readex Pro',
+                                                                                      fontFamily: 'Raleway',
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.bold,
                                                                                     ),
@@ -565,7 +563,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 child: Text(
                                                                                   'Accepted',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Readex Pro',
+                                                                                        fontFamily: 'Raleway',
                                                                                         color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
@@ -619,7 +617,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 Text(
                                                                               'Pending',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Readex Pro',
+                                                                                    fontFamily: 'Raleway',
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
@@ -661,7 +659,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                           builder:
                                                                               (context) {
                                                                             return GestureDetector(
-                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
                                                                                 child: SizedBox(
@@ -931,7 +929,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         .bodyLarge
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Readex Pro',
+                                                                              'Raleway',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -958,12 +956,12 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
-                                                                              'MMMMEEEEd',
+                                                                              "MMMMEEEEd",
                                                                               listViewHistoryRecord.time!),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Readex Pro',
+                                                                                fontFamily: 'Raleway',
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
@@ -977,12 +975,12 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
-                                                                              'Hm',
+                                                                              "Hm",
                                                                               listViewHistoryRecord.time!),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Readex Pro',
+                                                                                fontFamily: 'Raleway',
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.bold,
                                                                               ),

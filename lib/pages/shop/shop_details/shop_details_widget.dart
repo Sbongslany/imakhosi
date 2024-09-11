@@ -206,7 +206,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'Readex Pro',
+                                                fontFamily: 'Raleway',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondary,
@@ -226,7 +226,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             fontSize: 13.0,
@@ -244,7 +244,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .secondary,
                                         letterSpacing: 0.0,
@@ -265,7 +265,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
                                       fontSize: 13.0,
@@ -327,8 +327,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
+                                                        fontFamily: 'Raleway',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -339,8 +338,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
+                                                        fontFamily: 'Raleway',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -350,8 +348,7 @@ class _ShopDetailsWidgetState extends State<ShopDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
+                                                        fontFamily: 'Raleway',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),

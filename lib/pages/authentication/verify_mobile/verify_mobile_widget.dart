@@ -61,7 +61,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -74,9 +74,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -125,7 +123,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
@@ -165,7 +163,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                                 mainAxisAlignment:
@@ -196,12 +194,6 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                   inactiveColor:
                                       FlutterFlowTheme.of(context).alternate,
                                   selectedColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  activeFillColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  inactiveFillColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  selectedFillColor:
                                       FlutterFlowTheme.of(context).primary,
                                 ),
                                 controller: _model.pinCodeController,
@@ -267,7 +259,9 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                               shouldUpdate) {
                                             _model.timerMilliseconds = value;
                                             _model.timerValue = displayTime;
-                                            if (shouldUpdate) setState(() {});
+                                            if (shouldUpdate) {
+                                              safeSetState(() {});
+                                            }
                                           },
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
@@ -296,7 +290,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -328,7 +322,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         letterSpacing: 0.0,
@@ -394,7 +388,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       letterSpacing: 0.0,
@@ -443,7 +437,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget>
                           color: const Color(0x4DFFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

@@ -6,10 +6,9 @@ import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
-import 'flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
@@ -66,7 +65,7 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
   }
 
-  void setThemeMode(ThemeMode mode) => setState(() {
+  void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
       });
 
@@ -117,7 +116,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'HomePage': const HomePageWidget(),
       'BookingHome': const BookingHomeWidget(),
-      'ShopHome': const ShopHomeWidget(),
+      'HomeShopping': const HomeShoppingWidget(),
       'Profile': const ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -126,12 +125,12 @@ class _NavBarPageState extends State<NavBarPage> {
       body: _currentPage ?? tabs[_currentPageName],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        onTap: (i) => setState(() {
+        onTap: (i) => safeSetState(() {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: FlutterFlowTheme.of(context).secondary,
-        selectedItemColor: FlutterFlowTheme.of(context).alternate,
+        selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: const Color(0xFFA1A1A1),
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -154,11 +153,11 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.shopify_sharp,
+            icon: FaIcon(
+              FontAwesomeIcons.shopify,
               size: 50.0,
             ),
-            label: 'Shop',
+            label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(

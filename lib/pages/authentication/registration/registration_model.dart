@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -47,7 +46,6 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     emailFocusNode?.dispose();
     emailTextController?.dispose();
 

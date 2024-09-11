@@ -214,14 +214,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ShopHome',
           path: '/shopHome',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'ShopHome')
-              : ShopHomeWidget(
-                  category: params.getParam(
-                    'category',
-                    ParamType.String,
-                  ),
-                ),
+          builder: (context, params) => ShopHomeWidget(
+            category: params.getParam(
+              'category',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Users',
@@ -244,6 +242,45 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['shops'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'Dreams',
+          path: '/dreams',
+          builder: (context, params) => const DreamsWidget(),
+        ),
+        FFRoute(
+          name: 'DreamsAdmin',
+          path: '/dreamsAdmin',
+          builder: (context, params) => const DreamsAdminWidget(),
+        ),
+        FFRoute(
+          name: 'HomeShopping',
+          path: '/homeShopping',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'HomeShopping')
+              : const HomeShoppingWidget(),
+        ),
+        FFRoute(
+          name: 'FavouriteScreen',
+          path: '/favouriteScreen',
+          builder: (context, params) => const FavouriteScreenWidget(),
+        ),
+        FFRoute(
+          name: 'DetailsScreen',
+          path: '/detailsScreen',
+          builder: (context, params) => DetailsScreenWidget(
+            shopRef: params.getParam(
+              'shopRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['shoes'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'MyCart',
+          path: '/myCart',
+          builder: (context, params) => const MyCartWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

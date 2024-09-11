@@ -57,9 +57,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
         List<ShopsRecord> browseShopsRecordList = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -77,7 +75,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                   title: Text(
                     'Categories',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
+                          fontFamily: 'Raleway',
                           color: FlutterFlowTheme.of(context).secondary,
                           fontSize: 25.0,
                           letterSpacing: 0.0,
@@ -185,7 +183,7 @@ class _BrowseWidgetState extends State<BrowseWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Readex Pro',
+                                                  fontFamily: 'Raleway',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,

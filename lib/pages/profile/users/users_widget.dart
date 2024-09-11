@@ -40,9 +40,7 @@ class _UsersWidgetState extends State<UsersWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -121,7 +119,7 @@ class _UsersWidgetState extends State<UsersWidget>
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -165,7 +163,7 @@ class _UsersWidgetState extends State<UsersWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: null,
@@ -342,8 +340,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           fontSize: 13.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -354,8 +351,7 @@ class _UsersWidgetState extends State<UsersWidget>
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
+                                                          fontFamily: 'Raleway',
                                                           fontSize: 13.0,
                                                           letterSpacing: 0.0,
                                                         ),

@@ -75,11 +75,11 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                       FormFieldController<String>(null),
                   options: const ['Please select', '1', '2', '3', '4', '5'],
                   onChanged: (val) =>
-                      setState(() => _model.inputRatingValue = val),
+                      safeSetState(() => _model.inputRatingValue = val),
                   width: 200.0,
                   height: 56.0,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Readex Pro',
+                        fontFamily: 'Raleway',
                         letterSpacing: 0.0,
                       ),
                   hintText: 'Please select...',
@@ -117,13 +117,13 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                     decoration: InputDecoration(
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'Raleway',
                                 letterSpacing: 0.0,
                               ),
                       hintText: 'Type your review',
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'Raleway',
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: UnderlineInputBorder(
@@ -158,7 +158,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
+                          fontFamily: 'Raleway',
                           letterSpacing: 0.0,
                         ),
                     validator: _model.inputReviewTextControllerValidator
@@ -187,7 +187,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                 iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Readex Pro',
+                      fontFamily: 'Raleway',
                       color: Colors.white,
                       letterSpacing: 0.0,
                     ),

@@ -42,11 +42,11 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
         // addChatUsers_ToList
         _model.friendsList =
             widget.chatRef!.users.toList().cast<DocumentReference>();
-        setState(() {});
+        safeSetState(() {});
       } else {
         // addUser_ToList
         _model.addToFriendsList(currentUserReference!);
-        setState(() {});
+        safeSetState(() {});
       }
     });
   }
@@ -61,9 +61,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -89,7 +87,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                   child: Text(
                     'Select users from below to start a chat.',
                     style: FlutterFlowTheme.of(context).labelSmall.override(
-                          fontFamily: 'Readex Pro',
+                          fontFamily: 'Raleway',
                           color: FlutterFlowTheme.of(context).secondary,
                           letterSpacing: 0.0,
                         ),
@@ -164,7 +162,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
                                     letterSpacing: 0.0,
@@ -185,7 +183,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -198,7 +196,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   letterSpacing: 0.0,
@@ -346,7 +344,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                                 .reference) ==
                                                         true,
                                             onChanged: (newValue) async {
-                                              setState(() =>
+                                              safeSetState(() =>
                                                   _model.checkboxListTileValueMap[
                                                           listViewUsersRecord] =
                                                       newValue!);
@@ -355,13 +353,13 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                 _model.addToFriendsList(
                                                     listViewUsersRecord
                                                         .reference);
-                                                setState(() {});
+                                                safeSetState(() {});
                                               } else {
                                                 // removeUsser
                                                 _model.removeFromFriendsList(
                                                     listViewUsersRecord
                                                         .reference);
-                                                setState(() {});
+                                                safeSetState(() {});
                                               }
                                             },
                                             title: Text(
@@ -373,8 +371,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
+                                                        fontFamily: 'Raleway',
                                                         letterSpacing: 0.0,
                                                         lineHeight: 2.0,
                                                       ),
@@ -384,16 +381,17 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                 listViewUsersRecord.email,
                                                 'casper@ghost.io',
                                               ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .labelSmall
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondary,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             tileColor:
                                                 FlutterFlowTheme.of(context)
@@ -547,7 +545,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       color: FlutterFlowTheme.of(context).info,
                                       letterSpacing: 0.0,
                                     ),
@@ -559,7 +557,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                           );
                         }
 
-                        setState(() {});
+                        safeSetState(() {});
                       },
                       text: widget.chatRef != null
                           ? 'Add to Chat'
@@ -574,7 +572,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),

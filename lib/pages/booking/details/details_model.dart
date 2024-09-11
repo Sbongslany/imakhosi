@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class DetailsModel extends FlutterFlowModel<DetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for RatingBar widget.
   double? ratingBarValue;
 
@@ -13,7 +12,5 @@ class DetailsModel extends FlutterFlowModel<DetailsWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

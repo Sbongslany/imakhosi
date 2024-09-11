@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
   int carouselCurrentIndex = 1;
@@ -15,7 +14,5 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -45,7 +45,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.showDelete = false;
-      setState(() {});
+      safeSetState(() {});
     });
 
     animationsMap.addAll({
@@ -107,7 +107,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     'Options',
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Readex Pro',
+                          fontFamily: 'Raleway',
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -116,10 +116,10 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                   opaque: false,
                   cursor: MouseCursor.defer ?? MouseCursor.defer,
                   onEnter: ((event) async {
-                    setState(() => _model.mouseRegionHovered1 = true);
+                    safeSetState(() => _model.mouseRegionHovered1 = true);
                   }),
                   onExit: ((event) async {
-                    setState(() => _model.mouseRegionHovered1 = false);
+                    safeSetState(() => _model.mouseRegionHovered1 = false);
                   }),
                   child: InkWell(
                     splashColor: Colors.transparent,
@@ -162,7 +162,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -184,10 +184,10 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
                     onEnter: ((event) async {
-                      setState(() => _model.mouseRegionHovered2 = true);
+                      safeSetState(() => _model.mouseRegionHovered2 = true);
                     }),
                     onExit: ((event) async {
-                      setState(() => _model.mouseRegionHovered2 = false);
+                      safeSetState(() => _model.mouseRegionHovered2 = false);
                     }),
                     child: InkWell(
                       splashColor: Colors.transparent,
@@ -196,7 +196,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         _model.showDelete = true;
-                        setState(() {});
+                        safeSetState(() {});
                       },
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 200),
@@ -232,7 +232,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
                                               .error,
                                           letterSpacing: 0.0,
@@ -256,10 +256,10 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     opaque: false,
                     cursor: SystemMouseCursors.click ?? MouseCursor.defer,
                     onEnter: ((event) async {
-                      setState(() => _model.mouseRegionHovered3 = true);
+                      safeSetState(() => _model.mouseRegionHovered3 = true);
                     }),
                     onExit: ((event) async {
-                      setState(() => _model.mouseRegionHovered3 = false);
+                      safeSetState(() => _model.mouseRegionHovered3 = false);
                     }),
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 200),
@@ -290,7 +290,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -303,7 +303,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -319,7 +319,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       color: FlutterFlowTheme.of(context).error,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,

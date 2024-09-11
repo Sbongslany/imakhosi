@@ -70,7 +70,7 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
               widget.body,
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Readex Pro',
+                    fontFamily: 'Raleway',
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     letterSpacing: 0.0,
                   ),

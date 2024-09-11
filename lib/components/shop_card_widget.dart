@@ -138,7 +138,7 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: const Color(0xFF0F1113),
                                               letterSpacing: 0.0,
                                             ),
@@ -163,7 +163,7 @@ class _ShopCardWidgetState extends State<ShopCardWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),

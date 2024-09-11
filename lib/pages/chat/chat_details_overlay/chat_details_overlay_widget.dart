@@ -137,7 +137,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           ],
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -150,7 +150,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         'In this chat',
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'Raleway',
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -202,7 +202,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                         chatUsersItem.id,
                                         chatUsersIndex,
                                       ),
-                                      updateCallback: () => setState(() {}),
+                                      updateCallback: () => safeSetState(() {}),
                                       updateOnChange: true,
                                       child: UserListSmallWidget(
                                         key: Key(
@@ -238,7 +238,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                             ),
                             child: wrapWithModel(
                               model: _model.deleteDialogModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               updateOnChange: true,
                               child: DeleteDialogWidget(
                                 chatList: widget.chatRef,
@@ -273,7 +273,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,

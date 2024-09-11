@@ -10,7 +10,6 @@ class ShopHomeModel extends FlutterFlowModel<ShopHomeWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for inpSearch widget.
   FocusNode? inpSearchFocusNode;
   TextEditingController? inpSearchTextController;
@@ -22,7 +21,6 @@ class ShopHomeModel extends FlutterFlowModel<ShopHomeWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     inpSearchFocusNode?.dispose();
     inpSearchTextController?.dispose();
   }

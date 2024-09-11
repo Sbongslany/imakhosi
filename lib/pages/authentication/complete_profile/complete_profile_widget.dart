@@ -54,9 +54,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -99,7 +97,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
                                     fontSize: 24.0,
@@ -111,7 +109,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 12.0,
@@ -138,7 +136,8 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                setState(() => _model.isDataUploading = true);
+                                safeSetState(
+                                    () => _model.isDataUploading = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 var downloadUrls = <String>[];
@@ -169,13 +168,13 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         selectedMedia.length &&
                                     downloadUrls.length ==
                                         selectedMedia.length) {
-                                  setState(() {
+                                  safeSetState(() {
                                     _model.uploadedLocalFile =
                                         selectedUploadedFiles.first;
                                     _model.uploadedFileUrl = downloadUrls.first;
                                   });
                                 } else {
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                               }
@@ -220,16 +219,16 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Upload your image',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -277,16 +276,16 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Update your profile picture',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    letterSpacing: 0.0,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Raleway',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -372,7 +371,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -380,7 +379,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -394,7 +393,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -466,7 +465,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -474,7 +473,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -488,7 +487,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -560,7 +559,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -568,7 +567,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -582,7 +581,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -654,7 +653,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
                                             ),
@@ -662,7 +661,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
@@ -676,7 +675,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             letterSpacing: 0.0,
@@ -716,7 +715,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               children: [
                                 FlutterFlowRadioButton(
                                   options: ['Doctor', 'Patient'].toList(),
-                                  onChanged: (val) => setState(() {}),
+                                  onChanged: (val) => safeSetState(() {}),
                                   controller:
                                       _model.radioButtonValueController ??=
                                           FormFieldController<String>(null),
@@ -724,14 +723,14 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Readex Pro',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   selectedTextStyle:
                                       FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                   buttonPosition: RadioButtonPosition.left,
@@ -776,7 +775,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Please select...',
@@ -799,7 +798,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     isOverButton: true,
                                     isSearchable: false,
                                     isMultiSelect: true,
-                                    onMultiSelectChanged: (val) => setState(
+                                    onMultiSelectChanged: (val) => safeSetState(
                                         () => _model.dropDownValue = val),
                                   ),
                                 ],
@@ -844,7 +843,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

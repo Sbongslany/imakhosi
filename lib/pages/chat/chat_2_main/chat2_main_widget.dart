@@ -38,9 +38,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -153,7 +151,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -419,7 +417,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                               ),
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Readex Pro',
+                                                                                    fontFamily: 'Raleway',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -465,7 +463,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              fontFamily: 'Readex Pro',
+                                                                              fontFamily: 'Raleway',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -487,12 +485,12 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            dateTimeFormat('relative',
+                                                                            dateTimeFormat("relative",
                                                                                 listViewChatsRecord.lastMessageTime!),
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontFamily: 'Raleway',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -678,7 +676,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                                         ).maybeHandleOverflow(maxChars: 1),
                                                                                         textAlign: TextAlign.center,
                                                                                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                              fontFamily: 'Readex Pro',
+                                                                                              fontFamily: 'Raleway',
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.bold,
                                                                                             ),
@@ -758,7 +756,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                                     ).maybeHandleOverflow(maxChars: 1),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'Readex Pro',
+                                                                                          fontFamily: 'Raleway',
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.bold,
                                                                                         ),
@@ -809,7 +807,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                               'Group Chat',
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Readex Pro',
+                                                                                    fontFamily: 'Raleway',
                                                                                     letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
@@ -859,7 +857,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              fontFamily: 'Readex Pro',
+                                                                              fontFamily: 'Raleway',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -882,13 +880,13 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                           child:
                                                                               Text(
                                                                             valueOrDefault<String>(
-                                                                              dateTimeFormat('relative', listViewChatsRecord.lastMessageTime),
+                                                                              dateTimeFormat("relative", listViewChatsRecord.lastMessageTime),
                                                                               '--',
                                                                             ),
                                                                             textAlign:
                                                                                 TextAlign.start,
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontFamily: 'Raleway',
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),

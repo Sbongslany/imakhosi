@@ -41,9 +41,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -124,7 +122,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -168,7 +166,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               maxLines: null,
@@ -343,7 +341,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                           .bodyLarge
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Readex Pro',
+                                                                                'Raleway',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -364,7 +362,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                           .bodyLarge
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Readex Pro',
+                                                                                'Raleway',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -384,7 +382,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                   valueOrDefault<
                                                                       String>(
                                                                     dateTimeFormat(
-                                                                        'M/d h:mm a',
+                                                                        "M/d h:mm a",
                                                                         listViewBookingsRecord
                                                                             .time),
                                                                     '0',
@@ -394,7 +392,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                       .bodyLarge
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Readex Pro',
+                                                                            'Raleway',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),

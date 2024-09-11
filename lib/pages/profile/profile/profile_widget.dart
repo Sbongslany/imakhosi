@@ -141,9 +141,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -270,7 +268,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                           columnUsersRecord.email,
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     letterSpacing: 0.0,
@@ -285,7 +283,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                           'Your Account',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     letterSpacing: 0.0,
@@ -334,7 +332,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -396,7 +394,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -424,7 +422,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                           'App Settings',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     letterSpacing: 0.0,
@@ -473,7 +471,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -535,7 +533,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -583,7 +581,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 5.0,

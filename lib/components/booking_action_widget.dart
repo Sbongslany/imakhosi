@@ -98,7 +98,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                 Text(
                   'Book with ${widget.user}',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Readex Pro',
+                        fontFamily: 'Raleway',
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         fontSize: 25.0,
                         letterSpacing: 0.0,
@@ -108,9 +108,9 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               ],
             ),
             Text(
-              ' at ${dateTimeFormat('M/d h:mm a', widget.time)}',
+              ' at ${dateTimeFormat("M/d h:mm a", widget.time)}',
               style: FlutterFlowTheme.of(context).bodySmall.override(
-                    fontFamily: 'Readex Pro',
+                    fontFamily: 'Raleway',
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     fontSize: 25.0,
                     letterSpacing: 0.0,
@@ -157,7 +157,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).secondary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Readex Pro',
+                        fontFamily: 'Raleway',
                         color: FlutterFlowTheme.of(context).primary,
                         fontSize: 25.0,
                         letterSpacing: 0.0,

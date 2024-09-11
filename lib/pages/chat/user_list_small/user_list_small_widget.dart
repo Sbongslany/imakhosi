@@ -49,10 +49,10 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
       onEnter: ((event) async {
-        setState(() => _model.iuserHovered = true);
+        safeSetState(() => _model.iuserHovered = true);
       }),
       onExit: ((event) async {
-        setState(() => _model.iuserHovered = false);
+        safeSetState(() => _model.iuserHovered = false);
       }),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
@@ -120,7 +120,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                             textAlign: TextAlign.center,
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -145,7 +145,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                           'Ghost User',
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
+                              fontFamily: 'Raleway',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -160,7 +160,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
@@ -190,7 +190,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                         'ME',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
+                              fontFamily: 'Raleway',
                               letterSpacing: 0.0,
                             ),
                       ),

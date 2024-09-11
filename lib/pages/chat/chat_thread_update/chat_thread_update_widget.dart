@@ -147,7 +147,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -178,21 +178,21 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
                                     )),
                                     Text(
                                       valueOrDefault<String>(
-                                        dateTimeFormat('relative',
+                                        dateTimeFormat("relative",
                                             widget.chatMessagesRef?.timestamp),
                                         '--',
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            fontFamily: 'Readex Pro',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -242,7 +242,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Readex Pro',
+                                              fontFamily: 'Raleway',
                                               letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
@@ -340,11 +340,11 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                       child: Text(
                         valueOrDefault<String>(
                           dateTimeFormat(
-                              'relative', widget.chatMessagesRef?.timestamp),
+                              "relative", widget.chatMessagesRef?.timestamp),
                           '--',
                         ),
                         style: FlutterFlowTheme.of(context).labelSmall.override(
-                              fontFamily: 'Readex Pro',
+                              fontFamily: 'Raleway',
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -387,7 +387,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             )),

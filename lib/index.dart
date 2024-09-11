@@ -32,3 +32,13 @@ export '/pages/profile/users/users_widget.dart' show UsersWidget;
 export '/pages/shop/browse/browse_widget.dart' show BrowseWidget;
 export '/pages/shop/shop_details/shop_details_widget.dart'
     show ShopDetailsWidget;
+export '/pages/dreams/dreams/dreams_widget.dart' show DreamsWidget;
+export '/pages/dreams/dreams_admin/dreams_admin_widget.dart'
+    show DreamsAdminWidget;
+export '/pages/shopping/home_shopping/home_shopping_widget.dart'
+    show HomeShoppingWidget;
+export '/pages/shopping/favourite_screen/favourite_screen_widget.dart'
+    show FavouriteScreenWidget;
+export '/pages/shopping/details_screen/details_screen_widget.dart'
+    show DetailsScreenWidget;
+export '/pages/shopping/my_cart/my_cart_widget.dart' show MyCartWidget;
