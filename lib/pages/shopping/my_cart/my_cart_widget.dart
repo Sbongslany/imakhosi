@@ -113,120 +113,133 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
-                          child: Container(
-                            width: 270.0,
-                            height: 104.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              borderRadius: const BorderRadius.only(
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(5.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(5.0),
                                 topRight: Radius.circular(0.0),
                               ),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  1.0, 0.0, 0.0, 0.0),
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 90.0,
-                                        height: 90.0,
-                                        decoration: const BoxDecoration(
-                                          color: Color(0x0557636C),
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(10.0),
-                                            bottomRight: Radius.circular(10.0),
-                                            topLeft: Radius.circular(10.0),
-                                            topRight: Radius.circular(10.0),
+                            child: Container(
+                              width: 270.0,
+                              height: 104.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(5.0),
+                                  bottomRight: Radius.circular(0.0),
+                                  topLeft: Radius.circular(5.0),
+                                  topRight: Radius.circular(0.0),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    1.0, 0.0, 0.0, 0.0),
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Container(
+                                          width: 90.0,
+                                          height: 90.0,
+                                          decoration: const BoxDecoration(
+                                            color: Color(0x0557636C),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(10.0),
+                                              bottomRight:
+                                                  Radius.circular(10.0),
+                                              topLeft: Radius.circular(10.0),
+                                              topRight: Radius.circular(10.0),
+                                            ),
                                           ),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 5.0, 5.0, 5.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.asset(
-                                              'assets/images/pngaaa.png',
-                                              width: 57.0,
-                                              height: 85.0,
-                                              fit: BoxFit.cover,
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 5.0, 5.0, 5.0),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.asset(
+                                                'assets/images/pngaaa.png',
+                                                width: 57.0,
+                                                height: 85.0,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                'Nike Air Max 200',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Raleway',
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 5.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'R2000',
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  'Nike Air Max 200',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Raleway',
-                                                        fontSize: 15.0,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'R2000',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Raleway',
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -235,11 +248,10 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               5.0, 5.0, 0.0, 0.0),
-                          child: Container(
-                            width: 58.0,
-                            height: 104.0,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFFF1321),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(5.0),
@@ -247,12 +259,25 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                 topRight: Radius.circular(5.0),
                               ),
                             ),
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: FaIcon(
-                              FontAwesomeIcons.trashAlt,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              size: 25.0,
+                            child: Container(
+                              width: 58.0,
+                              height: 104.0,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFFF1321),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(0.0),
+                                  bottomRight: Radius.circular(5.0),
+                                  topLeft: Radius.circular(0.0),
+                                  topRight: Radius.circular(5.0),
+                                ),
+                              ),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: FaIcon(
+                                FontAwesomeIcons.trashAlt,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                size: 25.0,
+                              ),
                             ),
                           ),
                         ),
@@ -271,120 +296,133 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
-                          child: Container(
-                            width: 270.0,
-                            height: 104.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              borderRadius: const BorderRadius.only(
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(5.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(5.0),
                                 topRight: Radius.circular(0.0),
                               ),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  1.0, 0.0, 0.0, 0.0),
-                              child: SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 90.0,
-                                        height: 90.0,
-                                        decoration: const BoxDecoration(
-                                          color: Color(0x0557636C),
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(10.0),
-                                            bottomRight: Radius.circular(10.0),
-                                            topLeft: Radius.circular(10.0),
-                                            topRight: Radius.circular(10.0),
+                            child: Container(
+                              width: 270.0,
+                              height: 104.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(5.0),
+                                  bottomRight: Radius.circular(0.0),
+                                  topLeft: Radius.circular(5.0),
+                                  topRight: Radius.circular(0.0),
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    1.0, 0.0, 0.0, 0.0),
+                                child: SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: Container(
+                                          width: 90.0,
+                                          height: 90.0,
+                                          decoration: const BoxDecoration(
+                                            color: Color(0x0557636C),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(10.0),
+                                              bottomRight:
+                                                  Radius.circular(10.0),
+                                              topLeft: Radius.circular(10.0),
+                                              topRight: Radius.circular(10.0),
+                                            ),
                                           ),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 5.0, 5.0, 5.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.asset(
-                                              'assets/images/pngaaa.png',
-                                              width: 57.0,
-                                              height: 85.0,
-                                              fit: BoxFit.cover,
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 5.0, 5.0, 5.0),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.asset(
+                                                'assets/images/pngaaa.png',
+                                                width: 57.0,
+                                                height: 85.0,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                'Nike Air Max 200',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Raleway',
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 5.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'R2000',
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  'Nike Air Max 200',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Raleway',
-                                                        fontSize: 15.0,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'R2000',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Raleway',
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -393,11 +431,10 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               5.0, 5.0, 0.0, 0.0),
-                          child: Container(
-                            width: 58.0,
-                            height: 104.0,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFFF1321),
+                          child: Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(5.0),
@@ -405,12 +442,25 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                 topRight: Radius.circular(5.0),
                               ),
                             ),
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: FaIcon(
-                              FontAwesomeIcons.trashAlt,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              size: 25.0,
+                            child: Container(
+                              width: 58.0,
+                              height: 104.0,
+                              decoration: const BoxDecoration(
+                                color: Color(0xFFFF1321),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(0.0),
+                                  bottomRight: Radius.circular(5.0),
+                                  topLeft: Radius.circular(0.0),
+                                  topRight: Radius.circular(5.0),
+                                ),
+                              ),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: FaIcon(
+                                FontAwesomeIcons.trashAlt,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                size: 25.0,
+                              ),
                             ),
                           ),
                         ),
