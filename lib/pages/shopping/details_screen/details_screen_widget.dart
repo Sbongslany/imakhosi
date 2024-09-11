@@ -344,6 +344,20 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                     description:
                                         detailsScreenShoesRecord.description,
                                   ));
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    '${detailsScreenShoesRecord.name}has been added to favourite',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                  ),
+                                  duration: const Duration(milliseconds: 4000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                ),
+                              );
                             },
                             child: Container(
                               width: 60.0,

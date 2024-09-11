@@ -263,7 +263,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'FavouriteScreen',
           path: '/favouriteScreen',
-          builder: (context, params) => const FavouriteScreenWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'FavouriteScreen')
+              : const FavouriteScreenWidget(),
         ),
         FFRoute(
           name: 'DetailsScreen',
