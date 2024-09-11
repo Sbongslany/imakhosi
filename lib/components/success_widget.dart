@@ -42,13 +42,6 @@ class _SuccessWidgetState extends State<SuccessWidget>
             begin: const Offset(-43.99999999999999, -64.0),
             end: const Offset(0.0, 0.0),
           ),
-          RotateEffect(
-            curve: Curves.easeInOut,
-            delay: 600.0.ms,
-            duration: 380.0.ms,
-            begin: -3.75,
-            end: 1.0,
-          ),
         ],
       ),
     });
@@ -134,6 +127,8 @@ class _SuccessWidgetState extends State<SuccessWidget>
                 child: FFButtonWidget(
                   onPressed: () async {
                     Navigator.pop(context);
+
+                    context.pushNamed('HomeShopping');
                   },
                   text: 'Back to Shopping',
                   options: FFButtonOptions(

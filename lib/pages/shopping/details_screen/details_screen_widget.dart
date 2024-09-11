@@ -329,17 +329,35 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 60.0,
-                            height: 60.0,
-                            decoration: const BoxDecoration(
-                              color: Color(0x243D4335),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.favorite_border,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 30.0,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await FavouriteRecord.collection
+                                  .doc()
+                                  .set(createFavouriteRecordData(
+                                    name: detailsScreenShoesRecord.name,
+                                    price: detailsScreenShoesRecord.price,
+                                    image: detailsScreenShoesRecord.image,
+                                    description:
+                                        detailsScreenShoesRecord.description,
+                                  ));
+                            },
+                            child: Container(
+                              width: 60.0,
+                              height: 60.0,
+                              decoration: const BoxDecoration(
+                                color: Color(0x243D4335),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.favorite_border,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 30.0,
+                              ),
                             ),
                           ),
                           InkWell(

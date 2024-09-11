@@ -63,10 +63,12 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget> {
                         size: 20.0,
                       ),
                       Text(
-                        'Hello World',
+                        'Shop',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Raleway',
+                              fontSize: 20.0,
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
                             ),
                       ),
                       Stack(
@@ -223,6 +225,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget> {
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Raleway',
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
                             ),
                       ),
                     ),
@@ -355,7 +358,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget> {
                               FlutterFlowTheme.of(context).bodySmall.override(
                                     fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
+                                    fontWeight: FontWeight.w500,
                                   ),
                         ),
                       ),
@@ -631,7 +634,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget> {
                               FlutterFlowTheme.of(context).bodySmall.override(
                                     fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
+                                    fontWeight: FontWeight.w500,
                                   ),
                         ),
                       ),
@@ -657,7 +660,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: Container(
                     width: double.infinity,
-                    height: 95.0,
+                    height: 120.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
@@ -682,7 +685,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Raleway',
-                                            fontSize: 11.0,
+                                            fontSize: 15.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),

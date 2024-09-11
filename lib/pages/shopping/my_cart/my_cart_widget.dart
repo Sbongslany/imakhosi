@@ -50,18 +50,27 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.chevron_left,
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      size: 40.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.safePop();
+                      },
+                      child: Icon(
+                        Icons.chevron_left,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 40.0,
+                      ),
                     ),
                     Text(
                       'Cart',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Raleway',
-                            fontSize: 16.0,
+                            fontSize: 20.0,
                             letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.bold,
                           ),
                     ),
                     Opacity(
