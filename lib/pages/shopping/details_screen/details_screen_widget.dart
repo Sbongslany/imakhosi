@@ -271,22 +271,34 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Flexible(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 10.0),
-                            child: Text(
-                              detailsScreenShoesRecord.description,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                            ),
+                          child: Wrap(
+                            spacing: 0.0,
+                            runSpacing: 0.0,
+                            alignment: WrapAlignment.start,
+                            crossAxisAlignment: WrapCrossAlignment.start,
+                            direction: Axis.horizontal,
+                            runAlignment: WrapAlignment.start,
+                            verticalDirection: VerticalDirection.down,
+                            clipBehavior: Clip.none,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 10.0),
+                                child: Text(
+                                  detailsScreenShoesRecord.description,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Raleway',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
