@@ -132,8 +132,8 @@ class _SuccessWidgetState extends State<SuccessWidget>
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    Navigator.pop(context);
                   },
                   text: 'Back to Shopping',
                   options: FFButtonOptions(
