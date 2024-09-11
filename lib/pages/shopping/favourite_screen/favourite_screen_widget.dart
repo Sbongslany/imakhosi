@@ -130,6 +130,10 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                               topLeft: Radius.circular(16.0),
                               topRight: Radius.circular(16.0),
                             ),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context).secondary,
+                              width: 2.0,
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
