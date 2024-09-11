@@ -107,110 +107,89 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                     return Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: Container(
-                        width: 200.0,
-                        height: 180.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          borderRadius: const BorderRadius.only(
+                      child: Material(
+                        color: Colors.transparent,
+                        elevation: 5.0,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(16.0),
                             bottomRight: Radius.circular(16.0),
                             topLeft: Radius.circular(16.0),
                             topRight: Radius.circular(16.0),
                           ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 0.0, 0.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              const Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      FaIcon(
-                                        FontAwesomeIcons.solidHeart,
-                                        color: Color(0xFFF31B2A),
-                                        size: 15.0,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network(
-                                  staggeredViewFavouriteRecord.image,
-                                  width: 153.0,
-                                  height: 80.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'BEST SELLER',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          color: const Color(0xFF0B527E),
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
+                        child: Container(
+                          width: 200.0,
+                          height: 180.0,
+                          decoration: BoxDecoration(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(16.0),
+                              bottomRight: Radius.circular(16.0),
+                              topLeft: Radius.circular(16.0),
+                              topRight: Radius.circular(16.0),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 12.0, 0.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        FaIcon(
+                                          FontAwesomeIcons.solidHeart,
+                                          color: Color(0xFFF31B2A),
+                                          size: 15.0,
                                         ),
+                                      ],
+                                    ),
                                   ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 1.0, 0.0, 0.0),
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        staggeredViewFavouriteRecord.name,
-                                        '-',
-                                      ),
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    staggeredViewFavouriteRecord.image,
+                                    width: 153.0,
+                                    height: 80.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Text(
+                                      'BEST SELLER',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Raleway',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            fontSize: 13.0,
+                                            color: const Color(0xFF0B527E),
+                                            fontSize: 10.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 4.0, 0.0, 10.0),
-                                child: Row(
+                                  ],
+                                ),
+                                Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Expanded(
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 1.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          formatNumber(
-                                            staggeredViewFavouriteRecord.price,
-                                            formatType: FormatType.custom,
-                                            currency: 'R',
-                                            format: '',
-                                            locale: '',
-                                          ),
-                                          '0',
+                                          staggeredViewFavouriteRecord.name,
+                                          '-',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -221,39 +200,75 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                                       .secondaryText,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w800,
+                                              fontWeight: FontWeight.normal,
                                             ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: Container(
-                                        width: 15.0,
-                                        height: 15.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          shape: BoxShape.circle,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: Container(
-                                        width: 15.0,
-                                        height: 15.0,
-                                        decoration: const BoxDecoration(
-                                          color: Color(0xFF0F1994),
-                                          shape: BoxShape.circle,
-                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 10.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            formatNumber(
+                                              staggeredViewFavouriteRecord
+                                                  .price,
+                                              formatType: FormatType.custom,
+                                              currency: 'R',
+                                              format: '',
+                                              locale: '',
+                                            ),
+                                            '0',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Raleway',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 13.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w800,
+                                              ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: Container(
+                                          width: 15.0,
+                                          height: 15.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 10.0, 0.0),
+                                        child: Container(
+                                          width: 15.0,
+                                          height: 15.0,
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFF0F1994),
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
