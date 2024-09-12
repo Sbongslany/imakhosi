@@ -148,12 +148,12 @@ class _ProfileWidgetState extends State<ProfileWidget>
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: CachedNetworkImageProvider(
-                'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxsaW9ufGVufDB8fHx8MTcxMzcxNzM3MXww&ixlib=rb-4.0.3&q=80&w=1080',
-              ),
+              image: Image.asset(
+                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              ).image,
             ),
           ),
           child: ClipRRect(
@@ -190,6 +190,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                       SizedBox(
                         height: 200.0,
                         child: Stack(
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           children: [
                             Container(
                               width: double.infinity,

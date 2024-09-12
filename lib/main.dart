@@ -133,7 +133,7 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: FlutterFlowTheme.of(context).secondary,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: const Color(0xFFA1A1A1),
-        showSelectedLabels: false,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
@@ -158,7 +158,7 @@ class _NavBarPageState extends State<NavBarPage> {
               FontAwesomeIcons.shopify,
               size: 50.0,
             ),
-            label: 'Home',
+            label: 'Shop',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -166,7 +166,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.favorite_rounded,
               size: 40.0,
             ),
-            label: 'Home',
+            label: 'Favourite',
             tooltip: '',
           ),
           BottomNavigationBarItem(
