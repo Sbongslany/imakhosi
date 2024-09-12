@@ -171,7 +171,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 0.0),
+                            20.0, 40.0, 20.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -257,7 +257,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 30.0, 20.0, 0.0),
+                            20.0, 10.0, 20.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 0.0,
@@ -348,7 +348,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
