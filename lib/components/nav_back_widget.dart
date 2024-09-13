@@ -84,12 +84,19 @@ class _NavBackWidgetState extends State<NavBackWidget> {
               '-',
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Raleway',
-                  color: FlutterFlowTheme.of(context).secondary,
-                  fontSize: 20.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                ),
+              fontFamily: 'Raleway',
+              color: FlutterFlowTheme.of(context).secondary,
+              fontSize: 20.0,
+              letterSpacing: 0.0,
+              fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  offset: const Offset(2.0, 2.0),
+                  blurRadius: 2.0,
+                )
+              ],
+            ),
           ),
           Opacity(
             opacity: 0.0,

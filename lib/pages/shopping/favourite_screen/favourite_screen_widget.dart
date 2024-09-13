@@ -61,7 +61,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 50.0, 20.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 70.0, 20.0, 0.0),
                     child: StreamBuilder<List<FavouriteRecord>>(
                       stream: queryFavouriteRecord(),
                       builder: (context, snapshot) {
@@ -112,7 +112,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                   width: 200.0,
                                   height: 180.0,
                                   decoration: BoxDecoration(
-                                    color: const Color(0x9CFFFFFF),
+                                    color: const Color(0xD1FFFFFF),
                                     borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(16.0),
                                       bottomRight: Radius.circular(16.0),
@@ -121,7 +121,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .secondary,
+                                          .secondaryBackground,
                                       width: 2.0,
                                     ),
                                   ),
@@ -171,7 +171,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                                   .override(
                                                     fontFamily: 'Raleway',
                                                     color: const Color(0xFF0B527E),
-                                                    fontSize: 10.0,
+                                                    fontSize: 7.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
@@ -238,7 +238,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .secondaryText,
+                                                                .primaryText,
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -290,7 +290,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
                     child: wrapWithModel(
                       model: _model.navBackModel,
                       updateCallback: () => safeSetState(() {}),

@@ -176,10 +176,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            FaIcon(
-                              FontAwesomeIcons.alignLeft,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 25.0,
+                            Container(
+                              width: 40.0,
+                              height: 40.0,
+                              decoration: const BoxDecoration(
+                                color: Color(0x94C6E4EC),
+                                shape: BoxShape.circle,
+                              ),
+                              child: FaIcon(
+                                FontAwesomeIcons.alignLeft,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 25.0,
+                              ),
                             ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
@@ -841,7 +849,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 30.0, 20.0, 0.0),
+                            20.0, 20.0, 20.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 10.0,
@@ -855,7 +863,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ),
                           child: Container(
                             width: double.infinity,
-                            height: 100.0,
+                            height: 70.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -874,12 +882,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const Icon(
                                     Icons.calendar_month_rounded,
                                     color: Color(0x93D12833),
-                                    size: 55.0,
+                                    size: 30.0,
                                   ),
                                   Text(
                                     'Booking',
@@ -889,7 +897,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          fontSize: 30.0,
+                                          fontSize: 20.0,
                                           letterSpacing: 3.0,
                                           fontWeight: FontWeight.w800,
                                         ),
@@ -904,7 +912,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 0.0),
+                            20.0, 10.0, 20.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 10.0,
@@ -918,7 +926,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ),
                           child: Container(
                             width: double.infinity,
-                            height: 100.0,
+                            height: 70.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -937,12 +945,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const FaIcon(
                                     FontAwesomeIcons.shopify,
                                     color: Color(0x93D12833),
-                                    size: 55.0,
+                                    size: 30.0,
                                   ),
                                   Text(
                                     'Shopping',
@@ -952,7 +960,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          fontSize: 30.0,
+                                          fontSize: 20.0,
                                           letterSpacing: 3.0,
                                           fontWeight: FontWeight.w800,
                                         ),
@@ -967,7 +975,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 0.0),
+                            20.0, 10.0, 20.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 10.0,
@@ -981,7 +989,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           ),
                           child: Container(
                             width: double.infinity,
-                            height: 100.0,
+                            height: 70.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -1000,12 +1008,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   12.0, 12.0, 12.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const FaIcon(
                                     FontAwesomeIcons.seedling,
                                     color: Color(0x93D12833),
-                                    size: 55.0,
+                                    size: 30.0,
                                   ),
                                   Text(
                                     'Dreams',
@@ -1015,7 +1023,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          fontSize: 30.0,
+                                          fontSize: 20.0,
                                           letterSpacing: 3.0,
                                           fontWeight: FontWeight.w800,
                                         ),

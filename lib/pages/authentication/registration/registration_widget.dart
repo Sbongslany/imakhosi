@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,7 +11,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'registration_model.dart';
 export 'registration_model.dart';
@@ -72,11 +72,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
             height: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
-                image: CachedNetworkImageProvider(
-                  'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
-                ),
+                image: Image.asset(
+                  'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+                ).image,
               ),
             ),
             alignment: const AlignmentDirectional(0.0, 0.0),
@@ -106,9 +106,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   .override(
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                        .secondaryText,
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
                                   ),
                             ),
                             Text(
@@ -190,7 +191,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               width: double.infinity,
                               height: 90.0,
                               decoration: BoxDecoration(
-                                color: const Color(0x32FFFFFF),
+                                color: const Color(0xA2FFFFFF),
                                 borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(12.0),
                                   bottomRight: Radius.circular(12.0),
@@ -198,68 +199,73 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   topRight: Radius.circular(12.0),
                                 ),
                                 border: Border.all(
-                                  color: const Color(0x9AFFFFFF),
+                                  color: FlutterFlowTheme.of(context).secondary,
                                 ),
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   if (_model.uploadedFileUrl == '')
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Icon(
-                                            Icons.upload_sharp,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            size: 24.0,
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Padding(
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 5.0, 0.0, 5.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Upload your image',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 16.0, 0.0),
-                                          child: Container(
-                                            width: 36.0,
-                                            height: 36.0,
-                                            decoration: const BoxDecoration(
-                                              color: Color(0x4DFFFFFF),
-                                              shape: BoxShape.circle,
-                                            ),
                                             child: Icon(
-                                              Icons.person,
+                                              Icons.upload_sharp,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               size: 24.0,
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                          Expanded(
+                                            child: Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Upload your image',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Raleway',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 16.0, 0.0),
+                                            child: Container(
+                                              width: 36.0,
+                                              height: 36.0,
+                                              decoration: const BoxDecoration(
+                                                color: Color(0x4DFFFFFF),
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Icon(
+                                                Icons.person,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   if (_model.uploadedFileUrl != '')
                                     Row(
@@ -272,7 +278,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           child: Icon(
                                             Icons.upload_sharp,
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             size: 24.0,
                                           ),
                                         ),
@@ -288,9 +294,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Raleway',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -329,7 +336,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
+                              color: const Color(0xA2FFFFFF),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
@@ -337,7 +344,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                 topRight: Radius.circular(12.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x9AFFFFFF),
+                                color: FlutterFlowTheme.of(context).secondary,
                               ),
                             ),
                             child: Row(
@@ -349,7 +356,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   child: Icon(
                                     Icons.mail_rounded,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryText,
                                     size: 24.0,
                                   ),
                                 ),
@@ -379,7 +386,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Raleway',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your email',
@@ -389,7 +398,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
@@ -402,7 +411,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       keyboardType: TextInputType.emailAddress,
@@ -423,7 +432,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
+                              color: const Color(0xA3FFFFFF),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
@@ -443,7 +452,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   child: Icon(
                                     Icons.lock,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryText,
                                     size: 24.0,
                                   ),
                                 ),
@@ -473,7 +482,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Raleway',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your password',
@@ -483,7 +494,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
@@ -496,7 +507,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -516,7 +527,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
+                              color: const Color(0xA7FFFFFF),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
@@ -536,7 +547,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   child: Icon(
                                     Icons.person,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryText,
                                     size: 24.0,
                                   ),
                                 ),
@@ -566,7 +577,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Raleway',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your name',
@@ -576,7 +589,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
@@ -589,7 +602,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -609,7 +622,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
+                              color: const Color(0xA6FFFFFF),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
@@ -629,7 +642,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   child: Icon(
                                     Icons.person_remove,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryText,
                                     size: 24.0,
                                   ),
                                 ),
@@ -659,7 +672,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Raleway',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your surname',
@@ -669,7 +684,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
@@ -682,7 +697,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -702,7 +717,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
+                              color: const Color(0xA8FFFFFF),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
@@ -722,7 +737,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   child: Icon(
                                     Icons.personal_injury_sharp,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryText,
                                     size: 24.0,
                                   ),
                                 ),
@@ -752,7 +767,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Raleway',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your username',
@@ -762,7 +779,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
@@ -775,7 +792,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       validator: _model
@@ -795,7 +812,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x32FFFFFF),
+                              color: const Color(0xA2FFFFFF),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
@@ -815,7 +832,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   child: Icon(
                                     Icons.person,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                        .secondaryText,
                                     size: 24.0,
                                   ),
                                 ),
@@ -846,7 +863,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                             .labelMedium
                                             .override(
                                               fontFamily: 'Raleway',
-                                              color: Colors.white,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: 'Enter your cell number',
@@ -856,7 +875,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .secondaryText,
                                               letterSpacing: 0.0,
                                             ),
                                         enabledBorder: InputBorder.none,
@@ -869,7 +888,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                       keyboardType: TextInputType.number,
@@ -877,6 +896,89 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           .phoneNumberTextControllerValidator
                                           .asValidator(context),
                                     ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 15.0, 0.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 60.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0xA2FFFFFF),
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(12.0),
+                                bottomRight: Radius.circular(12.0),
+                                topLeft: Radius.circular(12.0),
+                                topRight: Radius.circular(12.0),
+                              ),
+                              border: Border.all(
+                                color: const Color(0x9AFFFFFF),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 5.0, 0.0),
+                                  child: Icon(
+                                    Icons.person,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 5.0, 0.0),
+                                  child: Container(
+                                    width: 1.0,
+                                    height: 24.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                  ),
+                                ),
+                                FlutterFlowPlacePicker(
+                                  iOSGoogleMapsApiKey: 'nkhhjjhhhjh',
+                                  androidGoogleMapsApiKey: 'gghghghghghg',
+                                  webGoogleMapsApiKey: '',
+                                  onSelect: (place) async {
+                                    safeSetState(
+                                        () => _model.placePickerValue = place);
+                                  },
+                                  defaultText: 'Select Location',
+                                  icon: Icon(
+                                    Icons.place,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 16.0,
+                                  ),
+                                  buttonOptions: FFButtonOptions(
+                                    width: 200.0,
+                                    height: 40.0,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Raleway',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ],
@@ -1047,17 +1149,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).secondary,
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).secondary,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),

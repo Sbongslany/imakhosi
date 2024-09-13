@@ -121,11 +121,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SignInPageWidget(),
         ),
         FFRoute(
-          name: 'healer_home',
-          path: '/healerHome',
-          builder: (context, params) => const HealerHomeWidget(),
-        ),
-        FFRoute(
           name: 'chat_2_Details',
           path: '/chat2Details',
           asyncParams: {
@@ -283,6 +278,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MyCart',
           path: '/myCart',
           builder: (context, params) => const MyCartWidget(),
+        ),
+        FFRoute(
+          name: 'settings',
+          path: '/settings',
+          builder: (context, params) => const SettingsWidget(),
+        ),
+        FFRoute(
+          name: 'EditProfile',
+          path: '/editProfile',
+          builder: (context, params) => const EditProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

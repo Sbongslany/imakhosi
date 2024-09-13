@@ -85,27 +85,41 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        FaIcon(
-                          FontAwesomeIcons.alignLeft,
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 25.0,
+                        Container(
+                          width: 40.0,
+                          height: 40.0,
+                          decoration: const BoxDecoration(
+                            color: Color(0x94C6E4EC),
+                            shape: BoxShape.circle,
+                          ),
+                          child: FaIcon(
+                            FontAwesomeIcons.alignLeft,
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 25.0,
+                          ),
                         ),
                         Text(
                           'Shop',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color: FlutterFlowTheme.of(context).secondary,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Raleway',
+                            color: FlutterFlowTheme.of(context).secondary,
+                            fontSize: 20.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w600,
+                            shadows: [
+                              const Shadow(
+                                color: Color(0x9357636C),
+                                offset: Offset(2.0, 2.0),
+                                blurRadius: 2.0,
+                              )
+                            ],
+                          ),
                         ),
                         Stack(
                           alignment: const AlignmentDirectional(1.0, -1.0),
@@ -163,7 +177,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 20.0, 0.0, 0.0, 0.0),
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 5.0,
+                              elevation: 3.0,
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(14.0),
@@ -259,7 +273,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                               14.0, 0.0, 20.0, 0.0),
                           child: Material(
                             color: Colors.transparent,
-                            elevation: 5.0,
+                            elevation: 3.0,
                             shape: const CircleBorder(),
                             child: Container(
                               width: 52.0,
@@ -299,8 +313,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 .override(
                                   fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 17.0,
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w800,
                                 ),
                           ),
                         ),
@@ -514,8 +529,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 .override(
                                   fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 17.0,
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w800,
                                 ),
                           ),
                         ),
@@ -529,6 +545,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 .override(
                                   fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 17.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -574,7 +591,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                               children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 16.0, 0.0, 0.0),
+                                      20.0, 16.0, 20.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -703,7 +720,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .normal,
+                                                                          .bold,
                                                                 ),
                                                       ),
                                                     ),
@@ -743,7 +760,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                 'Raleway',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryText,
+                                                                .secondary,
                                                             fontSize: 13.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
@@ -810,8 +827,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Raleway',
                               color: FlutterFlowTheme.of(context).secondary,
+                              fontSize: 18.0,
                               letterSpacing: 0.0,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.bold,
                               shadows: [
                                 Shadow(
                                   color: FlutterFlowTheme.of(context)
@@ -832,7 +850,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Raleway',
                               color: FlutterFlowTheme.of(context).secondary,
-                              fontSize: 10.0,
+                              fontSize: 17.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w800,
                               shadows: [

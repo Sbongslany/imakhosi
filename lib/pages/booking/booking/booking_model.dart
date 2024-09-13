@@ -1,3 +1,4 @@
+import '/components/nav_back_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'booking_widget.dart' show BookingWidget;
@@ -10,6 +11,8 @@ class BookingModel extends FlutterFlowModel<BookingWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Model for NavBack component.
+  late NavBackModel navBackModel;
   // State field(s) for Calendar widget.
   DateTimeRange? calendarSelectedDay;
   // State field(s) for TextField widget.
@@ -19,6 +22,7 @@ class BookingModel extends FlutterFlowModel<BookingWidget> {
 
   @override
   void initState(BuildContext context) {
+    navBackModel = createModel(context, () => NavBackModel());
     calendarSelectedDay = DateTimeRange(
       start: DateTime.now().startOfDay,
       end: DateTime.now().endOfDay,
@@ -27,6 +31,7 @@ class BookingModel extends FlutterFlowModel<BookingWidget> {
 
   @override
   void dispose() {
+    navBackModel.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'sign_in_page_model.dart';
 export 'sign_in_page_model.dart';
@@ -51,18 +50,18 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            image: const DecorationImage(
+            image: DecorationImage(
               fit: BoxFit.cover,
-              image: CachedNetworkImageProvider(
-                'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
-              ),
+              image: Image.asset(
+                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              ).image,
             ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
             child: BackdropFilter(
               filter: ImageFilter.blur(
-                sigmaX: 8.0,
+                sigmaX: 2.0,
                 sigmaY: 8.0,
               ),
               child: Padding(
@@ -82,21 +81,22 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                               .bodyMedium
                               .override(
                                 fontFamily: 'Raleway',
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 24.0,
                                 letterSpacing: 0.0,
+                                fontWeight: FontWeight.bold,
                               ),
                         ),
                         Text(
-                          'Enter phone number to continue',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                letterSpacing: 0.0,
-                              ),
+                          'Enter and password to continue',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ],
                     ),
@@ -107,7 +107,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
-                          color: const Color(0x32FFFFFF),
+                          color: const Color(0x89FFFFFF),
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
@@ -126,8 +126,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                   20.0, 0.0, 10.0, 0.0),
                               child: Icon(
                                 Icons.email,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 size: 24.0,
                               ),
                             ),
@@ -158,7 +158,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Raleway',
-                                          color: Colors.white,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Enter your email',
@@ -167,7 +168,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         .override(
                                           fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: InputBorder.none,
@@ -180,7 +181,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .secondaryText,
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model.emailTextControllerValidator
@@ -199,7 +200,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
-                          color: const Color(0x32FFFFFF),
+                          color: const Color(0x91FFFFFF),
                           borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(12.0),
                             bottomRight: Radius.circular(12.0),
@@ -218,8 +219,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                   20.0, 0.0, 10.0, 0.0),
                               child: Icon(
                                 Icons.lock,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 size: 24.0,
                               ),
                             ),
@@ -250,7 +251,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Raleway',
-                                          color: Colors.white,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Enter your password',
@@ -259,7 +261,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                         .override(
                                           fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .secondaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: InputBorder.none,
@@ -285,7 +287,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .secondaryText,
                                         letterSpacing: 0.0,
                                       ),
                                   validator: _model
@@ -353,16 +355,17 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                               24.0, 0.0, 24.0, 0.0),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0x4DFFFFFF),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Raleway',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).secondary,
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
@@ -405,7 +408,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                                       .primaryBackground,
                                 ),
                                 activeColor:
-                                    FlutterFlowTheme.of(context).alternate,
+                                    FlutterFlowTheme.of(context).primary,
                                 checkColor: FlutterFlowTheme.of(context).info,
                               ),
                             ),

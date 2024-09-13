@@ -9,8 +9,6 @@ export '/pages/authentication/registration/registration_widget.dart'
     show RegistrationWidget;
 export '/pages/authentication/sign_in_page/sign_in_page_widget.dart'
     show SignInPageWidget;
-export '/pages/healer_admin/healer_home/healer_home_widget.dart'
-    show HealerHomeWidget;
 export '/pages/chat/chat_2_details/chat2_details_widget.dart'
     show Chat2DetailsWidget;
 export '/pages/chat/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
@@ -42,3 +40,6 @@ export '/pages/shopping/favourite_screen/favourite_screen_widget.dart'
 export '/pages/shopping/details_screen/details_screen_widget.dart'
     show DetailsScreenWidget;
 export '/pages/shopping/my_cart/my_cart_widget.dart' show MyCartWidget;
+export '/pages/profile/settings/settings_widget.dart' show SettingsWidget;
+export '/pages/profile/edit_profile/edit_profile_widget.dart'
+    show EditProfileWidget;

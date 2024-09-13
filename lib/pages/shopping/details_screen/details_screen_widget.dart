@@ -91,11 +91,15 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        wrapWithModel(
-                          model: _model.navBackModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: const NavBackWidget(
-                            navName: 'Details',
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: wrapWithModel(
+                            model: _model.navBackModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: const NavBackWidget(
+                              navName: 'Details',
+                            ),
                           ),
                         ),
                         Padding(
@@ -114,6 +118,8 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Raleway',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                           fontSize: 26.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
@@ -137,6 +143,8 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Raleway',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -161,11 +169,19 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
-                                      fontSize: 34.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                  fontFamily: 'Raleway',
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  fontSize: 34.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  shadows: [
+                                    const Shadow(
+                                      color: Color(0xB357636C),
+                                      offset: Offset(2.0, 2.0),
+                                      blurRadius: 2.0,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -235,12 +251,20 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                           ),
                         ),
                         Container(
+                          height: 90.0,
                           decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(10.0),
+                              bottomRight: Radius.circular(10.0),
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(10.0),
+                            ),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Flexible(
                                 child: Wrap(
@@ -253,23 +277,38 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                   verticalDirection: VerticalDirection.down,
                                   clipBehavior: Clip.none,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 10.0),
-                                      child: Text(
-                                        detailsScreenShoesRecord.description,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w300,
-                                            ),
-                                      ),
+                                    Wrap(
+                                      spacing: 0.0,
+                                      runSpacing: 0.0,
+                                      alignment: WrapAlignment.start,
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.start,
+                                      direction: Axis.horizontal,
+                                      runAlignment: WrapAlignment.start,
+                                      verticalDirection: VerticalDirection.down,
+                                      clipBehavior: Clip.none,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 5.0, 5.0, 5.0),
+                                          child: Text(
+                                            detailsScreenShoesRecord
+                                                .description,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Raleway',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontSize: 10.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w300,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -283,13 +322,16 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                           children: [
                             Flexible(
                               child: Text(
-                                'Read more',
+                                'read more',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Raleway',
-                                      color: const Color(0xFF0F38B6),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      fontSize: 10.0,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
                               ),
                             ),
@@ -338,7 +380,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                   width: 60.0,
                                   height: 60.0,
                                   decoration: const BoxDecoration(
-                                    color: Color(0x243D4335),
+                                    color: Color(0x72FFFFFF),
                                     shape: BoxShape.circle,
                                   ),
                                   child: Icon(

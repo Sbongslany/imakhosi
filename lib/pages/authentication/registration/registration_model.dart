@@ -35,6 +35,8 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
   String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  // State field(s) for PlacePicker widget.
+  FFPlace placePickerValue = const FFPlace();
   // State field(s) for type widget.
   FormFieldController<String>? typeValueController;
   // State field(s) for healer widget.
