@@ -51,10 +51,11 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
     return Container(
       height: double.infinity,
       decoration: BoxDecoration(
+        color: FlutterFlowTheme.of(context).alternate,
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: Image.network(
-            'https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
+          image: Image.asset(
+            'assets/images/photo-1511208687438-2c5a5abb810c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHx3aWxkfGVufDB8fHx8MTcxMzcxMTU4N3ww&ixlib=rb-4.0.3&q=80&w=1080',
           ).image,
         ),
         borderRadius: const BorderRadius.only(
@@ -74,7 +75,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
               child: FaIcon(
                 FontAwesomeIcons.table,
-                color: FlutterFlowTheme.of(context).secondaryText,
+                color: FlutterFlowTheme.of(context).primary,
                 size: 74.0,
               ),
             ),
@@ -84,7 +85,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                 'Book your consultation',
                 style: FlutterFlowTheme.of(context).titleLarge.override(
                       fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 25.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
@@ -99,7 +100,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                   'Book with ${widget.user}',
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Raleway',
-                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 25.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w800,
@@ -111,7 +112,7 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               ' at ${dateTimeFormat("M/d h:mm a", widget.time)}',
               style: FlutterFlowTheme.of(context).bodySmall.override(
                     fontFamily: 'Raleway',
-                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    color: FlutterFlowTheme.of(context).secondaryText,
                     fontSize: 25.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w800,
@@ -155,16 +156,16 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).secondary,
+                  color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Raleway',
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 25.0,
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,
                   borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: FlutterFlowTheme.of(context).secondary,
                     width: 5.0,
                   ),
                   borderRadius: BorderRadius.circular(8.0),

@@ -43,17 +43,12 @@ class _UsersWidgetState extends State<UsersWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: Container(
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-              ).image,
-            ),
+            color: FlutterFlowTheme.of(context).secondary,
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
@@ -66,11 +61,15 @@ class _UsersWidgetState extends State<UsersWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  wrapWithModel(
-                    model: _model.navBackModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: const NavBackWidget(
-                      navName: 'Healers',
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    child: wrapWithModel(
+                      model: _model.navBackModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: const NavBackWidget(
+                        navName: 'Healers',
+                      ),
                     ),
                   ),
                   Padding(

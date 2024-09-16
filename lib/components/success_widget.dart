@@ -73,7 +73,7 @@ class _SuccessWidgetState extends State<SuccessWidget>
           width: 335.0,
           height: 375.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).primaryBackground,
+            color: FlutterFlowTheme.of(context).alternate,
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(16.0),
               bottomRight: Radius.circular(16.0),
@@ -109,13 +109,16 @@ class _SuccessWidgetState extends State<SuccessWidget>
                         child: Text(
                           'Your Payment is Successful',
                           textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Raleway',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
                         ),
                       ),
                     ),

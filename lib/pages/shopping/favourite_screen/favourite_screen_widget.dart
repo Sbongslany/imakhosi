@@ -43,12 +43,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondary,
         body: Container(
           decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-              ).image,
-            ),
+            color: FlutterFlowTheme.of(context).alternate,
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),

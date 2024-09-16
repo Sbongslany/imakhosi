@@ -63,16 +63,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondary,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-              ).image,
-            ),
-          ),
+          decoration: const BoxDecoration(),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
             child: BackdropFilter(
@@ -105,21 +98,16 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                         ),
                         Text(
                           'Shop',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Raleway',
-                            color: FlutterFlowTheme.of(context).secondary,
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                            shadows: [
-                              const Shadow(
-                                color: Color(0x9357636C),
-                                offset: Offset(2.0, 2.0),
-                                blurRadius: 2.0,
-                              )
-                            ],
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Raleway',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontSize: 15.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                         Stack(
                           alignment: const AlignmentDirectional(1.0, -1.0),
@@ -144,8 +132,8 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   children: [
                                     FaIcon(
                                       FontAwesomeIcons.shoppingCart,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       size: 20.0,
                                     ),
                                   ],
@@ -156,7 +144,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                               width: 10.0,
                               height: 10.0,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).error,
+                                color: FlutterFlowTheme.of(context).success,
                                 shape: BoxShape.circle,
                               ),
                             ),

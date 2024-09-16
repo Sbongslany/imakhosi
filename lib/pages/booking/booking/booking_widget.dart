@@ -59,12 +59,7 @@ class _BookingWidgetState extends State<BookingWidget>
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-              ).image,
-            ),
+            color: FlutterFlowTheme.of(context).alternate,
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
@@ -141,65 +136,70 @@ class _BookingWidgetState extends State<BookingWidget>
                                 ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 4.0, 5.0, 0.0),
-                      child: TextFormField(
-                        controller: _model.textController,
-                        focusNode: _model.textFieldFocusNode,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          isDense: false,
-                          labelText: 'Search for healer',
-                          labelStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
+                    Container(
+                      decoration: const BoxDecoration(),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(5.0, 4.0, 5.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.textController,
+                          focusNode: _model.textFieldFocusNode,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            isDense: false,
+                            labelText: 'Search for healer',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Raleway',
+                                  letterSpacing: 0.0,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            prefixIcon: Icon(
+                              Icons.search_outlined,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          filled: true,
-                          fillColor:
-                              FlutterFlowTheme.of(context).primaryBackground,
-                          prefixIcon: Icon(
-                            Icons.search_outlined,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                          ),
+                          maxLines: null,
+                          validator: _model.textControllerValidator
+                              .asValidator(context),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Raleway',
-                              letterSpacing: 0.0,
-                            ),
-                        maxLines: null,
-                        validator:
-                            _model.textControllerValidator.asValidator(context),
                       ),
                     ),
                     Expanded(
@@ -271,7 +271,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primary,
+                                                                .secondaryText,
                                                         fontSize: 20.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:

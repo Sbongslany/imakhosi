@@ -88,17 +88,12 @@ class _SettingsWidgetState extends State<SettingsWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).alternate,
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: Image.asset(
-              'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-            ).image,
-          ),
+          color: FlutterFlowTheme.of(context).alternate,
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(0.0),

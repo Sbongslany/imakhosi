@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/components/nav_back_widget.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
@@ -70,12 +71,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Container(
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: Image.asset(
-                    'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-                  ).image,
-                ),
+                color: FlutterFlowTheme.of(context).alternate,
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(0.0),
@@ -169,32 +165,56 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                  fontFamily: 'Raleway',
-                                  color: FlutterFlowTheme.of(context).secondary,
-                                  fontSize: 34.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  shadows: [
-                                    const Shadow(
-                                      color: Color(0xB357636C),
-                                      offset: Offset(2.0, 2.0),
-                                      blurRadius: 2.0,
-                                    )
-                                  ],
-                                ),
+                                      fontFamily: 'Raleway',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 34.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ),
                           ],
                         ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: CachedNetworkImage(
-                            fadeInDuration: const Duration(milliseconds: 500),
-                            fadeOutDuration: const Duration(milliseconds: 500),
-                            imageUrl: detailsScreenShoesRecord.image,
-                            width: 271.0,
-                            height: 279.0,
-                            fit: BoxFit.cover,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.fade,
+                                child: FlutterFlowExpandedImageView(
+                                  image: CachedNetworkImage(
+                                    fadeInDuration: const Duration(milliseconds: 500),
+                                    fadeOutDuration:
+                                        const Duration(milliseconds: 500),
+                                    imageUrl: detailsScreenShoesRecord.image,
+                                    fit: BoxFit.contain,
+                                  ),
+                                  allowRotation: false,
+                                  tag: detailsScreenShoesRecord.image,
+                                  useHeroAnimation: true,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Hero(
+                            tag: detailsScreenShoesRecord.image,
+                            transitionOnUserGestures: true,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: CachedNetworkImage(
+                                fadeInDuration: const Duration(milliseconds: 500),
+                                fadeOutDuration: const Duration(milliseconds: 500),
+                                imageUrl: detailsScreenShoesRecord.image,
+                                width: 271.0,
+                                height: 279.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
                         SingleChildScrollView(
@@ -301,7 +321,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                                   fontFamily: 'Raleway',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primary,
+                                                      .secondaryText,
                                                   fontSize: 10.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
@@ -328,7 +348,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                     .override(
                                       fontFamily: 'Raleway',
                                       color: FlutterFlowTheme.of(context)
-                                          .secondary,
+                                          .secondaryText,
                                       fontSize: 10.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,

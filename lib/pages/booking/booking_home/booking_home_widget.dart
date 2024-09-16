@@ -47,7 +47,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondary,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: ClipRRect(
           borderRadius: BorderRadius.circular(0.0),
           child: BackdropFilter(
@@ -56,14 +56,14 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
               sigmaY: 2.0,
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,13 +71,13 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                         Container(
                           width: 40.0,
                           height: 40.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0x94C6E4EC),
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).primary,
                             shape: BoxShape.circle,
                           ),
                           child: FaIcon(
                             FontAwesomeIcons.alignLeft,
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: FlutterFlowTheme.of(context).secondary,
                             size: 25.0,
                           ),
                         ),
@@ -109,7 +109,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                         FaIcon(
                                           FontAwesomeIcons.shoppingCart,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondary,
+                                              .primary,
                                           size: 20.0,
                                         ),
                                       ],
@@ -120,7 +120,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                   width: 10.0,
                                   height: 10.0,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).error,
+                                    color: FlutterFlowTheme.of(context).success,
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -156,26 +156,26 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                         elevation: 10.0,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10.0),
-                            bottomRight: Radius.circular(0.0),
-                            topLeft: Radius.circular(10.0),
-                            topRight: Radius.circular(0.0),
+                            bottomLeft: Radius.circular(16.0),
+                            bottomRight: Radius.circular(16.0),
+                            topLeft: Radius.circular(16.0),
+                            topRight: Radius.circular(16.0),
                           ),
                         ),
                         child: Container(
                           width: double.infinity,
                           height: 150.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).secondary,
+                            color: const Color(0x8FFFFFFF),
                             borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(10.0),
-                              bottomRight: Radius.circular(0.0),
-                              topLeft: Radius.circular(10.0),
-                              topRight: Radius.circular(0.0),
+                              bottomLeft: Radius.circular(16.0),
+                              bottomRight: Radius.circular(16.0),
+                              topLeft: Radius.circular(16.0),
+                              topRight: Radius.circular(16.0),
                             ),
                             border: Border.all(
-                              color: FlutterFlowTheme.of(context).secondary,
-                              width: 3.0,
+                              color: const Color(0xFFC6D9EC),
+                              width: 6.0,
                             ),
                           ),
                           alignment: const AlignmentDirectional(0.0, 0.0),
@@ -188,23 +188,13 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                  fontFamily: 'Rubik',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 25.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  shadows: [
-                                    const Shadow(
-                                      color: Color(0xB357636C),
-                                      offset: Offset(2.0, 2.0),
-                                      blurRadius: 2.0,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 1.0,
-                                color: FlutterFlowTheme.of(context).accent4,
+                                      fontFamily: 'Rubik',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 25.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                               ),
                               Text(
                                 'For your consultation',
@@ -214,7 +204,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                       fontFamily: 'Mukta',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
-                                      fontSize: 25.0,
+                                      fontSize: 20.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w300,
                                     ),
@@ -250,27 +240,26 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                         elevation: 10.0,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10.0),
-                            bottomRight: Radius.circular(0.0),
-                            topLeft: Radius.circular(10.0),
-                            topRight: Radius.circular(0.0),
+                            bottomLeft: Radius.circular(16.0),
+                            bottomRight: Radius.circular(16.0),
+                            topLeft: Radius.circular(16.0),
+                            topRight: Radius.circular(16.0),
                           ),
                         ),
                         child: Container(
                           width: double.infinity,
                           height: 150.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: const Color(0x8FFFFFFF),
                             borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(10.0),
-                              bottomRight: Radius.circular(0.0),
-                              topLeft: Radius.circular(10.0),
-                              topRight: Radius.circular(0.0),
+                              bottomLeft: Radius.circular(16.0),
+                              bottomRight: Radius.circular(16.0),
+                              topLeft: Radius.circular(16.0),
+                              topRight: Radius.circular(16.0),
                             ),
                             border: Border.all(
-                              color: FlutterFlowTheme.of(context).secondary,
-                              width: 3.0,
+                              color: const Color(0xFFC6D9EC),
+                              width: 6.0,
                             ),
                           ),
                           alignment: const AlignmentDirectional(0.0, 0.0),
@@ -279,48 +268,30 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'My bookings',
+                                'My Bookings',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                  fontFamily: 'Rubik',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 25.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  shadows: [
-                                    const Shadow(
-                                      color: Color(0xD557636C),
-                                      offset: Offset(2.0, 2.0),
-                                      blurRadius: 2.0,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 1.0,
-                                color: FlutterFlowTheme.of(context).accent4,
+                                      fontFamily: 'Rubik',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 25.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                               ),
                               Text(
                                 'View your bookings',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                  fontFamily: 'Mukta',
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  fontSize: 25.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w300,
-                                  shadows: [
-                                    Shadow(
+                                      fontFamily: 'Mukta',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
-                                      offset: const Offset(2.0, 2.0),
-                                      blurRadius: 2.0,
-                                    )
-                                  ],
-                                ),
+                                      fontSize: 20.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                               ),
                             ],
                           ),

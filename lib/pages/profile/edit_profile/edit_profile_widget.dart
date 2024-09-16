@@ -50,15 +50,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).alternate,
       body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: Image.asset(
-              'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
-            ).image,
-          ),
+          color: FlutterFlowTheme.of(context).secondary,
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(0.0),
@@ -163,21 +158,32 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             color: FlutterFlowTheme.of(context).secondary,
                             shape: BoxShape.circle,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: Container(
-                              width: 90.0,
-                              height: 90.0,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
+                          child: Container(
+                            width: 95.0,
+                            height: 95.0,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                               ),
-                              child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 500),
-                                fadeOutDuration: const Duration(milliseconds: 500),
-                                imageUrl:
-                                    'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
-                                fit: BoxFit.fitWidth,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Container(
+                                width: 90.0,
+                                height: 90.0,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: const Duration(milliseconds: 500),
+                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  imageUrl:
+                                      'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
+                                  fit: BoxFit.fitWidth,
+                                ),
                               ),
                             ),
                           ),
@@ -208,7 +214,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).secondary,
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -241,6 +247,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           letterSpacing: 0.0,
                         ),
                     validator: _model.yourNameTextControllerValidator
@@ -269,7 +276,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).secondary,
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -385,7 +392,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     ),
                     fillColor: const Color(0xD9FFFFFF),
                     elevation: 2.0,
-                    borderColor: FlutterFlowTheme.of(context).secondary,
+                    borderColor: FlutterFlowTheme.of(context).secondaryText,
                     borderWidth: 2.0,
                     borderRadius: 8.0,
                     margin:
@@ -417,7 +424,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).secondary,
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
