@@ -220,7 +220,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               Icons.upload_sharp,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .primary,
                                               size: 24.0,
                                             ),
                                           ),
@@ -278,7 +278,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                           child: Icon(
                                             Icons.upload_sharp,
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .primary,
                                             size: 24.0,
                                           ),
                                         ),
@@ -355,8 +355,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.mail_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),
@@ -451,8 +450,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.lock,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),
@@ -546,8 +544,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),
@@ -641,8 +638,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person_remove,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),
@@ -736,8 +732,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.personal_injury_sharp,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),
@@ -831,8 +826,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),
@@ -928,8 +922,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
                                     Icons.person,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                 ),

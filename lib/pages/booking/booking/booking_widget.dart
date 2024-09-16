@@ -245,8 +245,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                       0.0, 0.0, 0.0, 5.0),
                                   child: Container(
                                     width: double.infinity,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                    color: const Color(0x8FFFFFFF),
                                     child: ExpandableNotifier(
                                       initialExpanded: false,
                                       child: ExpandablePanel(
