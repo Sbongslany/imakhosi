@@ -303,7 +303,8 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .bodySmall
                                   .override(
                                     fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w800,
@@ -543,7 +544,8 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .bodySmall
                                   .override(
                                     fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     fontSize: 17.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
@@ -912,23 +914,14 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                              fontFamily: 'Roboto',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                              fontSize: 17.0,
-                                              letterSpacing: 6.0,
-                                              fontWeight: FontWeight.w500,
-                                              shadows: [
-                                                Shadow(
+                                                  fontFamily: 'Roboto',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
-                                                  offset: const Offset(2.0, 2.0),
-                                                  blurRadius: 2.0,
-                                                )
-                                              ],
-                                            ),
+                                                  fontSize: 17.0,
+                                                  letterSpacing: 6.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
                                         ],
                                       ),
