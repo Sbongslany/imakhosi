@@ -1,8 +1,9 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +106,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   fontFamily: 'Raleway',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
-                                  fontSize: 15.0,
+                                  fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -305,9 +306,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    fontSize: 17.0,
+                                    fontSize: 12.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                   ),
                             ),
                           ),
@@ -316,199 +317,53 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'All Shoes',
-                                  options: FFButtonOptions(
-                                    width: 100.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                      child: FlutterFlowChoiceChips(
+                        options: const [
+                          ChipData('Option 1'),
+                          ChipData('Option 2'),
+                          ChipData('Option 3')
+                        ],
+                        onChanged: (val) => safeSetState(
+                            () => _model.choiceChipsValue = val?.firstOrNull),
+                        selectedChipStyle: ChipStyle(
+                          backgroundColor: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context).info,
+                                    letterSpacing: 0.0,
                                   ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'Tennis',
-                                  options: FFButtonOptions(
-                                    width: 100.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          color: Colors.white,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 5.0,
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 20.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'Running',
-                                  options: FFButtonOptions(
-                                    width: 100.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 20.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'Running',
-                                  options: FFButtonOptions(
-                                    width: 100.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 20.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'Running',
-                                  options: FFButtonOptions(
-                                    width: 100.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Raleway',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          iconColor: FlutterFlowTheme.of(context).info,
+                          iconSize: 16.0,
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
+                        unselectedChipStyle: ChipStyle(
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Raleway',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
+                              ),
+                          iconColor: FlutterFlowTheme.of(context).secondaryText,
+                          iconSize: 16.0,
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        chipSpacing: 8.0,
+                        rowSpacing: 8.0,
+                        multiselect: false,
+                        alignment: WrapAlignment.start,
+                        controller: _model.choiceChipsValueController ??=
+                            FormFieldController<List<String>>(
+                          [],
+                        ),
+                        wrapped: true,
                       ),
                     ),
                     Padding(
@@ -528,10 +383,11 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .bodySmall
                                   .override(
                                     fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 17.0,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 12.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.normal,
                                   ),
                             ),
                           ),
@@ -546,9 +402,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    fontSize: 17.0,
+                                    fontSize: 12.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                             ),
                           ),
@@ -633,7 +489,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                           width: 157.0,
                                           height: 180.0,
                                           decoration: const BoxDecoration(
-                                            color: Color(0x6FFFFFFF),
+                                            color: Color(0x83FFFFFF),
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(16.0),
                                               bottomRight:
@@ -836,20 +692,13 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                fontFamily: 'Raleway',
-                                color: FlutterFlowTheme.of(context).secondary,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                shadows: [
-                                  Shadow(
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    offset: const Offset(2.0, 2.0),
-                                    blurRadius: 2.0,
-                                  )
-                                ],
-                              ),
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -860,20 +709,13 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                fontFamily: 'Raleway',
-                                color: FlutterFlowTheme.of(context).secondary,
-                                fontSize: 17.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w800,
-                                shadows: [
-                                  Shadow(
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    offset: const Offset(2.0, 2.0),
-                                    blurRadius: 2.0,
-                                  )
-                                ],
-                              ),
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
                           ),
                         ],
@@ -919,7 +761,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                           context)
                                                       .secondaryText,
                                                   fontSize: 17.0,
-                                                  letterSpacing: 6.0,
+                                                  letterSpacing: 2.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -936,7 +778,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .info,
+                                                      .tertiary,
                                               fontSize: 36.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w900,

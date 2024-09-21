@@ -133,7 +133,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
