@@ -86,7 +86,7 @@ class _NavBackWidgetState extends State<NavBackWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Raleway',
                   color: FlutterFlowTheme.of(context).secondaryText,
-                  fontSize: 15.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),

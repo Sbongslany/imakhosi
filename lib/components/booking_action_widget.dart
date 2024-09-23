@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/stripe/payment_manager.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -123,6 +124,25 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 40.0),
               child: FFButtonWidget(
                 onPressed: () async {
+                  final paymentResponse = await processStripePayment(
+                    context,
+                    amount: FFAppConstants.MyFee.toInt() * 100,
+                    currency: 'USD',
+                    customerEmail: currentUserEmail,
+                    customerName: valueOrDefault(currentUserDocument?.name, ''),
+                    description: 'Consultation Booking',
+                    allowGooglePay: false,
+                    allowApplePay: false,
+                  );
+                  if (paymentResponse.paymentId == null &&
+                      paymentResponse.errorMessage != null) {
+                    showSnackbar(
+                      context,
+                      'Error: ${paymentResponse.errorMessage}',
+                    );
+                  }
+                  _model.paymentId = paymentResponse.paymentId ?? '';
+
                   await BookingsRecord.createDoc(widget.userid!)
                       .set(createBookingsRecordData(
                     time: widget.time,
@@ -148,6 +168,8 @@ class _BookingActionWidgetState extends State<BookingActionWidget> {
                       backgroundColor: FlutterFlowTheme.of(context).success,
                     ),
                   );
+
+                  safeSetState(() {});
                 },
                 text: 'Book',
                 options: FFButtonOptions(

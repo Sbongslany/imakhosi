@@ -417,15 +417,29 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed(
-                                    'MyCart',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 500),
+                                  FFAppState().cartsum = FFAppState().cartsum +
+                                      detailsScreenShoesRecord.price;
+                                  FFAppState().addToCart(
+                                      detailsScreenShoesRecord.reference);
+                                  FFAppState().cartitems =
+                                      FFAppState().cartitems + 1;
+                                  safeSetState(() {});
+                                  ScaffoldMessenger.of(context)
+                                      .clearSnackBars();
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Added to Cart',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                       ),
-                                    },
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                    ),
                                   );
                                 },
                                 child: Container(

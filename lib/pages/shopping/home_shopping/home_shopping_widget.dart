@@ -167,7 +167,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   20.0, 0.0, 0.0, 0.0),
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 3.0,
+                                elevation: 1.0,
                                 shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(14.0),
@@ -264,7 +264,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 14.0, 0.0, 20.0, 0.0),
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 3.0,
+                              elevation: 1.0,
                               shape: const CircleBorder(),
                               child: Container(
                                 width: 52.0,
@@ -476,7 +476,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 5.0,
+                                        elevation: 2.0,
                                         shape: const RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(16.0),

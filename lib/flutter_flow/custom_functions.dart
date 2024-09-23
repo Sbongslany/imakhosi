@@ -75,3 +75,11 @@ double getRatings(List<int> ratings) {
   int sum = ratings.reduce((int value, int element) => value + element);
   return sum / ratings.length;
 }
+
+double negativePrice(double price) {
+  return price * -1;
+}
+
+double stripeAmount(double cartsum) {
+  return cartsum * 100;
+}

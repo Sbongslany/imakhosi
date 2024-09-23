@@ -8,6 +8,8 @@ class MyCartModel extends FlutterFlowModel<MyCartWidget> {
 
   // Model for NavBack component.
   late NavBackModel navBackModel;
+  // Stores action output result for [Stripe Payment] action in Button widget.
+  String? paymentId;
 
   @override
   void initState(BuildContext context) {

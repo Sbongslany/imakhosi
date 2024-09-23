@@ -410,9 +410,9 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 500),
                                                                     imageUrl:
                                                                         'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                                                    width: 60.0,
+                                                                    width: 40.0,
                                                                     height:
-                                                                        60.0,
+                                                                        40.0,
                                                                     fit: BoxFit
                                                                         .cover,
                                                                   ),
@@ -442,9 +442,30 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                               .bodyLarge
                                                                               .override(
                                                                                 fontFamily: 'Raleway',
-                                                                                fontSize: 20.0,
+                                                                                fontSize: 15.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w800,
+                                                                                fontWeight: FontWeight.normal,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          dateTimeFormat(
+                                                                              "Hm",
+                                                                              listViewBookingsRecord.time!),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Raleway',
+                                                                                fontSize: 12.0,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -466,17 +487,6 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Raleway',
                                                                                       letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                dateTimeFormat("Hm", listViewBookingsRecord.time!),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Raleway',
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.bold,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -701,7 +711,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 20.0, 8.0, 0.0),
+                                    10.0, 20.0, 10.0, 0.0),
                                 child: FutureBuilder<List<HistoryRecord>>(
                                   future: queryHistoryRecordOnce(
                                     queryBuilder: (historyRecord) =>
@@ -915,30 +925,30 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                         MainAxisSize
                                                                             .min,
                                                                     children: [
-                                                                      Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                      Expanded(
                                                                         child:
-                                                                            Text(
-                                                                          dateTimeFormat(
-                                                                              "MMMMEEEEd",
-                                                                              listViewHistoryRecord.time!),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Raleway',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              12.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            dateTimeFormat("MMMMEEEEd",
+                                                                                listViewHistoryRecord.time!),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Raleway',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             12.0,
                                                                             0.0,
-                                                                            0.0,
+                                                                            20.0,
                                                                             0.0),
                                                                         child:
                                                                             Text(
@@ -982,7 +992,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 0.0),
                     child: wrapWithModel(
                       model: _model.navBackModel,
                       updateCallback: () => safeSetState(() {}),

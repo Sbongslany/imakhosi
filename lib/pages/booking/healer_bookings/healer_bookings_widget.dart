@@ -127,7 +127,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(8.0, 20.0, 8.0, 0.0),
                     child: StreamBuilder<List<BookingsRecord>>(
                       stream: queryBookingsRecord(
                         parent: currentUserReference,
@@ -218,8 +219,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                   BorderRadius.circular(40.0),
                                               child: Image.network(
                                                 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                                width: 60.0,
-                                                height: 60.0,
+                                                width: 40.0,
+                                                height: 40.0,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -252,6 +253,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Raleway',
+                                                                  fontSize:
+                                                                      14.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -274,6 +277,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                 .override(
                                                                   fontFamily:
                                                                       'Raleway',
+                                                                  fontSize:
+                                                                      14.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -281,25 +286,42 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                         ),
                                                       ],
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          dateTimeFormat(
-                                                              "M/d h:mm a",
-                                                              listViewBookingsRecord
-                                                                  .time),
-                                                          '0',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                    Wrap(
+                                                      spacing: 0.0,
+                                                      runSpacing: 0.0,
+                                                      alignment:
+                                                          WrapAlignment.start,
+                                                      crossAxisAlignment:
+                                                          WrapCrossAlignment
+                                                              .start,
+                                                      direction:
+                                                          Axis.horizontal,
+                                                      runAlignment:
+                                                          WrapAlignment.start,
+                                                      verticalDirection:
+                                                          VerticalDirection
+                                                              .down,
+                                                      clipBehavior: Clip.none,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              dateTimeFormat(
+                                                                  "M/d h:mm a",
+                                                                  listViewBookingsRecord
+                                                                      .time),
+                                                              '0',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyLarge
                                                                 .override(
                                                                   fontFamily:
@@ -307,7 +329,9 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                      ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
