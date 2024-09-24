@@ -34,6 +34,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
     _model.switchValue1 = true;
     _model.switchValue2 = true;
     _model.switchValue3 = true;
+    _model.switchValue4 = true;
     animationsMap.addAll({
       'textOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -185,7 +186,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Phone Number',
+                                'Active',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -248,7 +249,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Maps',
+                                'Phone Number',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -311,7 +312,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Address',
+                                'Maps',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -327,6 +328,69 @@ class _SettingsWidgetState extends State<SettingsWidget>
                                 onChanged: (newValue) async {
                                   safeSetState(
                                       () => _model.switchValue3 = newValue);
+                                },
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                activeTrackColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                inactiveTrackColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                inactiveThumbColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 60.0,
+                        decoration: BoxDecoration(
+                          color: const Color(0xD9FFFFFF),
+                          boxShadow: const [
+                            BoxShadow(
+                              blurRadius: 3.0,
+                              color: Color(0x33000000),
+                              offset: Offset(
+                                0.0,
+                                1.0,
+                              ),
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(8.0),
+                          shape: BoxShape.rectangle,
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).secondary,
+                            width: 2.0,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Address',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Raleway',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                              Switch.adaptive(
+                                value: _model.switchValue4!,
+                                onChanged: (newValue) async {
+                                  safeSetState(
+                                      () => _model.switchValue4 = newValue);
                                 },
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
