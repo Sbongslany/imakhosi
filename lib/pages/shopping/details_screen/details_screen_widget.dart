@@ -1,11 +1,13 @@
 import '/backend/backend.dart';
-import '/components/nav_back_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import 'package:badges/badges.dart' as badges;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'details_screen_model.dart';
 export 'details_screen_model.dart';
 
@@ -41,6 +43,8 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<ShoesRecord>(
       stream: ShoesRecord.getDocument(widget.shopRef!),
       builder: (context, snapshot) {
@@ -89,13 +93,83 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 20.0, 0.0),
-                          child: wrapWithModel(
-                            model: _model.navBackModel,
-                            updateCallback: () => safeSetState(() {}),
-                            child: const NavBackWidget(
-                              navName: 'Details',
-                            ),
+                              20.0, 40.0, 20.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.safePop();
+                                },
+                                child: Container(
+                                  width: 40.0,
+                                  height: 40.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.arrow_back_ios_new,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    size: 25.0,
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('MyCart');
+                                },
+                                child: badges.Badge(
+                                  badgeContent: Text(
+                                    FFAppState().cartitems.toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Raleway',
+                                          color: Colors.white,
+                                          fontSize: 9.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  showBadge: true,
+                                  shape: badges.BadgeShape.circle,
+                                  badgeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  elevation: 4.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 8.0, 8.0, 8.0),
+                                  position: badges.BadgePosition.topStart(),
+                                  animationType:
+                                      badges.BadgeAnimationType.scale,
+                                  toAnimate: true,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('MyCart');
+                                    },
+                                    child: FaIcon(
+                                      FontAwesomeIcons.shoppingCart,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 23.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         Padding(
@@ -116,7 +190,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                           fontFamily: 'Raleway',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          fontSize: 26.0,
+                                          fontSize: 30.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -128,7 +202,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 16.0),
+                              0.0, 0.0, 0.0, 16.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -176,43 +250,48 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                             ),
                           ],
                         ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                child: FlutterFlowExpandedImageView(
-                                  image: CachedNetworkImage(
-                                    fadeInDuration: const Duration(milliseconds: 500),
-                                    fadeOutDuration:
-                                        const Duration(milliseconds: 500),
-                                    imageUrl: detailsScreenShoesRecord.image,
-                                    fit: BoxFit.contain,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.fade,
+                                  child: FlutterFlowExpandedImageView(
+                                    image: CachedNetworkImage(
+                                      fadeInDuration:
+                                          const Duration(milliseconds: 500),
+                                      fadeOutDuration:
+                                          const Duration(milliseconds: 500),
+                                      imageUrl: detailsScreenShoesRecord.image,
+                                      fit: BoxFit.contain,
+                                    ),
+                                    allowRotation: false,
+                                    tag: detailsScreenShoesRecord.image,
+                                    useHeroAnimation: true,
                                   ),
-                                  allowRotation: false,
-                                  tag: detailsScreenShoesRecord.image,
-                                  useHeroAnimation: true,
                                 ),
-                              ),
-                            );
-                          },
-                          child: Hero(
-                            tag: detailsScreenShoesRecord.image,
-                            transitionOnUserGestures: true,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 500),
-                                fadeOutDuration: const Duration(milliseconds: 500),
-                                imageUrl: detailsScreenShoesRecord.image,
-                                width: 271.0,
-                                height: 279.0,
-                                fit: BoxFit.cover,
+                              );
+                            },
+                            child: Hero(
+                              tag: detailsScreenShoesRecord.image,
+                              transitionOnUserGestures: true,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: const Duration(milliseconds: 500),
+                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  imageUrl: detailsScreenShoesRecord.image,
+                                  width: 271.0,
+                                  height: 279.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -425,27 +504,6 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                               ),
                             ],
                           ),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                'read more',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Raleway',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontSize: 10.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                          ],
                         ),
                         const Spacer(),
                         Padding(
