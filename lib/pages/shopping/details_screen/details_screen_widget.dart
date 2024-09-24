@@ -89,7 +89,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 0.0, 0.0),
+                              0.0, 20.0, 20.0, 0.0),
                           child: wrapWithModel(
                             model: _model.navBackModel,
                             updateCallback: () => safeSetState(() {}),

@@ -207,36 +207,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const HealerBookingsWidget(),
         ),
         FFRoute(
-          name: 'ShopHome',
-          path: '/shopHome',
-          builder: (context, params) => ShopHomeWidget(
-            category: params.getParam(
-              'category',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
           name: 'Users',
           path: '/users',
           builder: (context, params) => const UsersWidget(),
-        ),
-        FFRoute(
-          name: 'Browse',
-          path: '/browse',
-          builder: (context, params) => const BrowseWidget(),
-        ),
-        FFRoute(
-          name: 'ShopDetails',
-          path: '/shopDetails',
-          builder: (context, params) => ShopDetailsWidget(
-            shopRef: params.getParam(
-              'shopRef',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['shops'],
-            ),
-          ),
         ),
         FFRoute(
           name: 'Dreams',
@@ -288,6 +261,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'EditProfile',
           path: '/editProfile',
           builder: (context, params) => const EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'Beadscreen',
+          path: '/beadscreen',
+          builder: (context, params) => const BeadscreenWidget(),
+        ),
+        FFRoute(
+          name: 'Medicinescreen',
+          path: '/medicinescreen',
+          builder: (context, params) => const MedicinescreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

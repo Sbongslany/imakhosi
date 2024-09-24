@@ -285,7 +285,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                     child: wrapWithModel(
                       model: _model.navBackModel,
                       updateCallback: () => safeSetState(() {}),

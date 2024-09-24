@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,13 +15,25 @@ class CategoryRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "category" field.
-  List<String>? _category;
-  List<String> get category => _category ?? const [];
-  bool hasCategory() => _category != null;
+  // "Beads" field.
+  String? _beads;
+  String get beads => _beads ?? '';
+  bool hasBeads() => _beads != null;
+
+  // "Medicine" field.
+  String? _medicine;
+  String get medicine => _medicine ?? '';
+  bool hasMedicine() => _medicine != null;
+
+  // "Clothes" field.
+  String? _clothes;
+  String get clothes => _clothes ?? '';
+  bool hasClothes() => _clothes != null;
 
   void _initializeFields() {
-    _category = getDataList(snapshotData['category']);
+    _beads = snapshotData['Beads'] as String?;
+    _medicine = snapshotData['Medicine'] as String?;
+    _clothes = snapshotData['Clothes'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -59,9 +70,17 @@ class CategoryRecord extends FirestoreRecord {
       reference.path.hashCode == other.reference.path.hashCode;
 }
 
-Map<String, dynamic> createCategoryRecordData() {
+Map<String, dynamic> createCategoryRecordData({
+  String? beads,
+  String? medicine,
+  String? clothes,
+}) {
   final firestoreData = mapToFirestore(
-    <String, dynamic>{}.withoutNulls,
+    <String, dynamic>{
+      'Beads': beads,
+      'Medicine': medicine,
+      'Clothes': clothes,
+    }.withoutNulls,
   );
 
   return firestoreData;
@@ -72,12 +91,14 @@ class CategoryRecordDocumentEquality implements Equality<CategoryRecord> {
 
   @override
   bool equals(CategoryRecord? e1, CategoryRecord? e2) {
-    const listEquality = ListEquality();
-    return listEquality.equals(e1?.category, e2?.category);
+    return e1?.beads == e2?.beads &&
+        e1?.medicine == e2?.medicine &&
+        e1?.clothes == e2?.clothes;
   }
 
   @override
-  int hash(CategoryRecord? e) => const ListEquality().hash([e?.category]);
+  int hash(CategoryRecord? e) =>
+      const ListEquality().hash([e?.beads, e?.medicine, e?.clothes]);
 
   @override
   bool isValidKey(Object? o) => o is CategoryRecord;

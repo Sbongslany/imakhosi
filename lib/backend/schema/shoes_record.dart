@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -35,11 +36,17 @@ class ShoesRecord extends FirestoreRecord {
   String get description => _description ?? '';
   bool hasDescription() => _description != null;
 
+  // "category" field.
+  Category? _category;
+  Category? get category => _category;
+  bool hasCategory() => _category != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _price = castToType<double>(snapshotData['price']);
     _image = snapshotData['image'] as String?;
     _description = snapshotData['description'] as String?;
+    _category = deserializeEnum<Category>(snapshotData['category']);
   }
 
   static CollectionReference get collection =>
@@ -80,6 +87,7 @@ Map<String, dynamic> createShoesRecordData({
   double? price,
   String? image,
   String? description,
+  Category? category,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -87,6 +95,7 @@ Map<String, dynamic> createShoesRecordData({
       'price': price,
       'image': image,
       'description': description,
+      'category': category,
     }.withoutNulls,
   );
 
@@ -101,12 +110,13 @@ class ShoesRecordDocumentEquality implements Equality<ShoesRecord> {
     return e1?.name == e2?.name &&
         e1?.price == e2?.price &&
         e1?.image == e2?.image &&
-        e1?.description == e2?.description;
+        e1?.description == e2?.description &&
+        e1?.category == e2?.category;
   }
 
   @override
-  int hash(ShoesRecord? e) =>
-      const ListEquality().hash([e?.name, e?.price, e?.image, e?.description]);
+  int hash(ShoesRecord? e) => const ListEquality()
+      .hash([e?.name, e?.price, e?.image, e?.description, e?.category]);
 
   @override
   bool isValidKey(Object? o) => o is ShoesRecord;

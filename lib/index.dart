@@ -25,11 +25,7 @@ export '/pages/booking/booking_home/booking_home_widget.dart'
     show BookingHomeWidget;
 export '/pages/booking/healer_bookings/healer_bookings_widget.dart'
     show HealerBookingsWidget;
-export '/pages/shop/shop_home/shop_home_widget.dart' show ShopHomeWidget;
 export '/pages/profile/users/users_widget.dart' show UsersWidget;
-export '/pages/shop/browse/browse_widget.dart' show BrowseWidget;
-export '/pages/shop/shop_details/shop_details_widget.dart'
-    show ShopDetailsWidget;
 export '/pages/dreams/dreams/dreams_widget.dart' show DreamsWidget;
 export '/pages/dreams/dreams_admin/dreams_admin_widget.dart'
     show DreamsAdminWidget;
@@ -43,3 +39,7 @@ export '/pages/shopping/my_cart/my_cart_widget.dart' show MyCartWidget;
 export '/pages/profile/settings/settings_widget.dart' show SettingsWidget;
 export '/pages/profile/edit_profile/edit_profile_widget.dart'
     show EditProfileWidget;
+export '/pages/shopping/category/beadscreen/beadscreen_widget.dart'
+    show BeadscreenWidget;
+export '/pages/shopping/category/medicinescreen/medicinescreen_widget.dart'
+    show MedicinescreenWidget;
