@@ -152,7 +152,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Container(
                                             width: 270.0,
-                                            height: 60.0,
+                                            height: 90.0,
                                             decoration: BoxDecoration(
                                               color: const Color(0x98FFFFFF),
                                               borderRadius: const BorderRadius.only(
@@ -189,7 +189,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                   0.0),
                                                       child: Container(
                                                         width: 90.0,
-                                                        height: 40.0,
+                                                        height: 70.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
@@ -292,7 +292,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                       rowShoesRecord
                                                                           .image,
                                                                   width: 57.0,
-                                                                  height: 39.0,
+                                                                  height: 70.0,
                                                                   fit: BoxFit
                                                                       .cover,
                                                                 ),
@@ -446,7 +446,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               ),
                                               child: Container(
                                                 width: 58.0,
-                                                height: 60.0,
+                                                height: 90.0,
                                                 decoration: const BoxDecoration(
                                                   color: Color(0xFFFF1321),
                                                   borderRadius:
@@ -501,7 +501,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                         ),
                         child: Container(
                           width: double.infinity,
-                          height: 285.0,
+                          height: 150.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).alternate,
                             borderRadius: const BorderRadius.only(
@@ -520,7 +520,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 20.0, 0.0),
+                                      10.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -535,7 +535,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              fontSize: 16.0,
+                                              fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -558,85 +558,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 20.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Delivery',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Text(
-                                        'R 120.00',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 20.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'App fee',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Text(
-                                        'R 100.00',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 16.0,
+                                              fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -670,7 +592,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 16.0,
+                                              fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -693,7 +615,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 16.0,
+                                              fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w800,
                                             ),

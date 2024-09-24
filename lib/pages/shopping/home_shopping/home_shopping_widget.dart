@@ -95,6 +95,26 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
           ),
         ],
       ),
+      'buttonOnPageLoadAnimation4': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 400.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -431,7 +451,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 onPressed: () async {
                                   context.pushNamed('Medicinescreen');
                                 },
-                                text: 'Medicine',
+                                text: 'Clothes',
                                 options: FFButtonOptions(
                                   width: 100.0,
                                   height: 44.0,
@@ -459,6 +479,41 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 ),
                               ).animateOnPageLoad(
                                   animationsMap['buttonOnPageLoadAnimation3']!),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Medicinescreen');
+                                },
+                                text: 'Other',
+                                options: FFButtonOptions(
+                                  width: 100.0,
+                                  height: 44.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Raleway',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(38.0),
+                                ),
+                              ).animateOnPageLoad(
+                                  animationsMap['buttonOnPageLoadAnimation4']!),
                             ),
                           ].divide(const SizedBox(width: 5.0)),
                         ),
@@ -590,9 +645,11 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                           child: Container(
                                             width: 157.0,
                                             height: 180.0,
-                                            decoration: const BoxDecoration(
-                                              color: Color(0x83FFFFFF),
-                                              borderRadius: BorderRadius.only(
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(16.0),
                                                 bottomRight:
@@ -608,21 +665,31 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          listViewShoesRecord
-                                                              .image,
-                                                      width: 153.0,
-                                                      height: 80.0,
-                                                      fit: BoxFit.cover,
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                13.0, 0.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            listViewShoesRecord
+                                                                .image,
+                                                        width: 153.0,
+                                                        height: 80.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                   Row(
@@ -730,7 +797,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                     'Raleway',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,

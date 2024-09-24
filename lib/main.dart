@@ -128,8 +128,8 @@ class _NavBarPageState extends State<NavBarPage> {
       'HomePage': const HomePageWidget(),
       'BookingHome': const BookingHomeWidget(),
       'HomeShopping': const HomeShoppingWidget(),
-      'FavouriteScreen': const FavouriteScreenWidget(),
       'Profile': const ProfileWidget(),
+      'MyCart': const MyCartWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -174,18 +174,18 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite_rounded,
-              size: 40.0,
-            ),
-            label: 'Favourite',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.person_3,
               size: 40.0,
             ),
             label: 'Profile',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_cart_rounded,
+              size: 33.0,
+            ),
+            label: 'Cart',
             tooltip: '',
           )
         ],

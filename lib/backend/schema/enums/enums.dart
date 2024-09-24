@@ -13,6 +13,10 @@ enum Category {
   other,
 }
 
+enum Type {
+  Patient,
+}
+
 extension FFEnumExtensions<T extends Enum> on T {
   String serialize() => name;
 }
@@ -28,6 +32,8 @@ T? deserializeEnum<T>(String? value) {
       return Role.values.deserialize(value) as T?;
     case (Category):
       return Category.values.deserialize(value) as T?;
+    case (Type):
+      return Type.values.deserialize(value) as T?;
     default:
       return null;
   }

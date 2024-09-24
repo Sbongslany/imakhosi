@@ -46,18 +46,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
           ),
         ],
       ),
-      'rowOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 570.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-        ],
-      ),
     });
   }
 
@@ -141,7 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 elevation: 4.0,
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
-                                position: badges.BadgePosition.topEnd(),
+                                position: badges.BadgePosition.topStart(),
                                 animationType: badges.BadgeAnimationType.scale,
                                 toAnimate: true,
                                 child: InkWell(
@@ -155,7 +143,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   child: FaIcon(
                                     FontAwesomeIcons.shoppingCart,
                                     color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                        .secondaryText,
                                     size: 23.0,
                                   ),
                                 ),
@@ -287,438 +275,103 @@ class _HomePageWidgetState extends State<HomePageWidget>
                         ).animateOnPageLoad(
                             animationsMap['containerOnPageLoadAnimation']!),
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Stack(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 2.0,
-                                        shape: const CircleBorder(),
-                                        child: Container(
-                                          width: 95.0,
-                                          height: 95.0,
-                                          decoration: BoxDecoration(
+                      ListView(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Stack(
+                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  children: [
+                                    Material(
+                                      color: Colors.transparent,
+                                      elevation: 2.0,
+                                      shape: const CircleBorder(),
+                                      child: Container(
+                                        width: 70.0,
+                                        height: 70.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
+                                          ),
+                                        ),
+                                        child: Container(
+                                          width: 90.0,
+                                          height: 90.0,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
                                           ),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.network(
-                                              'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNzI2MDU1NTY4fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                              fit: BoxFit.cover,
-                                            ),
+                                          child: Image.network(
+                                            'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNzI2MDU1NTY4fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 15.0,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xEAFFFFFF),
-                                            borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(13.0),
-                                              bottomRight:
-                                                  Radius.circular(13.0),
-                                              topLeft: Radius.circular(13.0),
-                                              topRight: Radius.circular(13.0),
-                                            ),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 1.0, 0.0, 0.0),
+                                      child: Container(
+                                        width: 70.0,
+                                        height: 15.0,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xEAFFFFFF),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomLeft: Radius.circular(13.0),
+                                            bottomRight: Radius.circular(13.0),
+                                            topLeft: Radius.circular(13.0),
+                                            topRight: Radius.circular(13.0),
                                           ),
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Stack(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 2.0,
-                                        shape: const CircleBorder(),
-                                        child: Container(
-                                          width: 95.0,
-                                          height: 95.0,
-                                          decoration: BoxDecoration(
+                                          border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.network(
-                                              'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNzI2MDU1NTY4fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                              fit: BoxFit.cover,
-                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 15.0,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xEAFFFFFF),
-                                            borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(13.0),
-                                              bottomRight:
-                                                  Radius.circular(13.0),
-                                              topLeft: Radius.circular(13.0),
-                                              topRight: Radius.circular(13.0),
-                                            ),
-                                            border: Border.all(
-                                              color:
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Text(
+                                              'Gedleza',
+                                              style:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondary,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Roboto',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        fontSize: 10.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
                                             ),
-                                          ),
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
+                                          ],
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Stack(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 2.0,
-                                        shape: const CircleBorder(),
-                                        child: Container(
-                                          width: 95.0,
-                                          height: 95.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.network(
-                                              'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNzI2MDU1NTY4fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 15.0,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xEAFFFFFF),
-                                            borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(13.0),
-                                              bottomRight:
-                                                  Radius.circular(13.0),
-                                              topLeft: Radius.circular(13.0),
-                                              topRight: Radius.circular(13.0),
-                                            ),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
-                                          ),
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Stack(
-                                    alignment: const AlignmentDirectional(0.0, 1.0),
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 2.0,
-                                        shape: const CircleBorder(),
-                                        child: Container(
-                                          width: 95.0,
-                                          height: 95.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
-                                          ),
-                                          child: Container(
-                                            width: 90.0,
-                                            height: 90.0,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.network(
-                                              'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxhdmF0YXJ8ZW58MHx8fHwxNzI2MDU1NTY4fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 15.0,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xEAFFFFFF),
-                                            borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(13.0),
-                                              bottomRight:
-                                                  Radius.circular(13.0),
-                                              topLeft: Radius.circular(13.0),
-                                              topRight: Radius.circular(13.0),
-                                            ),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
-                                          ),
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                              Text(
-                                                'Gedleza',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Roboto',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 10.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ].divide(const SizedBox(width: 10.0)),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ).animateOnPageLoad(
-                            animationsMap['rowOnPageLoadAnimation']!),
+                        ],
                       ),
                       Padding(
                         padding:
@@ -740,6 +393,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         fontFamily: 'Raleway',
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                 ),
                               ),
@@ -755,7 +409,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Raleway',
+                                        fontSize: 12.0,
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                 ),
                               ),
@@ -843,7 +499,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondary,
+                                                      .primaryBackground,
                                               borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(16.0),
@@ -860,21 +516,31 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          listViewShoesRecord
-                                                              .image,
-                                                      width: 153.0,
-                                                      height: 80.0,
-                                                      fit: BoxFit.cover,
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                13.0, 0.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            listViewShoesRecord
+                                                                .image,
+                                                        width: 153.0,
+                                                        height: 80.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                   Row(
@@ -982,7 +648,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Raleway',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1055,6 +721,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                 ),
                               ),
@@ -1173,7 +840,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondary,
+                                                      .primaryBackground,
                                               borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(16.0),
@@ -1190,21 +857,31 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          listViewShoesRecord
-                                                              .image,
-                                                      width: 153.0,
-                                                      height: 80.0,
-                                                      fit: BoxFit.cover,
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                13.0, 0.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            listViewShoesRecord
+                                                                .image,
+                                                        width: 153.0,
+                                                        height: 80.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                   Row(
@@ -1312,7 +989,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Raleway',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1385,6 +1062,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                 ),
                               ),
@@ -1503,7 +1181,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondary,
+                                                      .primaryBackground,
                                               borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(16.0),
@@ -1520,21 +1198,31 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: const Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          listViewShoesRecord
-                                                              .image,
-                                                      width: 153.0,
-                                                      height: 80.0,
-                                                      fit: BoxFit.cover,
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                13.0, 0.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl:
+                                                            listViewShoesRecord
+                                                                .image,
+                                                        width: 153.0,
+                                                        height: 80.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                   Row(
@@ -1642,7 +1330,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     'Raleway',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .secondaryText,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,

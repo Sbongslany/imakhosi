@@ -231,9 +231,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'FavouriteScreen',
           path: '/favouriteScreen',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'FavouriteScreen')
-              : const FavouriteScreenWidget(),
+          builder: (context, params) => const FavouriteScreenWidget(),
         ),
         FFRoute(
           name: 'DetailsScreen',
@@ -250,7 +248,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'MyCart',
           path: '/myCart',
-          builder: (context, params) => const MyCartWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'MyCart')
+              : const MyCartWidget(),
         ),
         FFRoute(
           name: 'settings',
