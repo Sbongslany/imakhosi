@@ -205,8 +205,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               Align(
                                 alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Container(
-                                  width: 101.0,
-                                  height: 101.0,
+                                  width: 120.0,
+                                  height: 120.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
@@ -226,8 +226,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                             const Duration(milliseconds: 500),
                                         fadeOutDuration:
                                             const Duration(milliseconds: 500),
-                                        imageUrl:
-                                            'https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTZ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
+                                        imageUrl: columnUsersRecord.photoUrl,
                                         width: 100.0,
                                         height: 100.0,
                                         fit: BoxFit.cover,
