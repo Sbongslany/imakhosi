@@ -67,7 +67,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                 sigmaY: 2.0,
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -148,10 +148,10 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Container(
-                                          width: 310.0,
+                                          width: 270.0,
                                           height: 90.0,
                                           decoration: BoxDecoration(
-                                            color: const Color(0x98FFFFFF),
+                                            color: const Color(0xBBFFFFFF),
                                             borderRadius: const BorderRadius.only(
                                               bottomLeft: Radius.circular(5.0),
                                               bottomRight: Radius.circular(0.0),

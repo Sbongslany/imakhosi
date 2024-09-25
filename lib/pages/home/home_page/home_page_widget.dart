@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -102,6 +103,67 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 size: 25.0,
                               ),
                             ),
+                            if (true /* Warning: Trying to access variable not yet defined. */)
+                              StreamBuilder<List<SettingsRecord>>(
+                                stream: querySettingsRecord(
+                                  parent: currentUserReference,
+                                  singleRecord: true,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<SettingsRecord> rowSettingsRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final rowSettingsRecord =
+                                      rowSettingsRecordList.isNotEmpty
+                                          ? rowSettingsRecordList.first
+                                          : null;
+
+                                  return Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 20.0,
+                                        height: 20.0,
+                                        decoration: const BoxDecoration(
+                                          color: Color(0xFFC10711),
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          rowSettingsRecord?.active.toString(),
+                                          '0',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Raleway',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
                             InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,

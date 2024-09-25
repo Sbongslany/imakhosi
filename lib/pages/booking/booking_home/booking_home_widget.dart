@@ -2,9 +2,11 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'booking_home_model.dart';
 export 'booking_home_model.dart';
 
@@ -43,6 +45,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -63,7 +67,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,52 +85,51 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                             size: 25.0,
                           ),
                         ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Stack(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
-                              children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('MyCart');
-                                  },
-                                  child: Container(
-                                    width: 30.0,
-                                    height: 30.0,
-                                    decoration: const BoxDecoration(
-                                      color: Color(0x00FFFFFF),
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        FaIcon(
-                                          FontAwesomeIcons.shoppingCart,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 20.0,
-                                        ),
-                                      ],
-                                    ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('MyCart');
+                          },
+                          child: badges.Badge(
+                            badgeContent: Text(
+                              FFAppState().cartitems.toString(),
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Raleway',
+                                    color: Colors.white,
+                                    fontSize: 9.0,
+                                    letterSpacing: 0.0,
                                   ),
-                                ),
-                                Container(
-                                  width: 10.0,
-                                  height: 10.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).success,
-                                    shape: BoxShape.circle,
-                                  ),
-                                ),
-                              ],
                             ),
-                          ],
+                            showBadge: true,
+                            shape: badges.BadgeShape.circle,
+                            badgeColor: FlutterFlowTheme.of(context).primary,
+                            elevation: 4.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8.0, 8.0, 8.0, 8.0),
+                            position: badges.BadgePosition.topStart(),
+                            animationType: badges.BadgeAnimationType.scale,
+                            toAnimate: true,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('MyCart');
+                              },
+                              child: FaIcon(
+                                FontAwesomeIcons.shoppingCart,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 23.0,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),

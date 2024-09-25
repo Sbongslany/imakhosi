@@ -115,6 +115,26 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
           ),
         ],
       ),
+      'buttonOnPageLoadAnimation5': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 400.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -232,6 +252,43 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                             ],
                           ),
                         ],
+                      ),
+                    ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('CreateItemScreen');
+                          },
+                          text: 'Add your product',
+                          options: FFButtonOptions(
+                            width: 242.0,
+                            height: 44.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Raleway',
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                            elevation: 5.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).secondary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(38.0),
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['buttonOnPageLoadAnimation1']!),
                       ),
                     ),
                     Padding(
@@ -408,7 +465,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   borderRadius: BorderRadius.circular(38.0),
                                 ),
                               ).animateOnPageLoad(
-                                  animationsMap['buttonOnPageLoadAnimation1']!),
+                                  animationsMap['buttonOnPageLoadAnimation2']!),
                             ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, 0.0),
@@ -443,7 +500,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   borderRadius: BorderRadius.circular(38.0),
                                 ),
                               ).animateOnPageLoad(
-                                  animationsMap['buttonOnPageLoadAnimation2']!),
+                                  animationsMap['buttonOnPageLoadAnimation3']!),
                             ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, 0.0),
@@ -478,7 +535,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   borderRadius: BorderRadius.circular(38.0),
                                 ),
                               ).animateOnPageLoad(
-                                  animationsMap['buttonOnPageLoadAnimation3']!),
+                                  animationsMap['buttonOnPageLoadAnimation4']!),
                             ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, 0.0),
@@ -513,7 +570,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   borderRadius: BorderRadius.circular(38.0),
                                 ),
                               ).animateOnPageLoad(
-                                  animationsMap['buttonOnPageLoadAnimation4']!),
+                                  animationsMap['buttonOnPageLoadAnimation5']!),
                             ),
                           ].divide(const SizedBox(width: 5.0)),
                         ),
@@ -716,50 +773,96 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                       ),
                                                     ],
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 4.0,
-                                                                0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      1.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              listViewShoesRecord
-                                                                  .name,
-                                                              '-',
+                                                  Align(
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                            -1.0, 0.0),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  4.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                listViewShoesRecord
+                                                                    .name,
+                                                                '-',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Raleway',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    fontSize:
+                                                                        13.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Raleway',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  fontSize:
-                                                                      13.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                listViewShoesRecord
+                                                                    .createdBy
+                                                                    ?.id,
+                                                                '-',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Raleway',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    fontSize:
+                                                                        10.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w300,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                   const Spacer(),

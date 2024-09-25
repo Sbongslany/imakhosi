@@ -63,7 +63,7 @@ class _UsersWidgetState extends State<UsersWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
                     child: wrapWithModel(
                       model: _model.navBackModel,
                       updateCallback: () => safeSetState(() {}),

@@ -271,6 +271,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Medicinescreen',
           path: '/medicinescreen',
           builder: (context, params) => const MedicinescreenWidget(),
+        ),
+        FFRoute(
+          name: 'CreateItemScreen',
+          path: '/createItemScreen',
+          builder: (context, params) => const CreateItemScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -20,20 +20,26 @@ class CategoryRecord extends FirestoreRecord {
   String get beads => _beads ?? '';
   bool hasBeads() => _beads != null;
 
-  // "Medicine" field.
-  String? _medicine;
-  String get medicine => _medicine ?? '';
-  bool hasMedicine() => _medicine != null;
-
   // "Clothes" field.
   String? _clothes;
   String get clothes => _clothes ?? '';
   bool hasClothes() => _clothes != null;
 
+  // "Medicine" field.
+  String? _medicine;
+  String get medicine => _medicine ?? '';
+  bool hasMedicine() => _medicine != null;
+
+  // "Other" field.
+  String? _other;
+  String get other => _other ?? '';
+  bool hasOther() => _other != null;
+
   void _initializeFields() {
     _beads = snapshotData['Beads'] as String?;
-    _medicine = snapshotData['Medicine'] as String?;
     _clothes = snapshotData['Clothes'] as String?;
+    _medicine = snapshotData['Medicine'] as String?;
+    _other = snapshotData['Other'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -72,14 +78,16 @@ class CategoryRecord extends FirestoreRecord {
 
 Map<String, dynamic> createCategoryRecordData({
   String? beads,
-  String? medicine,
   String? clothes,
+  String? medicine,
+  String? other,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'Beads': beads,
-      'Medicine': medicine,
       'Clothes': clothes,
+      'Medicine': medicine,
+      'Other': other,
     }.withoutNulls,
   );
 
@@ -92,13 +100,14 @@ class CategoryRecordDocumentEquality implements Equality<CategoryRecord> {
   @override
   bool equals(CategoryRecord? e1, CategoryRecord? e2) {
     return e1?.beads == e2?.beads &&
+        e1?.clothes == e2?.clothes &&
         e1?.medicine == e2?.medicine &&
-        e1?.clothes == e2?.clothes;
+        e1?.other == e2?.other;
   }
 
   @override
   int hash(CategoryRecord? e) =>
-      const ListEquality().hash([e?.beads, e?.medicine, e?.clothes]);
+      const ListEquality().hash([e?.beads, e?.clothes, e?.medicine, e?.other]);
 
   @override
   bool isValidKey(Object? o) => o is CategoryRecord;

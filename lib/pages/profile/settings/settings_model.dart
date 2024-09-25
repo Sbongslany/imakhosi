@@ -8,14 +8,14 @@ class SettingsModel extends FlutterFlowModel<SettingsWidget> {
 
   // Model for NavBack component.
   late NavBackModel navBackModel;
-  // State field(s) for Switch widget.
-  bool? switchValue1;
-  // State field(s) for Switch widget.
-  bool? switchValue2;
-  // State field(s) for Switch widget.
-  bool? switchValue3;
-  // State field(s) for Switch widget.
-  bool? switchValue4;
+  // State field(s) for SwitchActive widget.
+  bool? switchActiveValue;
+  // State field(s) for SwitchPhone widget.
+  bool? switchPhoneValue;
+  // State field(s) for SwitchMaps widget.
+  bool? switchMapsValue;
+  // State field(s) for SwitchAddress widget.
+  bool? switchAddressValue;
 
   @override
   void initState(BuildContext context) {

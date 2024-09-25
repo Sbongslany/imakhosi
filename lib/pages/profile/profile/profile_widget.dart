@@ -182,7 +182,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     children: [
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 20.0, 0.0, 10.0),
+                            0.0, 40.0, 0.0, 10.0),
                         child: SizedBox(
                           height: 139.0,
                           child: Stack(

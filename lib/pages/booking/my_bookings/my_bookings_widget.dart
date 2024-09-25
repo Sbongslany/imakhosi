@@ -444,7 +444,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 fontFamily: 'Raleway',
                                                                                 fontSize: 15.0,
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.normal,
+                                                                                fontWeight: FontWeight.w500,
                                                                               ),
                                                                         ),
                                                                       ),

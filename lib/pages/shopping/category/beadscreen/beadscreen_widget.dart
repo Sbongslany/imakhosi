@@ -372,7 +372,7 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 0.0),
+                            20.0, 40.0, 20.0, 0.0),
                         child: wrapWithModel(
                           model: _model.navBackModel,
                           updateCallback: () => safeSetState(() {}),

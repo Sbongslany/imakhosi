@@ -56,7 +56,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 70.0, 20.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 100.0, 20.0, 0.0),
                     child: StreamBuilder<List<FavouriteRecord>>(
                       stream: queryFavouriteRecord(),
                       builder: (context, snapshot) {
@@ -285,7 +285,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
                     child: wrapWithModel(
                       model: _model.navBackModel,
                       updateCallback: () => safeSetState(() {}),

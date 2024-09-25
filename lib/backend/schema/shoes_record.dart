@@ -41,12 +41,18 @@ class ShoesRecord extends FirestoreRecord {
   Category? get category => _category;
   bool hasCategory() => _category != null;
 
+  // "createdBy" field.
+  DocumentReference? _createdBy;
+  DocumentReference? get createdBy => _createdBy;
+  bool hasCreatedBy() => _createdBy != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _price = castToType<double>(snapshotData['price']);
     _image = snapshotData['image'] as String?;
     _description = snapshotData['description'] as String?;
     _category = deserializeEnum<Category>(snapshotData['category']);
+    _createdBy = snapshotData['createdBy'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -88,6 +94,7 @@ Map<String, dynamic> createShoesRecordData({
   String? image,
   String? description,
   Category? category,
+  DocumentReference? createdBy,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -96,6 +103,7 @@ Map<String, dynamic> createShoesRecordData({
       'image': image,
       'description': description,
       'category': category,
+      'createdBy': createdBy,
     }.withoutNulls,
   );
 
@@ -111,12 +119,13 @@ class ShoesRecordDocumentEquality implements Equality<ShoesRecord> {
         e1?.price == e2?.price &&
         e1?.image == e2?.image &&
         e1?.description == e2?.description &&
-        e1?.category == e2?.category;
+        e1?.category == e2?.category &&
+        e1?.createdBy == e2?.createdBy;
   }
 
   @override
-  int hash(ShoesRecord? e) => const ListEquality()
-      .hash([e?.name, e?.price, e?.image, e?.description, e?.category]);
+  int hash(ShoesRecord? e) => const ListEquality().hash(
+      [e?.name, e?.price, e?.image, e?.description, e?.category, e?.createdBy]);
 
   @override
   bool isValidKey(Object? o) => o is ShoesRecord;

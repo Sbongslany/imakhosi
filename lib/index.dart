@@ -43,3 +43,5 @@ export '/pages/shopping/category/beadscreen/beadscreen_widget.dart'
     show BeadscreenWidget;
 export '/pages/shopping/category/medicinescreen/medicinescreen_widget.dart'
     show MedicinescreenWidget;
+export '/pages/shopping/create_item_screen/create_item_screen_widget.dart'
+    show CreateItemScreenWidget;
