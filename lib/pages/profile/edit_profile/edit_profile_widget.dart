@@ -31,6 +31,15 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
 
     _model.yourNameTextController ??= TextEditingController();
     _model.yourNameFocusNode ??= FocusNode();
+
+    _model.displayNameTextController ??= TextEditingController();
+    _model.displayNameFocusNode ??= FocusNode();
+
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
+
+    _model.emailTextController ??= TextEditingController();
+    _model.emailFocusNode ??= FocusNode();
   }
 
   @override
@@ -185,7 +194,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(1.0, 1.0),
+                                  alignment: const AlignmentDirectional(0.0, 1.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -262,7 +271,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                         Icons.camera_alt,
                                         color: FlutterFlowTheme.of(context)
                                             .secondary,
-                                        size: 24.0,
+                                        size: 44.0,
                                       ),
                                     ),
                                   ),
@@ -337,6 +346,193 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         .asValidator(context),
                   ),
                 ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+                  child: TextFormField(
+                    controller: _model.displayNameTextController,
+                    focusNode: _model.displayNameFocusNode,
+                    textCapitalization: TextCapitalization.words,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      labelText: 'Dispaly Name',
+                      labelStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Raleway',
+                                letterSpacing: 0.0,
+                              ),
+                      hintStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Raleway',
+                                letterSpacing: 0.0,
+                              ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primary,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      filled: true,
+                      fillColor: const Color(0xEBFFFFFF),
+                      contentPadding:
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Raleway',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          letterSpacing: 0.0,
+                        ),
+                    validator: _model.displayNameTextControllerValidator
+                        .asValidator(context),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+                  child: TextFormField(
+                    controller: _model.phoneNumberTextController,
+                    focusNode: _model.phoneNumberFocusNode,
+                    textCapitalization: TextCapitalization.words,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      labelText: 'Phone Name',
+                      labelStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Raleway',
+                                letterSpacing: 0.0,
+                              ),
+                      hintStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Raleway',
+                                letterSpacing: 0.0,
+                              ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primary,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      filled: true,
+                      fillColor: const Color(0xEBFFFFFF),
+                      contentPadding:
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Raleway',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          letterSpacing: 0.0,
+                        ),
+                    validator: _model.phoneNumberTextControllerValidator
+                        .asValidator(context),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+                  child: TextFormField(
+                    controller: _model.emailTextController,
+                    focusNode: _model.emailFocusNode,
+                    textCapitalization: TextCapitalization.words,
+                    readOnly: true,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      labelText: currentUserEmail,
+                      labelStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Raleway',
+                                letterSpacing: 0.0,
+                              ),
+                      hintStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Raleway',
+                                letterSpacing: 0.0,
+                              ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).primary,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      filled: true,
+                      fillColor: const Color(0xEBFFFFFF),
+                      contentPadding:
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Raleway',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          letterSpacing: 0.0,
+                        ),
+                    validator: _model.emailTextControllerValidator
+                        .asValidator(context),
+                  ),
+                ),
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.05),
                   child: Padding(
@@ -348,6 +544,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             .update(createUsersRecordData(
                           name: _model.yourNameTextController.text,
                           photoUrl: _model.uploadedFileUrl2,
+                          displayName: _model.displayNameTextController.text,
+                          phoneNumber: _model.phoneNumberTextController.text,
                         ));
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
