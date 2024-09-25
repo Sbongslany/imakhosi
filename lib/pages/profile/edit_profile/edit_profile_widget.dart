@@ -1,10 +1,10 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/components/nav_back_widget.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -31,12 +31,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
 
     _model.yourNameTextController ??= TextEditingController();
     _model.yourNameFocusNode ??= FocusNode();
-
-    _model.cityTextController ??= TextEditingController();
-    _model.cityFocusNode ??= FocusNode();
-
-    _model.myBioTextController ??= TextEditingController();
-    _model.myBioFocusNode ??= FocusNode();
   }
 
   @override
@@ -343,225 +337,33 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         .asValidator(context),
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-                  child: TextFormField(
-                    controller: _model.cityTextController,
-                    focusNode: _model.cityFocusNode,
-                    textCapitalization: TextCapitalization.words,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: 'Your City',
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
-                                letterSpacing: 0.0,
-                              ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xD9FFFFFF),
-                      contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
-                          letterSpacing: 0.0,
-                        ),
-                    validator:
-                        _model.cityTextControllerValidator.asValidator(context),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-                  child: FlutterFlowDropDown<String>(
-                    controller: _model.stateValueController ??=
-                        FormFieldController<String>(
-                      _model.stateValue ??= 'State',
-                    ),
-                    options: const [
-                      'State',
-                      'Alabama',
-                      'Alaska',
-                      'Arizona',
-                      'Arkansas',
-                      'California',
-                      'Colorado',
-                      'Connecticut',
-                      'Delaware',
-                      'Florida',
-                      'Georgia',
-                      'Hawaii',
-                      'Idaho',
-                      'Illinoi',
-                      'Indiana',
-                      'Iowa',
-                      'Kansas',
-                      'Kentucky',
-                      'Louisiana',
-                      'Maine',
-                      'Maryland',
-                      'Massachusetts',
-                      'Michigan',
-                      'Minnesota',
-                      'Mississippi',
-                      'Missouri',
-                      'Monta',
-                      'Nebraska',
-                      'Nevada',
-                      'New Hampshire',
-                      'New Jersey',
-                      'New Mexico',
-                      'New York',
-                      'North Carolina',
-                      'North Dak',
-                      'Ohio',
-                      'Oklahoma',
-                      'Oregon',
-                      'Pennsylvani',
-                      'Rhode Island',
-                      'South Caroli',
-                      'South Dakota',
-                      'Tennessee',
-                      'Texas',
-                      'Utah',
-                      'Vermont',
-                      'Virginia',
-                      'Washingto',
-                      'West Virginia',
-                      'Wisconsin',
-                      'Wyoming'
-                    ],
-                    onChanged: (val) =>
-                        safeSetState(() => _model.stateValue = val),
-                    width: double.infinity,
-                    height: 56.0,
-                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
-                          letterSpacing: 0.0,
-                        ),
-                    hintText: 'Select State',
-                    icon: Icon(
-                      Icons.keyboard_arrow_down_rounded,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 15.0,
-                    ),
-                    fillColor: const Color(0xD9FFFFFF),
-                    elevation: 2.0,
-                    borderColor: FlutterFlowTheme.of(context).secondaryText,
-                    borderWidth: 2.0,
-                    borderRadius: 8.0,
-                    margin:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 4.0, 12.0, 4.0),
-                    hidesUnderline: true,
-                    isSearchable: false,
-                    isMultiSelect: false,
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-                  child: TextFormField(
-                    controller: _model.myBioTextController,
-                    focusNode: _model.myBioFocusNode,
-                    textCapitalization: TextCapitalization.sentences,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
-                                letterSpacing: 0.0,
-                              ),
-                      hintText: 'Your bio',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      filled: true,
-                      fillColor: const Color(0xD9FFFFFF),
-                      contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
-                          letterSpacing: 0.0,
-                        ),
-                    textAlign: TextAlign.start,
-                    maxLines: 3,
-                    validator: _model.myBioTextControllerValidator
-                        .asValidator(context),
-                  ),
-                ),
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.05),
                   child: Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        await currentUserReference!
+                            .update(createUsersRecordData(
+                          name: _model.yourNameTextController.text,
+                          photoUrl: _model.uploadedFileUrl2,
+                        ));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Profile Updated',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+
+                        context.pushNamed('Profile');
                       },
                       text: 'Save Changes',
                       options: FFButtonOptions(
