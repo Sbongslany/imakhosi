@@ -243,15 +243,23 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                             milliseconds:
                                                                                 500),
                                                                     imageUrl:
-                                                                        rowShoesRecord
-                                                                            .image,
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                      rowShoesRecord
+                                                                          .image,
+                                                                      'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                                                    ),
                                                                     fit: BoxFit
                                                                         .contain,
                                                                   ),
                                                                   allowRotation:
                                                                       false,
-                                                                  tag: rowShoesRecord
-                                                                      .image,
+                                                                  tag: valueOrDefault<
+                                                                      String>(
+                                                                    rowShoesRecord
+                                                                        .image,
+                                                                    'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png' '$cartItemsIndex',
+                                                                  ),
                                                                   useHeroAnimation:
                                                                       true,
                                                                 ),
@@ -259,8 +267,12 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                             );
                                                           },
                                                           child: Hero(
-                                                            tag: rowShoesRecord
-                                                                .image,
+                                                            tag: valueOrDefault<
+                                                                String>(
+                                                              rowShoesRecord
+                                                                  .image,
+                                                              'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png' '$cartItemsIndex',
+                                                            ),
                                                             transitionOnUserGestures:
                                                                 true,
                                                             child: ClipRRect(
@@ -279,8 +291,12 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                         milliseconds:
                                                                             500),
                                                                 imageUrl:
-                                                                    rowShoesRecord
-                                                                        .image,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  rowShoesRecord
+                                                                      .image,
+                                                                  'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                                                ),
                                                                 width: 57.0,
                                                                 height: 70.0,
                                                                 fit: BoxFit
@@ -487,7 +503,8 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                           width: double.infinity,
                           height: 150.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).alternate,
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(10.0),
                               bottomRight: Radius.circular(10.0),
@@ -518,7 +535,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .primaryBackground,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -541,7 +558,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               fontFamily: 'Poppins',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .primaryBackground,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
@@ -575,7 +592,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primary,
+                                                      .primaryBackground,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
@@ -598,7 +615,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               fontFamily: 'Poppins',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primary,
+                                                      .primaryBackground,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w800,
@@ -621,7 +638,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                         customerEmail: currentUserEmail,
                                         customerName:
                                             '${valueOrDefault(currentUserDocument?.name, '')} ${valueOrDefault(currentUserDocument?.surname, '')}',
-                                        description: 'Med Purchases',
+                                        description: 'Shopping Purchases',
                                         allowGooglePay: false,
                                         allowApplePay: false,
                                       );

@@ -209,12 +209,16 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                     width: double.infinity,
                     height: 100.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      color: FlutterFlowTheme.of(context).secondary,
                       borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(16.0),
                         bottomRight: Radius.circular(16.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
+                      ),
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 5.0,
                       ),
                     ),
                     child: Row(
@@ -224,7 +228,10 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            _model.uploadedFileUrl,
+                            valueOrDefault<String>(
+                              _model.uploadedFileUrl,
+                              'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                            ),
                             width: 200.0,
                             height: 200.0,
                             fit: BoxFit.cover,
@@ -516,6 +523,8 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                                 FlutterFlowTheme.of(context).success,
                           ),
                         );
+
+                        context.pushNamed('ProductsScreen');
                       },
                       text: 'Save Changes',
                       options: FFButtonOptions(

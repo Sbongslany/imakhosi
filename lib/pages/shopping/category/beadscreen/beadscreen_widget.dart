@@ -88,7 +88,7 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
                     children: [
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 70.0, 20.0, 0.0),
+                            20.0, 90.0, 20.0, 0.0),
                         child: StreamBuilder<List<ShoesRecord>>(
                           stream: queryShoesRecord(
                             queryBuilder: (shoesRecord) => shoesRecord.where(
@@ -176,7 +176,7 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 12.0, 0.0, 0.0),
+                                                  12.0, 12.0, 12.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -207,8 +207,11 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: Image.network(
-                                                  staggeredViewShoesRecord
-                                                      .image,
+                                                  valueOrDefault<String>(
+                                                    staggeredViewShoesRecord
+                                                        .image,
+                                                    'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                                  ),
                                                   width: 153.0,
                                                   height: 80.0,
                                                   fit: BoxFit.cover,

@@ -65,6 +65,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
       body: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondary,
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: Image.asset(
+              'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+            ).image,
+          ),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(0.0),
@@ -78,7 +84,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
                   child: wrapWithModel(
                     model: _model.navBackModel,
                     updateCallback: () => safeSetState(() {}),
@@ -196,7 +202,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           const Duration(milliseconds: 500),
                                       fadeOutDuration:
                                           const Duration(milliseconds: 500),
-                                      imageUrl: _model.uploadedFileUrl2,
+                                      imageUrl: valueOrDefault<String>(
+                                        _model.uploadedFileUrl2,
+                                        'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
+                                      ),
                                       fit: BoxFit.fitWidth,
                                     ),
                                   ),
@@ -342,7 +351,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
-                        fillColor: const Color(0xEBFFFFFF),
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 0.0, 24.0),
                       ),

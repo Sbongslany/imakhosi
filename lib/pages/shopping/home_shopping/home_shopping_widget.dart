@@ -1,13 +1,16 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:badges/badges.dart' as badges;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'home_shopping_model.dart';
 export 'home_shopping_model.dart';
 
@@ -159,13 +162,23 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).alternate,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryText,
         body: Container(
-          decoration: const BoxDecoration(),
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              ).image,
+            ),
+          ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
             child: BackdropFilter(
@@ -187,33 +200,46 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                           Container(
                             width: 40.0,
                             height: 40.0,
-                            decoration: const BoxDecoration(
-                              color: Color(0x94C6E4EC),
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).primary,
                               shape: BoxShape.circle,
                             ),
                             child: FaIcon(
                               FontAwesomeIcons.alignLeft,
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).secondary,
                               size: 25.0,
                             ),
                           ),
-                          Text(
-                            'Shop',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Raleway',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                          ),
-                          Stack(
-                            alignment: const AlignmentDirectional(1.0, -1.0),
-                            children: [
-                              InkWell(
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('MyCart');
+                            },
+                            child: badges.Badge(
+                              badgeContent: Text(
+                                FFAppState().cartitems.toString(),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Raleway',
+                                      color: Colors.white,
+                                      fontSize: 9.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              showBadge: true,
+                              shape: badges.BadgeShape.circle,
+                              badgeColor: FlutterFlowTheme.of(context).primary,
+                              elevation: 4.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 8.0, 8.0),
+                              position: badges.BadgePosition.topStart(),
+                              animationType: badges.BadgeAnimationType.scale,
+                              toAnimate: true,
+                              child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
@@ -221,76 +247,60 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                 onTap: () async {
                                   context.pushNamed('MyCart');
                                 },
-                                child: Container(
-                                  width: 30.0,
-                                  height: 30.0,
-                                  decoration: const BoxDecoration(
-                                    color: Color(0x00C6E4EC),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      FaIcon(
-                                        FontAwesomeIcons.shoppingCart,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 20.0,
-                                      ),
-                                    ],
-                                  ),
+                                child: FaIcon(
+                                  FontAwesomeIcons.shoppingCart,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  size: 23.0,
                                 ),
                               ),
-                              Container(
-                                width: 10.0,
-                                height: 10.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).success,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('CreateItemScreen');
-                          },
-                          text: 'Add your product',
-                          options: FFButtonOptions(
-                            width: 242.0,
-                            height: 44.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Raleway',
+                    if (valueOrDefault(currentUserDocument?.type, '') ==
+                        'Traditional Healer')
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed('CreateItemScreen');
+                              },
+                              text: 'Add your product',
+                              options: FFButtonOptions(
+                                width: 242.0,
+                                height: 44.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Raleway',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                elevation: 5.0,
+                                borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).secondary,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
+                                  width: 2.0,
                                 ),
-                            elevation: 5.0,
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).secondary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(38.0),
+                                borderRadius: BorderRadius.circular(38.0),
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['buttonOnPageLoadAnimation1']!),
                           ),
-                        ).animateOnPageLoad(
-                            animationsMap['buttonOnPageLoadAnimation1']!),
+                        ),
                       ),
-                    ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
@@ -426,7 +436,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 7.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 7.0, 0.0, 0.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -436,7 +446,18 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('Beadscreen');
+                                  context.pushNamed(
+                                    'Beadscreen',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.scale,
+                                        alignment: Alignment.bottomCenter,
+                                        duration: Duration(milliseconds: 500),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: 'Beads',
                                 options: FFButtonOptions(
@@ -604,18 +625,27 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'See all',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('ProductsScreen');
+                              },
+                              child: Text(
+                                'See all',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      fontFamily: 'Raleway',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
                             ),
                           ),
                         ],
@@ -689,7 +719,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                         },
                                         child: Material(
                                           color: Colors.transparent,
-                                          elevation: 2.0,
+                                          elevation: 10.0,
                                           shape: const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(16.0),
@@ -703,9 +733,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                             width: 157.0,
                                             height: 180.0,
                                             decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                              color: const Color(0x68FFFFFF),
                                               borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(16.0),
@@ -713,6 +741,12 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                     Radius.circular(16.0),
                                                 topLeft: Radius.circular(16.0),
                                                 topRight: Radius.circular(16.0),
+                                              ),
+                                              border: Border.all(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                width: 1.0,
                                               ),
                                             ),
                                             child: Padding(
@@ -741,8 +775,12 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
-                                                            listViewShoesRecord
-                                                                .image,
+                                                            valueOrDefault<
+                                                                String>(
+                                                          listViewShoesRecord
+                                                              .image,
+                                                          'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                                        ),
                                                         width: 153.0,
                                                         height: 80.0,
                                                         fit: BoxFit.cover,
@@ -815,9 +853,9 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                         'Raleway',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .secondaryText,
+                                                                        .primaryText,
                                                                     fontSize:
-                                                                        13.0,
+                                                                        15.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -835,13 +873,8 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                         0.0,
                                                                         0.0),
                                                             child: Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                listViewShoesRecord
-                                                                    .createdBy
-                                                                    ?.id,
-                                                                '-',
-                                                              ),
+                                                              listViewShoesRecord
+                                                                  .reference.id,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -850,7 +883,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                         'Raleway',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .secondaryText,
+                                                                        .primaryBackground,
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
@@ -900,7 +933,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                                     'Raleway',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryText,
+                                                                    .primaryBackground,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -973,7 +1006,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .override(
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryBackground,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -990,10 +1023,10 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .override(
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryBackground,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.bold,
                                   ),
                             ),
                           ),
@@ -1038,7 +1071,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                                   fontFamily: 'Roboto',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryText,
+                                                      .primaryBackground,
                                                   fontSize: 17.0,
                                                   letterSpacing: 2.0,
                                                   fontWeight: FontWeight.w500,
@@ -1057,7 +1090,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                               fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .tertiary,
+                                                      .primary,
                                               fontSize: 36.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w900,

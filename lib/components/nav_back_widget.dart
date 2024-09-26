@@ -87,7 +87,7 @@ class _NavBackWidgetState extends State<NavBackWidget> {
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Raleway',
-                  color: FlutterFlowTheme.of(context).secondaryText,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   fontSize: 20.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
@@ -129,7 +129,7 @@ class _NavBackWidgetState extends State<NavBackWidget> {
                 },
                 child: FaIcon(
                   FontAwesomeIcons.shoppingCart,
-                  color: FlutterFlowTheme.of(context).secondaryText,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   size: 23.0,
                 ),
               ),

@@ -49,6 +49,12 @@ class _UsersWidgetState extends State<UsersWidget> {
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondary,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              ).image,
+            ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
@@ -206,7 +212,7 @@ class _UsersWidgetState extends State<UsersWidget> {
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 12.0, 0.0, 0.0),
+                                          12.0, 12.0, 12.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -231,17 +237,23 @@ class _UsersWidgetState extends State<UsersWidget> {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                            child: Container(
+                                              width: 70.0,
+                                              height: 70.0,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: const BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
                                               child: CachedNetworkImage(
                                                 fadeInDuration:
                                                     const Duration(milliseconds: 500),
                                                 fadeOutDuration:
                                                     const Duration(milliseconds: 500),
-                                                imageUrl: '',
-                                                width: 153.0,
-                                                height: 80.0,
+                                                imageUrl:
+                                                    valueOrDefault<String>(
+                                                  gridViewUsersRecord.photoUrl,
+                                                  'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
+                                                ),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),

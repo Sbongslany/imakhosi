@@ -60,6 +60,12 @@ class _BookingWidgetState extends State<BookingWidget>
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).alternate,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              ).image,
+            ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
@@ -94,8 +100,7 @@ class _BookingWidgetState extends State<BookingWidget>
                       ),
                       child: FlutterFlowCalendar(
                         color: FlutterFlowTheme.of(context).primary,
-                        iconColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
+                        iconColor: FlutterFlowTheme.of(context).secondaryText,
                         weekFormat: true,
                         weekStartsMonday: true,
                         initialDate: _model.start,
@@ -112,13 +117,16 @@ class _BookingWidgetState extends State<BookingWidget>
                         titleStyle:
                             FlutterFlowTheme.of(context).headlineSmall.override(
                                   fontFamily: 'Outfit',
+                                  color: FlutterFlowTheme.of(context).primary,
                                   letterSpacing: 0.0,
                                 ),
-                        dayOfWeekStyle:
-                            FlutterFlowTheme.of(context).labelLarge.override(
-                                  fontFamily: 'Raleway',
-                                  letterSpacing: 0.0,
-                                ),
+                        dayOfWeekStyle: FlutterFlowTheme.of(context)
+                            .labelLarge
+                            .override(
+                              fontFamily: 'Raleway',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              letterSpacing: 0.0,
+                            ),
                         dateStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Raleway',
@@ -155,12 +163,14 @@ class _BookingWidgetState extends State<BookingWidget>
                                   .labelMedium
                                   .override(
                                     fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  color: FlutterFlowTheme.of(context).secondary,
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
@@ -187,8 +197,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                              fillColor: const Color(0x95FFFFFF),
                               prefixIcon: Icon(
                                 Icons.search_outlined,
                                 color:
@@ -199,6 +208,8 @@ class _BookingWidgetState extends State<BookingWidget>
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Raleway',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: null,

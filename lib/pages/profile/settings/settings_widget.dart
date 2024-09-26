@@ -123,6 +123,12 @@ class _SettingsWidgetState extends State<SettingsWidget>
             height: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).alternate,
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: Image.asset(
+                  'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+                ).image,
+              ),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(0.0),
@@ -205,7 +211,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                            .secondaryText,
                                         fontSize: 15.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
@@ -272,7 +278,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                            .secondaryText,
                                         fontSize: 15.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
@@ -339,7 +345,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                            .secondaryText,
                                         fontSize: 15.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
@@ -406,7 +412,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                            .secondaryText,
                                         fontSize: 15.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,

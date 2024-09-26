@@ -276,6 +276,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateItemScreen',
           path: '/createItemScreen',
           builder: (context, params) => const CreateItemScreenWidget(),
+        ),
+        FFRoute(
+          name: 'ProductsScreen',
+          path: '/productsScreen',
+          builder: (context, params) => const ProductsScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

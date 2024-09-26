@@ -122,7 +122,7 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 0.0, 0.0),
+                                        12.0, 12.0, 12.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -149,7 +149,11 @@ class _FavouriteScreenWidgetState extends State<FavouriteScreenWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.network(
-                                            staggeredViewFavouriteRecord.image,
+                                            valueOrDefault<String>(
+                                              staggeredViewFavouriteRecord
+                                                  .image,
+                                              'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                            ),
                                             width: 153.0,
                                             height: 80.0,
                                             fit: BoxFit.cover,

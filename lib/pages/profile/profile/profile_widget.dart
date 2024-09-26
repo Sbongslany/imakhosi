@@ -108,6 +108,25 @@ class _ProfileWidgetState extends State<ProfileWidget>
           ),
         ],
       ),
+      'textOnPageLoadAnimation5': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(-60.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'buttonOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -148,7 +167,14 @@ class _ProfileWidgetState extends State<ProfileWidget>
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              ).image,
+            ),
+          ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(0.0),
             child: BackdropFilter(
@@ -193,7 +219,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 height: 31.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
+                                      .secondaryBackground,
                                   image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: Image.asset(
@@ -229,8 +255,10 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                                 const Duration(milliseconds: 500),
                                             fadeOutDuration:
                                                 const Duration(milliseconds: 500),
-                                            imageUrl:
-                                                columnUsersRecord.photoUrl,
+                                            imageUrl: valueOrDefault<String>(
+                                              columnUsersRecord.photoUrl,
+                                              'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
+                                            ),
                                             width: 100.0,
                                             height: 100.0,
                                             fit: BoxFit.cover,
@@ -286,7 +314,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               .headlineLarge
                               .override(
                                 fontFamily: 'Outfit',
-                                color: FlutterFlowTheme.of(context).primary,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 fontSize: 25.0,
                                 letterSpacing: 0.0,
                               ),
@@ -294,18 +323,35 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             animationsMap['textOnPageLoadAnimation1']!),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 4.0, 0.0, 16.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 5.0),
                         child: Text(
                           columnUsersRecord.email,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Raleway',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: 'Raleway',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                letterSpacing: 0.0,
+                              ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation2']!),
+                      ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 0.0, 16.0),
+                        child: Text(
+                          columnUsersRecord.province,
+                          style: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: 'Raleway',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
+                        ).animateOnPageLoad(
+                            animationsMap['textOnPageLoadAnimation3']!),
                       ),
                       Padding(
                         padding:
@@ -323,7 +369,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 fontWeight: FontWeight.normal,
                               ),
                         ).animateOnPageLoad(
-                            animationsMap['textOnPageLoadAnimation3']!),
+                            animationsMap['textOnPageLoadAnimation4']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -427,7 +473,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 fontWeight: FontWeight.normal,
                               ),
                         ).animateOnPageLoad(
-                            animationsMap['textOnPageLoadAnimation4']!),
+                            animationsMap['textOnPageLoadAnimation5']!),
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(

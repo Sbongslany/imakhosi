@@ -269,25 +269,37 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                           const Duration(milliseconds: 500),
                                       fadeOutDuration:
                                           const Duration(milliseconds: 500),
-                                      imageUrl: detailsScreenShoesRecord.image,
+                                      imageUrl: valueOrDefault<String>(
+                                        detailsScreenShoesRecord.image,
+                                        'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                      ),
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: detailsScreenShoesRecord.image,
+                                    tag: valueOrDefault<String>(
+                                      detailsScreenShoesRecord.image,
+                                      'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                    ),
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: detailsScreenShoesRecord.image,
+                              tag: valueOrDefault<String>(
+                                detailsScreenShoesRecord.image,
+                                'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                              ),
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: CachedNetworkImage(
                                   fadeInDuration: const Duration(milliseconds: 500),
                                   fadeOutDuration: const Duration(milliseconds: 500),
-                                  imageUrl: detailsScreenShoesRecord.image,
+                                  imageUrl: valueOrDefault<String>(
+                                    detailsScreenShoesRecord.image,
+                                    'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                  ),
                                   width: 271.0,
                                   height: 279.0,
                                   fit: BoxFit.cover,

@@ -45,3 +45,5 @@ export '/pages/shopping/category/medicinescreen/medicinescreen_widget.dart'
     show MedicinescreenWidget;
 export '/pages/shopping/create_item_screen/create_item_screen_widget.dart'
     show CreateItemScreenWidget;
+export '/pages/shopping/products_screen/products_screen_widget.dart'
+    show ProductsScreenWidget;

@@ -4,6 +4,7 @@ import '/components/nav_back_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -89,7 +90,7 @@ class _MedicinescreenWidgetState extends State<MedicinescreenWidget> {
                     children: [
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 70.0, 20.0, 0.0),
+                            20.0, 90.0, 20.0, 0.0),
                         child: StreamBuilder<List<ShoesRecord>>(
                           stream: queryShoesRecord(
                             queryBuilder: (shoesRecord) => shoesRecord.where(
@@ -177,7 +178,7 @@ class _MedicinescreenWidgetState extends State<MedicinescreenWidget> {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 12.0, 0.0, 0.0),
+                                                  12.0, 12.0, 12.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -207,9 +208,17 @@ class _MedicinescreenWidgetState extends State<MedicinescreenWidget> {
                                               ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  staggeredViewShoesRecord
-                                                      .image,
+                                                child: CachedNetworkImage(
+                                                  fadeInDuration: const Duration(
+                                                      milliseconds: 500),
+                                                  fadeOutDuration: const Duration(
+                                                      milliseconds: 500),
+                                                  imageUrl:
+                                                      valueOrDefault<String>(
+                                                    staggeredViewShoesRecord
+                                                        .image,
+                                                    'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png',
+                                                  ),
                                                   width: 153.0,
                                                   height: 80.0,
                                                   fit: BoxFit.cover,
