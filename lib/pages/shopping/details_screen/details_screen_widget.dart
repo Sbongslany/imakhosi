@@ -76,6 +76,12 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
             body: Container(
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).alternate,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: Image.network(
+                    'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+                  ).image,
+                ),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(0.0),
@@ -187,13 +193,21 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                      fontFamily: 'Raleway',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      fontSize: 35.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      shadows: [
+                                        Shadow(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          fontSize: 30.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                          offset: const Offset(2.0, 2.0),
+                                          blurRadius: 2.0,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -489,7 +503,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                                 fontFamily: 'Raleway',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                        .secondary,
                                                 fontSize: 13.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
@@ -552,7 +566,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                   child: Icon(
                                     Icons.favorite_border,
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryBackground,
                                     size: 30.0,
                                   ),
                                 ),

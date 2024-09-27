@@ -52,8 +52,8 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
             color: FlutterFlowTheme.of(context).secondaryBackground,
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -77,16 +77,15 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                       children: [
                         Text(
                           'Sign In',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 24.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 24.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                         Text(
                           'Enter and password to continue',
@@ -94,8 +93,7 @@ class _SignInPageWidgetState extends State<SignInPageWidget> {
                               .bodyMedium
                               .override(
                                 fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: FlutterFlowTheme.of(context).secondary,
                                 letterSpacing: 0.0,
                               ),
                         ),

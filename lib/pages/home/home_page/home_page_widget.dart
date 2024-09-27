@@ -71,8 +71,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
             color: const Color(0x91748285),
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -360,7 +360,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .override(
                                             fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .primaryBackground,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w900,
@@ -498,7 +498,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             width: 157.0,
                                             height: 180.0,
                                             decoration: BoxDecoration(
-                                              color: const Color(0x76FFFFFF),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                               borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(16.0),

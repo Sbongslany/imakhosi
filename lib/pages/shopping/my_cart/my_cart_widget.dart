@@ -53,12 +53,12 @@ class _MyCartWidgetState extends State<MyCartWidget> {
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.network(
+              image: CachedNetworkImageProvider(
                 'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
-              ).image,
+              ),
             ),
           ),
           child: ClipRRect(
@@ -75,7 +75,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.navBackModel,
                         updateCallback: () => safeSetState(() {}),
@@ -339,8 +339,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
+                                                          MainAxisAlignment.end,
                                                       crossAxisAlignment:
                                                           CrossAxisAlignment
                                                               .start,
@@ -369,7 +368,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                           'Raleway',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondaryText,
+                                                                          .primaryText,
                                                                       fontSize:
                                                                           17.0,
                                                                       letterSpacing:
@@ -395,34 +394,54 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              Text(
-                                                                formatNumber(
-                                                                  rowShoesRecord
-                                                                      .price,
-                                                                  formatType:
-                                                                      FormatType
-                                                                          .custom,
-                                                                  currency: 'R',
-                                                                  format: '',
-                                                                  locale: '',
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                child: Text(
+                                                                  formatNumber(
+                                                                    rowShoesRecord
+                                                                        .price,
+                                                                    formatType:
+                                                                        FormatType
+                                                                            .custom,
+                                                                    currency:
+                                                                        'R',
+                                                                    format: '',
+                                                                    locale: '',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                    fontFamily:
+                                                                        'Raleway',
+                                                                    color: const Color(
+                                                                        0xFFF1F4F8),
+                                                                    fontSize:
+                                                                        23.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w800,
+                                                                    shadows: [
+                                                                      Shadow(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        offset: const Offset(
+                                                                            2.0,
+                                                                            2.0),
+                                                                        blurRadius:
+                                                                            2.0,
+                                                                      )
+                                                                    ],
+                                                                  ),
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Raleway',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          23.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w800,
-                                                                    ),
                                                               ),
                                                             ],
                                                           ),
@@ -541,7 +560,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                             border: Border.all(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              width: 5.0,
+                              width: 2.0,
                             ),
                           ),
                           child: Padding(
@@ -733,8 +752,8 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                       elevation: 3.0,
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        width: 5.0,
+                                            .primaryBackground,
+                                        width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),

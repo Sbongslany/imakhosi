@@ -53,8 +53,8 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -292,7 +292,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
 
                                       return Material(
                                         color: Colors.transparent,
-                                        elevation: 10.0,
+                                        elevation: 20.0,
                                         shape: const RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(20.0),
@@ -304,7 +304,7 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: const Color(0x8FFFFFFF),
+                                            color: const Color(0xA057636C),
                                             borderRadius: const BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
@@ -362,10 +362,16 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Raleway',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
                                                                     ),
                                                               ),
                                                             ),
@@ -386,6 +392,9 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Raleway',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:
@@ -438,6 +447,9 @@ class _HealerBookingsWidgetState extends State<HealerBookingsWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Raleway',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),

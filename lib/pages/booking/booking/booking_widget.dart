@@ -62,8 +62,8 @@ class _BookingWidgetState extends State<BookingWidget>
             color: FlutterFlowTheme.of(context).alternate,
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -339,7 +339,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondary,
+                                                      .secondaryBackground,
                                                   boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 0.0,
@@ -444,6 +444,8 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Raleway',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
                                                                             fontSize:
                                                                                 13.0,
                                                                             letterSpacing:
@@ -454,7 +456,7 @@ class _BookingWidgetState extends State<BookingWidget>
                                                                   Expanded(
                                                                     child: Text(
                                                                       listViewUsersRecord
-                                                                          .displayName,
+                                                                          .surname,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyLarge

@@ -72,8 +72,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
               color: FlutterFlowTheme.of(context).secondaryBackground,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+                image: Image.network(
+                  'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
                 ).image,
               ),
             ),
@@ -86,7 +86,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                   sigmaY: 8.0,
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -129,7 +130,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA2FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -224,7 +225,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA3FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -318,7 +319,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA7FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -412,7 +413,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA6FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -506,7 +507,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA8FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -600,7 +601,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA2FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -620,7 +621,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
-                                    Icons.person,
+                                    Icons.phone_sharp,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -696,7 +697,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA2FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -716,7 +717,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
-                                    Icons.person,
+                                    Icons.share_location_rounded,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -792,7 +793,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0xA2FFFFFF),
                               borderRadius: const BorderRadius.only(
@@ -812,7 +813,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 5.0, 0.0),
                                   child: Icon(
-                                    Icons.person,
+                                    Icons.location_on,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -874,7 +875,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            height: 60.0,
+                            height: 50.0,
                             decoration: BoxDecoration(
                               color: const Color(0x32FFFFFF),
                               borderRadius: const BorderRadius.only(

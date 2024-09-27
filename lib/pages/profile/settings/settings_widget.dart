@@ -125,8 +125,8 @@ class _SettingsWidgetState extends State<SettingsWidget>
               color: FlutterFlowTheme.of(context).alternate,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+                image: Image.network(
+                  'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
                 ).image,
               ),
             ),
@@ -179,8 +179,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                           width: double.infinity,
                           height: 60.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: FlutterFlowTheme.of(context).alternate,
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -246,8 +245,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                           width: double.infinity,
                           height: 60.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: FlutterFlowTheme.of(context).alternate,
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -313,8 +311,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                           width: double.infinity,
                           height: 60.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: FlutterFlowTheme.of(context).alternate,
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
@@ -380,8 +377,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                           width: double.infinity,
                           height: 60.0,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color: FlutterFlowTheme.of(context).alternate,
                             boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,

@@ -76,6 +76,12 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
             body: Container(
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).alternate,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: Image.network(
+                    'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+                  ).image,
+                ),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(0.0),
@@ -147,7 +153,7 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
                                     },
                                     child: Material(
                                       color: Colors.transparent,
-                                      elevation: 5.0,
+                                      elevation: 10.0,
                                       shape: const RoundedRectangleBorder(
                                         borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(16.0),
@@ -160,7 +166,8 @@ class _BeadscreenWidgetState extends State<BeadscreenWidget> {
                                         width: 200.0,
                                         height: 180.0,
                                         decoration: BoxDecoration(
-                                          color: const Color(0xD1FFFFFF),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
                                           borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(16.0),
                                             bottomRight: Radius.circular(16.0),

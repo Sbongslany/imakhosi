@@ -64,8 +64,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -344,7 +344,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondaryBackground,
+                                                                .secondaryText,
                                                             boxShadow: [
                                                               BoxShadow(
                                                                 blurRadius: 0.0,
@@ -377,7 +377,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                             border: Border.all(
                                                               color: const Color(
                                                                   0xFFC6D9EC),
-                                                              width: 5.0,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Padding(
@@ -464,6 +464,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                             '${containerUsersRecord.name} ${containerUsersRecord.displayName}',
                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                   fontFamily: 'Raleway',
+                                                                                  color: FlutterFlowTheme.of(context).secondary,
                                                                                   fontSize: 15.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
@@ -482,6 +483,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                 listViewBookingsRecord.time!),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Raleway',
+                                                                                  color: FlutterFlowTheme.of(context).secondary,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
@@ -505,6 +507,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                                   dateTimeFormat("MMMMEEEEd", listViewBookingsRecord.time!),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Raleway',
+                                                                                        color: FlutterFlowTheme.of(context).secondary,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),

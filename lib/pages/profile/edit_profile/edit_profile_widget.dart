@@ -67,8 +67,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
           color: FlutterFlowTheme.of(context).secondary,
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: Image.asset(
-              'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+            image: Image.network(
+              'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
             ).image,
           ),
         ),
@@ -287,7 +287,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       child: Icon(
                                         Icons.camera_alt,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .alternate,
                                         size: 44.0,
                                       ),
                                     ),
@@ -351,8 +351,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
-                        fillColor:
-                            FlutterFlowTheme.of(context).secondaryBackground,
+                        fillColor: FlutterFlowTheme.of(context).alternate,
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 0.0, 24.0),
                       ),
@@ -416,7 +415,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
-                        fillColor: const Color(0xEBFFFFFF),
+                        fillColor: FlutterFlowTheme.of(context).alternate,
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 0.0, 24.0),
                       ),
@@ -480,7 +479,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
-                        fillColor: const Color(0xEBFFFFFF),
+                        fillColor: FlutterFlowTheme.of(context).alternate,
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 0.0, 24.0),
                       ),
@@ -544,7 +543,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
-                        fillColor: const Color(0xEBFFFFFF),
+                        fillColor: FlutterFlowTheme.of(context).alternate,
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 0.0, 24.0),
                       ),
@@ -608,7 +607,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       filled: true,
-                      fillColor: const Color(0xEBFFFFFF),
+                      fillColor: FlutterFlowTheme.of(context).alternate,
                       contentPadding:
                           const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),

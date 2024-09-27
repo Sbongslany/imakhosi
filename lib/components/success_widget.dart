@@ -74,6 +74,12 @@ class _SuccessWidgetState extends State<SuccessWidget>
           height: 375.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).alternate,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+              ).image,
+            ),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(16.0),
               bottomRight: Radius.circular(16.0),
@@ -109,16 +115,15 @@ class _SuccessWidgetState extends State<SuccessWidget>
                         child: Text(
                           'Your Payment is Successful',
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 20.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                         ),
                       ),
                     ),

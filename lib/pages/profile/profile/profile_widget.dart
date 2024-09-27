@@ -170,8 +170,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -314,8 +314,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               .headlineLarge
                               .override(
                                 fontFamily: 'Outfit',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
                                 fontSize: 25.0,
                                 letterSpacing: 0.0,
                               ),
@@ -327,14 +327,13 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 5.0),
                         child: Text(
                           columnUsersRecord.email,
-                          style: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                letterSpacing: 0.0,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    letterSpacing: 0.0,
+                                  ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation2']!),
                       ),
@@ -343,13 +342,13 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             24.0, 0.0, 0.0, 16.0),
                         child: Text(
                           columnUsersRecord.province,
-                          style: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                letterSpacing: 0.0,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    letterSpacing: 0.0,
+                                  ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation3']!),
                       ),
@@ -358,16 +357,15 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                         child: Text(
                           'Your Account',
-                          style: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 10.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.normal,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation4']!),
                       ),
@@ -392,7 +390,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               width: double.infinity,
                               height: 60.0,
                               decoration: BoxDecoration(
-                                color: const Color(0x8FFFFFFF),
+                                color: FlutterFlowTheme.of(context).alternate,
                                 boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 3.0,
@@ -462,16 +460,15 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             24.0, 16.0, 0.0, 0.0),
                         child: Text(
                           'App Settings',
-                          style: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 10.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.normal,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 10.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation5']!),
                       ),
@@ -496,7 +493,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               width: double.infinity,
                               height: 60.0,
                               decoration: BoxDecoration(
-                                color: const Color(0x8FFFFFFF),
+                                color: FlutterFlowTheme.of(context).alternate,
                                 boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 3.0,
@@ -571,7 +568,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x8FFFFFFF),
+                              color: FlutterFlowTheme.of(context).alternate,
                               boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
@@ -644,7 +641,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             width: double.infinity,
                             height: 60.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x8FFFFFFF),
+                              color: FlutterFlowTheme.of(context).alternate,
                               boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,

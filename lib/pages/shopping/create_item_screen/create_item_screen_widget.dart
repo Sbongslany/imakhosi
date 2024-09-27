@@ -57,6 +57,12 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
       body: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondary,
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: Image.network(
+              'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+            ).image,
+          ),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(0.0),
@@ -128,7 +134,7 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       filled: true,
-                      fillColor: const Color(0xEBFFFFFF),
+                      fillColor: FlutterFlowTheme.of(context).alternate,
                       contentPadding:
                           const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
@@ -190,7 +196,7 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       filled: true,
-                      fillColor: const Color(0xD9FFFFFF),
+                      fillColor: FlutterFlowTheme.of(context).alternate,
                       contentPadding:
                           const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
@@ -217,8 +223,8 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                         topRight: Radius.circular(16.0),
                       ),
                       border: Border.all(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 5.0,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        width: 2.0,
                       ),
                     ),
                     child: Row(
@@ -417,7 +423,7 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       filled: true,
-                      fillColor: const Color(0xD9FFFFFF),
+                      fillColor: FlutterFlowTheme.of(context).alternate,
                       contentPadding:
                           const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
@@ -478,7 +484,7 @@ class _CreateItemScreenWidgetState extends State<CreateItemScreenWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       filled: true,
-                      fillColor: const Color(0xD9FFFFFF),
+                      fillColor: FlutterFlowTheme.of(context).alternate,
                       contentPadding:
                           const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),

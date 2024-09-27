@@ -56,8 +56,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/alex-perez-wEgR12N01Tk-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -165,7 +165,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                         },
                         child: Material(
                           color: Colors.transparent,
-                          elevation: 10.0,
+                          elevation: 30.0,
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
@@ -179,6 +179,16 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                             height: 150.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4.0,
+                                  color: Color(0x33000000),
+                                  offset: Offset(
+                                    0.0,
+                                    2.0,
+                                  ),
+                                )
+                              ],
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(16.0),
                                 bottomRight: Radius.circular(16.0),
@@ -186,7 +196,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                 topRight: Radius.circular(16.0),
                               ),
                               border: Border.all(
-                                color: const Color(0xFFC6D9EC),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 width: 6.0,
                               ),
                             ),
@@ -202,8 +213,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                       .override(
                                         fontFamily: 'Rubik',
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        fontSize: 25.0,
+                                            .primaryText,
+                                        fontSize: 30.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -215,8 +226,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                       .override(
                                         fontFamily: 'Mukta',
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        fontSize: 20.0,
+                                            .primaryText,
+                                        fontSize: 25.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
                                       ),
@@ -249,7 +260,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                         },
                         child: Material(
                           color: Colors.transparent,
-                          elevation: 10.0,
+                          elevation: 40.0,
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(16.0),
@@ -263,6 +274,16 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                             height: 150.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
+                              boxShadow: const [
+                                BoxShadow(
+                                  blurRadius: 4.0,
+                                  color: Color(0x33000000),
+                                  offset: Offset(
+                                    0.0,
+                                    2.0,
+                                  ),
+                                )
+                              ],
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(16.0),
                                 bottomRight: Radius.circular(16.0),
@@ -270,7 +291,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                 topRight: Radius.circular(16.0),
                               ),
                               border: Border.all(
-                                color: const Color(0xFFC6D9EC),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 width: 6.0,
                               ),
                             ),
@@ -286,8 +308,8 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                       .override(
                                         fontFamily: 'Rubik',
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        fontSize: 25.0,
+                                            .primaryText,
+                                        fontSize: 30.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -299,7 +321,7 @@ class _BookingHomeWidgetState extends State<BookingHomeWidget> {
                                       .override(
                                         fontFamily: 'Mukta',
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                            .primaryText,
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
