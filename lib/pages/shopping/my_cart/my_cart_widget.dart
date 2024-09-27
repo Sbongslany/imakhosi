@@ -56,8 +56,8 @@ class _MyCartWidgetState extends State<MyCartWidget> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/andrei-r-popescu-poyjT5Ap-oM-unsplash.jpg',
+              image: Image.network(
+                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ).image,
             ),
           ),
@@ -151,7 +151,7 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
-                                          elevation: 10.0,
+                                          elevation: 20.0,
                                           shape: const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(5.0),
@@ -167,12 +167,6 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: Image.asset(
-                                                  'assets/images/andrei-r-popescu-poyjT5Ap-oM-unsplash.jpg',
-                                                ).image,
-                                              ),
                                               borderRadius: const BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(5.0),
@@ -371,31 +365,19 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                  fontFamily:
-                                                                      'Raleway',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  fontSize:
-                                                                      17.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  shadows: [
-                                                                    Shadow(
+                                                                      fontFamily:
+                                                                          'Raleway',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
-                                                                      offset: const Offset(
-                                                                          2.0,
-                                                                          2.0),
-                                                                      blurRadius:
-                                                                          2.0,
-                                                                    )
-                                                                  ],
-                                                                ),
+                                                                      fontSize:
+                                                                          17.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                    ),
                                                               ),
                                                             ],
                                                           ),
@@ -428,31 +410,19 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                  fontFamily:
-                                                                      'Raleway',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  fontSize:
-                                                                      23.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w800,
-                                                                  shadows: [
-                                                                    Shadow(
+                                                                      fontFamily:
+                                                                          'Raleway',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondaryText,
-                                                                      offset: const Offset(
-                                                                          2.0,
-                                                                          2.0),
-                                                                      blurRadius:
-                                                                          2.0,
-                                                                    )
-                                                                  ],
-                                                                ),
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          23.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w800,
+                                                                    ),
                                                               ),
                                                             ],
                                                           ),
@@ -562,12 +532,6 @@ class _MyCartWidgetState extends State<MyCartWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: Image.asset(
-                                'assets/images/andrei-r-popescu-poyjT5Ap-oM-unsplash.jpg',
-                              ).image,
-                            ),
                             borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(10.0),
                               bottomRight: Radius.circular(10.0),
