@@ -830,8 +830,8 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                   ),
                                 ),
                                 FlutterFlowPlacePicker(
-                                  iOSGoogleMapsApiKey: 'nkhhjjhhhjh',
-                                  androidGoogleMapsApiKey: 'gghghghghghg',
+                                  iOSGoogleMapsApiKey: '',
+                                  androidGoogleMapsApiKey: '',
                                   webGoogleMapsApiKey: '',
                                   onSelect: (place) async {
                                     safeSetState(
