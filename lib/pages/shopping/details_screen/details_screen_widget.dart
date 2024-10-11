@@ -503,7 +503,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                                                 fontFamily: 'Raleway',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondary,
+                                                        .primaryBackground,
                                                 fontSize: 13.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
@@ -520,7 +520,7 @@ class _DetailsScreenWidgetState extends State<DetailsScreenWidget> {
                         const Spacer(),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 20.0),
+                              0.0, 0.0, 0.0, 40.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

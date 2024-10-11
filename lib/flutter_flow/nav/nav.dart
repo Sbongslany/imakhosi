@@ -9,7 +9,6 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -281,6 +280,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ProductsScreen',
           path: '/productsScreen',
           builder: (context, params) => const ProductsScreenWidget(),
+        ),
+        FFRoute(
+          name: 'UsersScreen',
+          path: '/usersScreen',
+          builder: (context, params) => const UsersScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -467,10 +471,13 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).secondary,
-                  child: Image.asset(
-                    'assets/images/logo-color.png',
-                    fit: BoxFit.contain,
+                  color: Colors.transparent,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      width: 90.0,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 )
               : page;

@@ -102,6 +102,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).alternate,
             body: Container(
+              height: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -125,7 +126,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 0.0),
+                                10.0, 40.0, 10.0, 0.0),
                             child: wrapWithModel(
                               model: _model.navBackModel,
                               updateCallback: () => safeSetState(() {}),
@@ -157,7 +158,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: Image.network(
-                                  'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jb3RyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                                  detailsUsersRecord.photoUrl,
                                   width: double.infinity,
                                   height: 170.0,
                                   fit: BoxFit.cover,
@@ -193,7 +194,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             .override(
                                           fontFamily: 'Outfit',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .secondary,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           shadows: [
@@ -324,6 +325,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Raleway',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -335,6 +339,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Raleway',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),

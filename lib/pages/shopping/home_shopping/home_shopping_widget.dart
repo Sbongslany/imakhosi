@@ -174,8 +174,8 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: Image.network(
-                'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+              image: Image.asset(
+                'assets/images/joanna-kosinska-CxmXVRG5R_k-unsplash.jpg',
               ).image,
             ),
           ),
@@ -424,7 +424,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .override(
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryBackground,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -615,7 +615,7 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                   .override(
                                     fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                        .primaryBackground,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -639,8 +639,8 @@ class _HomeShoppingWidgetState extends State<HomeShoppingWidget>
                                     .bodySmall
                                     .override(
                                       fontFamily: 'Raleway',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,

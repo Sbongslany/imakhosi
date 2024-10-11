@@ -47,3 +47,4 @@ export '/pages/shopping/create_item_screen/create_item_screen_widget.dart'
     show CreateItemScreenWidget;
 export '/pages/shopping/products_screen/products_screen_widget.dart'
     show ProductsScreenWidget;
+export '/users_screen/users_screen_widget.dart' show UsersScreenWidget;

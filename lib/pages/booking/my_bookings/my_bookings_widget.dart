@@ -152,82 +152,94 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 20.0, 16.0, 0.0),
-                                      child: TextFormField(
-                                        controller: _model.textController,
-                                        focusNode: _model.textFieldFocusNode,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          isDense: false,
-                                          labelText: 'Search for booking',
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Raleway',
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
+                                          10.0, 5.0, 10.0, 0.0),
+                                      child: Card(
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        elevation: 0.0,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        child: TextFormField(
+                                          controller: _model.textController,
+                                          focusNode: _model.textFieldFocusNode,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            isDense: false,
+                                            labelText: 'Search for booking',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Raleway',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            prefixIcon: Icon(
+                                              Icons.search_outlined,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              width: 2.0,
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
                                           ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          prefixIcon: Icon(
-                                            Icons.search_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Raleway',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          maxLines: null,
+                                          validator: _model
+                                              .textControllerValidator
+                                              .asValidator(context),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Raleway',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        maxLines: null,
-                                        validator: _model
-                                            .textControllerValidator
-                                            .asValidator(context),
                                       ),
                                     ),
                                     Expanded(
@@ -524,108 +536,42 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    if (listViewBookingsRecord
-                                                                            .accepted ==
-                                                                        true)
-                                                                      Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: listViewBookingsRecord.time! <
-                                                                                getCurrentTimestamp
-                                                                            ? const Color(0x9B4C8883)
-                                                                            : FlutterFlowTheme.of(context).success,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(4.0),
-                                                                        ),
-                                                                        child:
-                                                                            Visibility(
-                                                                          visible:
-                                                                              listViewBookingsRecord.accepted == true,
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.min,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            children:
-                                                                                [
-                                                                              if (listViewBookingsRecord.accepted == true)
-                                                                                Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 1.0, 5.0),
-                                                                                  child: Text(
-                                                                                    'Accepted',
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Raleway',
-                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                          fontSize: 10.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
+                                                                    Container(
+                                                                      width:
+                                                                          90.0,
+                                                                      height:
+                                                                          25.0,
+                                                                      decoration:
+                                                                          const BoxDecoration(),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.min,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.spaceEvenly,
+                                                                        children:
+                                                                            [
+                                                                          Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                5.0,
+                                                                                1.0,
+                                                                                5.0),
+                                                                            child:
+                                                                                Text(
+                                                                              listViewBookingsRecord.accepted ? 'Accepted' : 'Pending',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Raleway',
+                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    fontSize: 10.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.normal,
                                                                                   ),
-                                                                                ),
-                                                                              Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                                                                                child: Icon(
-                                                                                  Icons.credit_score,
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  size: 17.0,
-                                                                                ),
-                                                                              ),
-                                                                            ].divide(const SizedBox(width: 6.0)),
+                                                                            ),
                                                                           ),
-                                                                        ),
+                                                                        ].divide(const SizedBox(width: 9.0)),
                                                                       ),
-                                                                    if (listViewBookingsRecord
-                                                                            .accepted ==
-                                                                        false)
-                                                                      Card(
-                                                                        clipBehavior:
-                                                                            Clip.antiAliasWithSaveLayer,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .tertiary,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        shape:
-                                                                            RoundedRectangleBorder(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(2.0),
-                                                                        ),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.min,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceEvenly,
-                                                                          children:
-                                                                              [
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 1.0, 5.0),
-                                                                              child: Text(
-                                                                                'Pending',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Raleway',
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      fontSize: 10.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.normal,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                                                                              child: Icon(
-                                                                                Icons.tips_and_updates_rounded,
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                size: 17.0,
-                                                                              ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(width: 9.0)),
-                                                                        ),
-                                                                      ),
+                                                                    ),
                                                                     if (listViewBookingsRecord
                                                                             .time! <
                                                                         getCurrentTimestamp)
