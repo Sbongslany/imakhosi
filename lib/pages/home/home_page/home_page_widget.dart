@@ -70,13 +70,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
         backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: Container(
           height: double.infinity,
-          decoration: const BoxDecoration(
-            color: Color(0x91748285),
-            image: DecorationImage(
+          decoration: BoxDecoration(
+            color: const Color(0x91748285),
+            image: const DecorationImage(
               fit: BoxFit.contain,
               image: CachedNetworkImageProvider(
                 'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
               ),
+            ),
+            border: Border.all(
+              color: FlutterFlowTheme.of(context).secondaryText,
             ),
           ),
           child: ClipRRect(
