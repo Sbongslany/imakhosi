@@ -1,9 +1,11 @@
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:badges/badges.dart' as badges;
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
@@ -16,15 +18,57 @@ class HomePageWidget extends StatefulWidget {
   State<HomePageWidget> createState() => _HomePageWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _HomePageWidgetState extends State<HomePageWidget>
+    with TickerProviderStateMixin {
   late HomePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    animationsMap.addAll({
+      'textOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(98.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 800.0.ms,
+            begin: const Offset(98.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 1000.0.ms,
+            begin: const Offset(98.0, 0.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -173,7 +217,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                         child: Container(
                           width: double.infinity,
-                          height: 110.0,
+                          height: 130.0,
                           decoration: BoxDecoration(
                             color: const Color(0x8FFFFFFF),
                             boxShadow: const [
@@ -193,7 +237,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               topRight: Radius.circular(16.0),
                             ),
                             border: Border.all(
-                              color: const Color(0x6D57636C),
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 10.0,
                             ),
                           ),
@@ -204,11 +248,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Icon(
                                     Icons.calendar_month,
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     size: 40.0,
                                   ),
                                   Text(
@@ -218,10 +263,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .override(
                                       fontFamily: 'Rubik',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                          .primaryBackground,
                                       fontSize: 30.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
+                                      fontWeight: FontWeight.w500,
                                       shadows: [
                                         Shadow(
                                           color: FlutterFlowTheme.of(context)
@@ -231,7 +276,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         )
                                       ],
                                     ),
-                                  ),
+                                  ).animateOnPageLoad(animationsMap[
+                                      'textOnPageLoadAnimation1']!),
                                 ],
                               ),
                               StyledDivider(
@@ -240,18 +286,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     .secondaryBackground,
                                 lineStyle: DividerLineStyle.dashdotted,
                               ),
-                              Text(
-                                'Book for your consultation',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Mukta',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 15.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w300,
-                                    ),
+                              Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 5.0, 0.0),
+                                  child: Text(
+                                    'Book for your consultation',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Mukta',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 15.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -291,7 +344,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                           child: Container(
                             width: double.infinity,
-                            height: 110.0,
+                            height: 130.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
                               boxShadow: const [
@@ -311,7 +364,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 topRight: Radius.circular(16.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x6D57636C),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 width: 10.0,
                               ),
                             ),
@@ -322,12 +376,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Icon(
                                       Icons.shopping_basket_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
                                       size: 40.0,
                                     ),
                                     Text(
@@ -337,10 +391,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           .override(
                                         fontFamily: 'Rubik',
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primaryBackground,
                                         fontSize: 30.0,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w300,
+                                        fontWeight: FontWeight.w500,
                                         shadows: [
                                           Shadow(
                                             color: FlutterFlowTheme.of(context)
@@ -350,7 +404,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           )
                                         ],
                                       ),
-                                    ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'textOnPageLoadAnimation2']!),
                                   ],
                                 ),
                                 StyledDivider(
@@ -359,18 +414,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .secondaryBackground,
                                   lineStyle: DividerLineStyle.dashdotted,
                                 ),
-                                Text(
-                                  'Start shopping',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Mukta',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 15.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w300,
-                                      ),
+                                Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 5.0, 0.0),
+                                    child: Text(
+                                      'Start shopping',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Mukta',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 15.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -411,7 +473,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                           child: Container(
                             width: double.infinity,
-                            height: 110.0,
+                            height: 130.0,
                             decoration: BoxDecoration(
                               color: const Color(0x8FFFFFFF),
                               boxShadow: const [
@@ -431,7 +493,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 topRight: Radius.circular(16.0),
                               ),
                               border: Border.all(
-                                color: const Color(0x6D57636C),
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 width: 10.0,
                               ),
                             ),
@@ -442,12 +505,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Icon(
                                       Icons.calendar_month,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
                                       size: 40.0,
                                     ),
                                     Text(
@@ -457,10 +520,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           .override(
                                         fontFamily: 'Rubik',
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primaryBackground,
                                         fontSize: 30.0,
                                         letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w300,
+                                        fontWeight: FontWeight.w500,
                                         shadows: [
                                           Shadow(
                                             color: FlutterFlowTheme.of(context)
@@ -470,7 +533,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           )
                                         ],
                                       ),
-                                    ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'textOnPageLoadAnimation3']!),
                                   ],
                                 ),
                                 StyledDivider(
@@ -479,18 +543,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .secondaryBackground,
                                   lineStyle: DividerLineStyle.dashdotted,
                                 ),
-                                Text(
-                                  'Explore your dreams',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Mukta',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 15.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w300,
-                                      ),
+                                Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 5.0, 0.0),
+                                    child: Text(
+                                      'Explore your dreams',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Mukta',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 15.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
