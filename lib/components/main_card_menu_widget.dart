@@ -69,90 +69,107 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
           color: FlutterFlowTheme.of(context).secondary,
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                widget.image!,
-                width: 241.0,
-                height: 120.0,
-                fit: BoxFit.cover,
-              ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.network(
+              widget.image!,
+              width: 241.0,
+              height: 120.0,
+              fit: BoxFit.cover,
             ),
-            Text(
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+            child: Text(
               valueOrDefault<String>(
                 widget.name,
                 '-',
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Raleway',
-                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    color: FlutterFlowTheme.of(context).secondaryText,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-              child: Text(
-                formatNumber(
-                  widget.pricw,
-                  formatType: FormatType.custom,
-                  currency: 'R',
-                  format: '',
-                  locale: '',
-                ),
-                style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Raleway',
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      fontSize: 11.0,
-                      letterSpacing: 0.0,
-                    ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: 20.0,
-                    height: 20.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).accent2,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: Image.network(
-                        'https://images.unsplash.com/photo-1724710152067-f5cda1ed9820?w=200&h=200',
-                        width: 10.0,
-                        height: 10.0,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'John Doe',
-                    style: FlutterFlowTheme.of(context).labelSmall.override(
-                          fontFamily: 'Raleway',
-                          color: FlutterFlowTheme.of(context).secondary,
-                          fontSize: 9.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.normal,
+          ),
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                        child: Container(
+                          width: 20.0,
+                          height: 20.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).accent2,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              'https://images.unsplash.com/photo-1724710152067-f5cda1ed9820?w=200&h=200',
+                              width: 10.0,
+                              height: 10.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
+                      ),
+                      Text(
+                        'John Doe',
+                        style: FlutterFlowTheme.of(context).labelSmall.override(
+                              fontFamily: 'Raleway',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              fontSize: 9.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.normal,
+                            ),
+                      ),
+                    ],
                   ),
-                ].divide(const SizedBox(width: 4.0)),
-              ),
+                ),
+                Text(
+                  'Product by',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Raleway',
+                        fontSize: 10.0,
+                        letterSpacing: 0.0,
+                      ),
+                ),
+                Text(
+                  formatNumber(
+                    widget.pricw,
+                    formatType: FormatType.custom,
+                    currency: 'R',
+                    format: '',
+                    locale: '',
+                  ),
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
+                        fontFamily: 'Raleway',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        fontSize: 11.0,
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ].divide(const SizedBox(width: 4.0)),
             ),
-          ].divide(const SizedBox(height: 3.0)),
-        ),
+          ),
+        ].divide(const SizedBox(height: 3.0)),
       ),
     );
   }
