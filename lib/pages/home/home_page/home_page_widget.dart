@@ -252,7 +252,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
+                                        10.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.calendar_month,
                                       color: FlutterFlowTheme.of(context)
@@ -350,7 +350,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             width: double.infinity,
                             height: 130.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x8FFFFFFF),
+                              color: const Color(0x6BD12833),
                               boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 4.0,
@@ -384,11 +384,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
+                                          10.0, 0.0, 10.0, 0.0),
                                       child: Icon(
                                         Icons.shopping_basket_rounded,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                            .primaryBackground,
                                         size: 40.0,
                                       ),
                                     ),
@@ -434,7 +434,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .override(
                                             fontFamily: 'Mukta',
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .primaryBackground,
                                             fontSize: 15.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w300,
@@ -517,7 +517,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
+                                          10.0, 0.0, 10.0, 0.0),
                                       child: Icon(
                                         Icons.calendar_month,
                                         color: FlutterFlowTheme.of(context)
