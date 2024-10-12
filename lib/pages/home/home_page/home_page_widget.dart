@@ -470,8 +470,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                     ),
                                     child: Container(
-                                      width: 157.0,
-                                      height: 180.0,
+                                      width: 220.0,
+                                      height: 200.0,
                                       decoration: BoxDecoration(
                                         color: const Color(0x8FFFFFFF),
                                         borderRadius: const BorderRadius.only(
@@ -526,8 +526,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               ].divide(const SizedBox(width: 2.0)),
                                             ),
                                             Container(
-                                              width: 110.0,
-                                              height: 110.0,
+                                              width: 140.0,
+                                              height: 140.0,
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                   fit: BoxFit.cover,
