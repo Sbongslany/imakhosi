@@ -138,7 +138,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
                           color: FlutterFlowTheme.of(context).secondary,
-                          fontSize: 25.0,
+                          fontSize: 15.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -157,7 +157,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Raleway',
                           color: FlutterFlowTheme.of(context).secondary,
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
