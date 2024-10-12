@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -333,18 +334,26 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
-                              child: Text(
+                              child: AutoSizeText(
                                 'Traditional Healers',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Raleway',
+                                  fontFamily: 'Raleway',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                  shadows: [
+                                    Shadow(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      fontSize: 12.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                                          .secondaryText,
+                                      offset: const Offset(2.0, 2.0),
+                                      blurRadius: 2.0,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -379,7 +388,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       .override(
                                         fontFamily: 'Raleway',
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .primaryText,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
@@ -519,27 +528,37 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w300,
+                                                              FontWeight.w600,
                                                         ),
                                                   ),
                                                 ),
                                               ].divide(const SizedBox(width: 2.0)),
                                             ),
-                                            Container(
-                                              width: 140.0,
-                                              height: 140.0,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  fit: BoxFit.cover,
-                                                  image: Image.network(
-                                                    valueOrDefault<String>(
-                                                      listViewUsersRecord
-                                                          .photoUrl,
-                                                      'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
-                                                    ),
-                                                  ).image,
+                                            Material(
+                                              color: Colors.transparent,
+                                              elevation: 2.0,
+                                              shape: const CircleBorder(),
+                                              child: Container(
+                                                width: 140.0,
+                                                height: 140.0,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    fit: BoxFit.cover,
+                                                    image: Image.network(
+                                                      valueOrDefault<String>(
+                                                        listViewUsersRecord
+                                                            .photoUrl,
+                                                        'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
+                                                      ),
+                                                    ).image,
+                                                  ),
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                  ),
                                                 ),
-                                                shape: BoxShape.circle,
                                               ),
                                             ),
                                             Row(
