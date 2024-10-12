@@ -466,7 +466,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 20.0, 0.0),
+                                          20.0, 0.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -794,7 +794,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       height: 200.0,
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 5.0, 10.0, 10.0),
+                            10.0, 5.0, 0.0, 10.0),
                         child: StreamBuilder<List<ShoesRecord>>(
                           stream: queryShoesRecord(
                             queryBuilder: (shoesRecord) => shoesRecord.where(

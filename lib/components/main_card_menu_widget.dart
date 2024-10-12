@@ -59,7 +59,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
         width: 216.0,
         height: 186.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondary,
+          color: const Color(0x68C6E4EC),
           image: DecorationImage(
             fit: BoxFit.cover,
             image: Image.network(
@@ -137,7 +137,8 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
-                          color: FlutterFlowTheme.of(context).secondaryText,
+                          color: FlutterFlowTheme.of(context).secondary,
+                          fontSize: 15.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -155,8 +156,8 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Raleway',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 11.0,
+                          color: FlutterFlowTheme.of(context).secondary,
+                          fontSize: 15.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -174,7 +175,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     'Product by',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
-                          color: FlutterFlowTheme.of(context).secondaryText,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
                           fontSize: 9.0,
                           letterSpacing: 0.0,
                         ),
@@ -210,16 +211,15 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                         ),
                         Text(
                           'John Doe',
-                          style: FlutterFlowTheme.of(context)
-                              .labelSmall
-                              .override(
-                                fontFamily: 'Raleway',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 9.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.normal,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Raleway',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontSize: 9.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
                       ],
                     ),
