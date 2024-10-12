@@ -250,11 +250,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.calendar_month,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 40.0,
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    child: Icon(
+                                      Icons.calendar_month,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 40.0,
+                                    ),
                                   ),
                                   Text(
                                     'Book Now',
@@ -298,7 +302,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         .override(
                                           fontFamily: 'Mukta',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                              .secondaryText,
                                           fontSize: 15.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w300,
@@ -378,11 +382,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Icon(
-                                      Icons.shopping_basket_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 40.0,
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: Icon(
+                                        Icons.shopping_basket_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 40.0,
+                                      ),
                                     ),
                                     Text(
                                       'Shop',
@@ -426,7 +434,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .override(
                                             fontFamily: 'Mukta',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondaryText,
                                             fontSize: 15.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w300,
@@ -507,11 +515,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Icon(
-                                      Icons.calendar_month,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 40.0,
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: Icon(
+                                        Icons.calendar_month,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 40.0,
+                                      ),
                                     ),
                                     Text(
                                       'Dreams',
@@ -555,7 +567,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .override(
                                             fontFamily: 'Mukta',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondaryText,
                                             fontSize: 15.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w300,
