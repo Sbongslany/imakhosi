@@ -561,42 +561,36 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         const SizedBox(width: 2.0)),
                                                   ),
                                                 ),
-                                                Material(
-                                                  color: Colors.transparent,
-                                                  elevation: 2.0,
-                                                  shape: const CircleBorder(),
-                                                  child: Container(
-                                                    width: 70.0,
-                                                    height: 70.0,
-                                                    decoration: BoxDecoration(
+                                                Container(
+                                                  width: 70.0,
+                                                  height: 70.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondary,
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondary,
-                                                      shape: BoxShape.circle,
-                                                      border: Border.all(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                      ),
                                                     ),
-                                                    child: Container(
-                                                      width: 90.0,
-                                                      height: 90.0,
-                                                      clipBehavior:
-                                                          Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
-                                                        shape: BoxShape.circle,
+                                                  ),
+                                                  child: Container(
+                                                    width: 90.0,
+                                                    height: 90.0,
+                                                    clipBehavior:
+                                                        Clip.antiAlias,
+                                                    decoration: const BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                    child: Image.network(
+                                                      valueOrDefault<String>(
+                                                        listViewUsersRecord
+                                                            .photoUrl,
+                                                        'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
                                                       ),
-                                                      child: Image.network(
-                                                        valueOrDefault<String>(
-                                                          listViewUsersRecord
-                                                              .photoUrl,
-                                                          'https://cdn.vectorstock.com/i/500p/08/19/gray-photo-placeholder-icon-design-ui-vector-35850819.jpg',
-                                                        ),
-                                                        fit: BoxFit.cover,
-                                                      ),
+                                                      fit: BoxFit.cover,
                                                     ),
                                                   ),
                                                 ),
