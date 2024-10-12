@@ -111,18 +111,6 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     letterSpacing: 0.0,
                   ),
             ),
-            Text(
-              valueOrDefault<String>(
-                widget.description,
-                '-',
-              ),
-              style: FlutterFlowTheme.of(context).labelSmall.override(
-                    fontFamily: 'Raleway',
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 10.0,
-                    letterSpacing: 0.0,
-                  ),
-            ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
               child: Row(
