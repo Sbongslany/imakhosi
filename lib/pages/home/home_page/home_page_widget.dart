@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import 'package:badges/badges.dart' as badges;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -69,13 +70,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
         backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: Container(
           height: double.infinity,
-          decoration: BoxDecoration(
-            color: const Color(0x91748285),
+          decoration: const BoxDecoration(
+            color: Color(0x91748285),
             image: DecorationImage(
               fit: BoxFit.contain,
-              image: Image.network(
+              image: CachedNetworkImageProvider(
                 'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
-              ).image,
+              ),
             ),
           ),
           child: ClipRRect(
@@ -491,7 +492,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         },
                                         child: Material(
                                           color: Colors.transparent,
-                                          elevation: 10.0,
+                                          elevation: 15.0,
                                           shape: const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(16.0),

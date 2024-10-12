@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,12 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
       height: 215.0,
       decoration: BoxDecoration(
         color: const Color(0x6BFFFFFF),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: Image.network(
+            'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+          ).image,
+        ),
         boxShadow: const [
           BoxShadow(
             blurRadius: 4.0,
@@ -71,16 +78,43 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Image.network(
-              widget.image!,
-              width: 241.0,
-              height: 120.0,
-              fit: BoxFit.cover,
+          InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              await Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.fade,
+                  child: FlutterFlowExpandedImageView(
+                    image: Image.network(
+                      widget.image!,
+                      fit: BoxFit.contain,
+                    ),
+                    allowRotation: false,
+                    tag: widget.image!,
+                    useHeroAnimation: true,
+                  ),
+                ),
+              );
+            },
+            child: Hero(
+              tag: widget.image!,
+              transitionOnUserGestures: true,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(0.0),
+                child: Image.network(
+                  widget.image!,
+                  width: 241.0,
+                  height: 120.0,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Padding(
@@ -92,7 +126,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Raleway',
-                    color: FlutterFlowTheme.of(context).secondaryText,
+                    color: FlutterFlowTheme.of(context).secondary,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -118,6 +152,9 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).accent2,
                             borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context).secondary,
+                            ),
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
@@ -134,7 +171,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                         'John Doe',
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Raleway',
-                              color: FlutterFlowTheme.of(context).secondaryText,
+                              color: FlutterFlowTheme.of(context).secondary,
                               fontSize: 9.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
@@ -147,6 +184,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                   'Product by',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Raleway',
+                        color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 10.0,
                         letterSpacing: 0.0,
                       ),
@@ -161,7 +199,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Raleway',
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                        color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 11.0,
                         letterSpacing: 0.0,
                       ),
