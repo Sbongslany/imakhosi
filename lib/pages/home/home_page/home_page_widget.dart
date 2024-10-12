@@ -513,7 +513,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               image: DecorationImage(
                                                 fit: BoxFit.cover,
                                                 image: Image.network(
-                                                  'https://images.unsplash.com/photo-1727075252960-7eeff88ae038?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDN8fHxlbnwwfHx8fHw%3D',
+                                                  '',
                                                 ).image,
                                               ),
                                               borderRadius: const BorderRadius.only(
@@ -525,9 +525,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 topRight: Radius.circular(16.0),
                                               ),
                                               border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
+                                                color: const Color(0x80C6E4EC),
+                                                width: 2.0,
                                               ),
                                             ),
                                             child: Padding(
@@ -637,18 +636,26 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Raleway',
+                                                            fontFamily:
+                                                                'Raleway',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            fontSize: 15.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            shadows: [
+                                                              Shadow(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBackground,
-                                                                fontSize: 15.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                              ),
+                                                                    .secondaryText,
+                                                                offset: const Offset(
+                                                                    2.0, 2.0),
+                                                                blurRadius: 2.0,
+                                                              )
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                       Padding(
@@ -670,18 +677,26 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Raleway',
+                                                            fontFamily:
+                                                                'Raleway',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            fontSize: 15.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            shadows: [
+                                                              Shadow(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBackground,
-                                                                fontSize: 15.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                              ),
+                                                                    .secondaryText,
+                                                                offset: const Offset(
+                                                                    2.0, 2.0),
+                                                                blurRadius: 2.0,
+                                                              )
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ].divide(

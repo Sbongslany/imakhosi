@@ -79,7 +79,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
           ],
           borderRadius: BorderRadius.circular(0.0),
           border: Border.all(
-            color: FlutterFlowTheme.of(context).secondaryText,
+            color: FlutterFlowTheme.of(context).secondary,
             width: 2.0,
           ),
         ),
@@ -138,7 +138,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
                           color: FlutterFlowTheme.of(context).secondary,
-                          fontSize: 15.0,
+                          fontSize: 25.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
@@ -157,7 +157,7 @@ class _MainCardMenuWidgetState extends State<MainCardMenuWidget> {
                     style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Raleway',
                           color: FlutterFlowTheme.of(context).secondary,
-                          fontSize: 15.0,
+                          fontSize: 20.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
