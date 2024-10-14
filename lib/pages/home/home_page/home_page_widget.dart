@@ -182,7 +182,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       alignment: const AlignmentDirectional(1.0, 0.0),
                       child: Icon(
                         Icons.wechat_outlined,
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         size: 34.0,
                       ),
                     ),
@@ -219,10 +219,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           width: double.infinity,
                           height: 130.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x8FFFFFFF),
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             boxShadow: const [
                               BoxShadow(
-                                blurRadius: 4.0,
                                 color: Color(0x33000000),
                                 offset: Offset(
                                   0.0,
@@ -237,8 +237,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               topRight: Radius.circular(16.0),
                             ),
                             border: Border.all(
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              width: 10.0,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              width: 2.0,
                             ),
                           ),
                           alignment: const AlignmentDirectional(0.0, 0.0),
@@ -250,14 +251,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
-                                    child: Icon(
-                                      Icons.calendar_month,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 40.0,
+                                  Flexible(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 10.0, 0.0),
+                                      child: Icon(
+                                        Icons.calendar_month,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 40.0,
+                                      ),
                                     ),
                                   ),
                                   Text(
@@ -268,7 +271,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       fontFamily: 'Rubik',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
-                                      fontSize: 30.0,
+                                      fontSize: 35.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                       shadows: [
@@ -286,6 +289,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               ),
                               StyledDivider(
                                 thickness: 2.0,
+                                indent: 10.0,
+                                endIndent: 10.0,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 lineStyle: DividerLineStyle.dashdotted,
@@ -302,7 +307,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         .override(
                                           fontFamily: 'Mukta',
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .primaryBackground,
                                           fontSize: 15.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w300,
@@ -350,7 +355,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             width: double.infinity,
                             height: 130.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x6BD12833),
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                               boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 4.0,
@@ -368,9 +374,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 topRight: Radius.circular(16.0),
                               ),
                               border: Border.all(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                width: 10.0,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                width: 2.0,
                               ),
                             ),
                             alignment: const AlignmentDirectional(0.0, 0.0),
@@ -388,7 +394,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       child: Icon(
                                         Icons.shopping_basket_rounded,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .secondary,
                                         size: 40.0,
                                       ),
                                     ),
@@ -400,7 +406,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         fontFamily: 'Rubik',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        fontSize: 30.0,
+                                        fontSize: 35.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         shadows: [
@@ -418,6 +424,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ),
                                 StyledDivider(
                                   thickness: 2.0,
+                                  indent: 10.0,
+                                  endIndent: 10.0,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   lineStyle: DividerLineStyle.dashdotted,
@@ -483,7 +491,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             width: double.infinity,
                             height: 130.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x8FFFFFFF),
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                               boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 4.0,
@@ -501,9 +510,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 topRight: Radius.circular(16.0),
                               ),
                               border: Border.all(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                width: 10.0,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                width: 2.0,
                               ),
                             ),
                             alignment: const AlignmentDirectional(0.0, 0.0),
@@ -521,7 +530,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       child: Icon(
                                         Icons.calendar_month,
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                            .secondary,
                                         size: 40.0,
                                       ),
                                     ),
@@ -533,7 +542,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         fontFamily: 'Rubik',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        fontSize: 30.0,
+                                        fontSize: 35.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         shadows: [
@@ -551,6 +560,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ),
                                 StyledDivider(
                                   thickness: 2.0,
+                                  indent: 5.0,
+                                  endIndent: 5.0,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   lineStyle: DividerLineStyle.dashdotted,
@@ -567,7 +578,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .override(
                                             fontFamily: 'Mukta',
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .primaryBackground,
                                             fontSize: 15.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w300,
